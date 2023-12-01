@@ -1,5 +1,5 @@
 {
-  "name": "bgd-forge-template",
+  "name": "protocol-v3.1-upgrade",
   "version": "1.0.0",
   "scripts": {
     "lint": "prettier ./",
@@ -7,15 +7,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bgd-labs/bgd-forge-template.git"
+    "url": "git+https://github.com/bgd-labs/protocol-v3.1-upgrade"
   },
   "keywords": [],
   "author": "BGD labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bgd-labs/bgd-forge-template/issues"
+    "url": "https://github.com/bgd-labs/protocol-v3.1-upgrade/issues"
   },
-  "homepage": "https://github.com/bgd-labs/bgd-forge-template#readme",
+  "homepage": "https://github.com/bgd-labs/protocol-v3.1-upgrade#readme",
   "devDependencies": {
     "prettier": "2.8.7",
     "prettier-plugin-solidity": "1.1.3"
