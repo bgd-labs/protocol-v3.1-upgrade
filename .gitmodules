@@ -4,6 +4,7 @@
 [submodule "lib/aave-v3-factory"]
 	path = lib/aave-v3-factory
 	url = git@github.com:bgd-labs/aave-v3-factory.git
+	branch = v3.1.0
 [submodule "lib/aave-address-book"]
 	path = lib/aave-address-book
 	url = https://github.com/bgd-labs/aave-address-book
