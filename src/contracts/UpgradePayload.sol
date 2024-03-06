@@ -68,19 +68,19 @@ contract UpgradePayload is IProposalGenericExecutor {
           IDefaultInterestRateStrategyV2.InterestRateData({
             optimalUsageRatio: uint16(
               ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
-                .OPTIMAL_USAGE_RATIO()
+                .OPTIMAL_USAGE_RATIO() / 1e23
             ),
             baseVariableBorrowRate: uint32(
               ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
-                .getBaseVariableBorrowRate()
+                .getBaseVariableBorrowRate() / 1e23
             ),
             variableRateSlope1: uint32(
               ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
-                .getVariableRateSlope1()
+                .getVariableRateSlope1() / 1e23
             ),
             variableRateSlope2: uint32(
               ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
-                .getVariableRateSlope2()
+                .getVariableRateSlope2() / 1e23
             )
           })
         )
