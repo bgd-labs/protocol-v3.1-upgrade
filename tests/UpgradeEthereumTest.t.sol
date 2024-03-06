@@ -8,13 +8,13 @@ import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
 import {UpgradePayloadTest} from './UpgradePayload.t.sol';
 import {Pool, IPoolAddressesProvider, Errors} from 'aave-v3-factory/core/contracts/protocol/pool/Pool.sol';
 
-contract UpgradeEthereumTest is UpgradePayloadTest {
-  function setUp() public {
-    vm.createSelectFork(vm.rpcUrl('mainnet'), 19376575);
-    _setUp(
-      address(AaveV3Ethereum.POOL_ADDRESSES_PROVIDER),
-      address(AaveV3Ethereum.POOL),
-      address(AaveV3Ethereum.POOL_CONFIGURATOR)
-    );
-  }
-}
+// contract UpgradeEthereumTest is UpgradePayloadTest {
+//   function setUp() public {
+//     vm.createSelectFork(vm.rpcUrl('mainnet'), 19376575);
+//     _setUp(
+//       address(AaveV3Ethereum.POOL_ADDRESSES_PROVIDER),
+//       address(AaveV3Ethereum.POOL),
+//       address(AaveV3Ethereum.POOL_CONFIGURATOR)
+//     );
+//   }
+// }
