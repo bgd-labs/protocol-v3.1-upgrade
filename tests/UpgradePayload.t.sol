@@ -4,28 +4,32 @@ pragma solidity ^0.8.0;
 import 'forge-std/Test.sol';
 import {AaveV3Ethereum} from 'aave-address-book/AaveV3Ethereum.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3helpers.sol';
-import {ProtocolV3TestBase, IPool} from 'aave-helpers/ProtocolV3TestBase.sol';
+import {ProtocolV3TestBase, IPool as IOldPool} from 'aave-helpers/ProtocolV3TestBase.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
-import {Pool, IPoolAddressesProvider, Errors} from 'aave-v3-factory/core/contracts/protocol/pool/Pool.sol';
+import {IPoolAddressesProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolAddressesProvider.sol';
+import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
+import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPoolConfigurator.sol';
 
 /**
  * Basetest to be executed on all networks
  */
 abstract contract UpgradePayloadTest is ProtocolV3TestBase {
-  IPoolAddressesProvider internal immutable POOL_ADDRESSES_PROVIDER;
-  UpgradePayload internal immutable PAYLOAD;
+  IPoolAddressesProvider internal POOL_ADDRESSES_PROVIDER;
+  UpgradePayload internal PAYLOAD;
 
-  constructor(address poolAddressProvider) {
+  function _setUp(address poolAddressProvider, address pool, address configurator) internal {
     POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressProvider);
-    PAYLOAD = new UpgradePayload(IPoolAddressesProvider(poolAddressProvider));
-    // needed as setup is invoked afterwards to the fork changes
-    vm.makePersistent(address(PAYLOAD));
+    PAYLOAD = new UpgradePayload(
+      IPoolAddressesProvider(poolAddressProvider),
+      IPool(pool),
+      IPoolConfigurator(configurator)
+    );
   }
 
   function test_default() external {
     defaultTest(
       vm.toString(block.chainid),
-      IPool(POOL_ADDRESSES_PROVIDER.getPool()),
+      IOldPool(POOL_ADDRESSES_PROVIDER.getPool()),
       address(PAYLOAD)
     );
   }
