@@ -43,14 +43,10 @@ contract UpgradePayload is IProposalGenericExecutor {
   IPoolConfigurator public immutable CONFIGURATOR;
   DefaultReserveInterestRateStrategyV2 public immutable DEFAULT_IR;
 
-  constructor(
-    IPoolAddressesProvider poolAddressesProvider,
-    IPool pool,
-    IPoolConfigurator configurator
-  ) {
-    POOL_ADDRESSES_PROVIDER = poolAddressesProvider;
-    POOL = pool;
-    CONFIGURATOR = configurator;
+  constructor(address poolAddressesProvider, address pool, address configurator) {
+    POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressesProvider);
+    POOL = IPool(pool);
+    CONFIGURATOR = IPoolConfigurator(configurator);
     DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(poolAddressesProvider));
   }
 
