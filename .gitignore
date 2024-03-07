@@ -15,3 +15,7 @@ node_modules
 
 # ignore foundry deploy artifacts
 broadcast/
+
+# tooling artifacts
+reports
+.assets
