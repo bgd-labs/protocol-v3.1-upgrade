@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 import 'forge-std/Test.sol';
 
 import {AaveV3Polygon, AaveV3PolygonAssets} from 'aave-address-book/AaveV3Polygon.sol';
-import {PoolInstance} from '../src/PoolInstance.sol';
+import {PoolInstance} from '../src/contracts/PoolInstance.sol';
 
 contract SwapToVariable is Test {
   PoolInstance public pool = PoolInstance(address(AaveV3Polygon.POOL));
