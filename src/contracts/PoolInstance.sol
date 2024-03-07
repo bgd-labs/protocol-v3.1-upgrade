@@ -11,7 +11,6 @@ contract PoolInstanceWithCustomInitialize is PoolInstance {
 
   function initialize(IPoolAddressesProvider provider) external virtual override initializer {
     require(provider == ADDRESSES_PROVIDER, Errors.INVALID_ADDRESSES_PROVIDER);
-    _maxStableRateBorrowSizePercent = 0.25e4;
     // TODO: virtual accounting
   }
 }
