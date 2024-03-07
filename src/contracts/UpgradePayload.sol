@@ -5,9 +5,9 @@ import {IPoolAddressesProvider} from 'aave-v3-factory/core/contracts/interfaces/
 import {IPool, DataTypes} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
 import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPoolConfigurator.sol';
 import {PoolConfiguratorInstance} from 'aave-v3-factory/core/instances/PoolConfiguratorInstance.sol';
-import {PoolInstance} from 'aave-v3-factory/core/instances/PoolInstance.sol';
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-factory/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-factory/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
+import {PoolInstanceWithCustomInitialize} from './PoolInstance.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -56,7 +56,9 @@ contract UpgradePayload is IProposalGenericExecutor {
 
   function execute() external {
     POOL_ADDRESSES_PROVIDER.setPoolConfiguratorImpl(address(new PoolConfiguratorInstance()));
-    POOL_ADDRESSES_PROVIDER.setPoolImpl(address(new PoolInstance(POOL_ADDRESSES_PROVIDER)));
+    POOL_ADDRESSES_PROVIDER.setPoolImpl(
+      address(new PoolInstanceWithCustomInitialize(POOL_ADDRESSES_PROVIDER))
+    );
 
     address[] memory reserves = POOL.getReservesList();
     for (uint256 i = 0; i < reserves.length; i++) {
