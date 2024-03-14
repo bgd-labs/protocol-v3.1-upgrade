@@ -7,7 +7,7 @@ import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPool
 import {PoolConfiguratorInstance} from 'aave-v3-factory/core/instances/PoolConfiguratorInstance.sol';
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-factory/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-factory/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
-import {PoolInstanceWithCustomInitialize} from './PoolInstance.sol';
+import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -43,35 +43,40 @@ contract UpgradePayload is IProposalGenericExecutor {
   IPoolConfigurator public immutable CONFIGURATOR;
   DefaultReserveInterestRateStrategyV2 public immutable DEFAULT_IR;
 
-  constructor(
-    IPoolAddressesProvider poolAddressesProvider,
-    IPool pool,
-    IPoolConfigurator configurator
-  ) {
-    POOL_ADDRESSES_PROVIDER = poolAddressesProvider;
-    POOL = pool;
-    CONFIGURATOR = configurator;
+  address public immutable POOL_IMPL;
+
+  constructor(address poolAddressesProvider, address pool, address configurator, address poolImpl) {
+    POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressesProvider);
+    POOL = IPool(pool);
+    CONFIGURATOR = IPoolConfigurator(configurator);
     DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(poolAddressesProvider));
+    POOL_IMPL = poolImpl;
   }
 
   function execute() external {
     POOL_ADDRESSES_PROVIDER.setPoolConfiguratorImpl(address(new PoolConfiguratorInstance()));
-    POOL_ADDRESSES_PROVIDER.setPoolImpl(
-      address(new PoolInstanceWithCustomInitialize(POOL_ADDRESSES_PROVIDER))
-    );
+    POOL_ADDRESSES_PROVIDER.setPoolImpl(POOL_IMPL);
 
     address[] memory reserves = POOL.getReservesList();
     for (uint256 i = 0; i < reserves.length; i++) {
       DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(reserves[i]);
+      uint256 currentUOpt;
+
+      if (reserves[i] == AaveV3EthereumAssets.GHO_UNDERLYING) {
+        currentUOpt = DEFAULT_IR.MAX_OPTIMAL_POINT();
+      } else {
+        currentUOpt =
+          ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
+            .OPTIMAL_USAGE_RATIO() /
+          1e23;
+      }
+
       CONFIGURATOR.setReserveInterestRateStrategyAddress(
         reserves[i],
         address(DEFAULT_IR),
         abi.encode(
           IDefaultInterestRateStrategyV2.InterestRateData({
-            optimalUsageRatio: uint16(
-              ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
-                .OPTIMAL_USAGE_RATIO() / 1e23
-            ),
+            optimalUsageRatio: uint16(currentUOpt),
             baseVariableBorrowRate: uint32(
               ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
                 .getBaseVariableBorrowRate() / 1e23
