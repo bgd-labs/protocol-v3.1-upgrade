@@ -7,7 +7,6 @@ import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPool
 import {PoolConfiguratorInstance} from 'aave-v3-factory/core/instances/PoolConfiguratorInstance.sol';
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-factory/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-factory/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
-import {PoolInstanceWithCustomInitialize} from './PoolInstance.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -58,17 +57,18 @@ contract UpgradePayload is IProposalGenericExecutor {
     POOL_ADDRESSES_PROVIDER.setPoolImpl(POOL_IMPL);
 
     address[] memory reserves = POOL.getReservesList();
+    uint256 maxUOpt = DEFAULT_IR.MAX_OPTIMAL_POINT();
     for (uint256 i = 0; i < reserves.length; i++) {
       DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(reserves[i]);
+      uint256 currentUOpt = ILegacyDefaultInterestRateStrategy(
+        reserveData.interestRateStrategyAddress
+      ).OPTIMAL_USAGE_RATIO();
       CONFIGURATOR.setReserveInterestRateStrategyAddress(
         reserves[i],
         address(DEFAULT_IR),
         abi.encode(
           IDefaultInterestRateStrategyV2.InterestRateData({
-            optimalUsageRatio: uint16(
-              ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
-                .OPTIMAL_USAGE_RATIO() / 1e23
-            ),
+            optimalUsageRatio: uint16(currentUOpt == 0 ? maxUOpt : currentUOpt / 1e23),
             baseVariableBorrowRate: uint32(
               ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)
                 .getBaseVariableBorrowRate() / 1e23
