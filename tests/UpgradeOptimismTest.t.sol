@@ -1,10 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import {UpgradePayloadTest} from './UpgradePayload.t.sol';
-import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
+import {AaveV3OptimismAssets, AaveV3Optimism} from 'aave-address-book/AaveV3Optimism.sol';
 
-contract UpgradeOptimismTest is UpgradePayloadTest('optimism', 117104603) {
+import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
+import {UpgradePayloadTestWithStableSwap} from './UpgradePayloadTestWithStableSwap.sol';
+
+contract UpgradeOptimismTest is
+  UpgradePayloadTestWithStableSwap(
+    'optimism',
+    117104603,
+    0x583891495AF8624fbc88Cc5e8AA45C91d089A508,
+    AaveV3OptimismAssets.USDC_UNDERLYING,
+    AaveV3Optimism.ACL_ADMIN
+  )
+{
   function _getPayload() internal virtual override returns (address) {
     return DeploymentLibrary._deployOptimism();
   }
