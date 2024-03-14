@@ -7,6 +7,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x05295489b6aE0d97ae7C49a42989497294F7F428](https://basescan.org/address/0x05295489b6aE0d97ae7C49a42989497294F7F428) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://basescan.org/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.001 | 1.001 |
+| variableBorrowIndex | 1.006 | 1.006 |
+| currentLiquidityRate | 0 % | 0 % |
+| currentVariableBorrowRate | 0.054 % | 0 % |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -21,6 +25,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xC1F6588f4A1145D0B7F94c86a773bB47F0eC0759](https://basescan.org/address/0xC1F6588f4A1145D0B7F94c86a773bB47F0eC0759) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://basescan.org/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.008 | 1.008 |
+| variableBorrowIndex | 1.015 | 1.015 |
+| currentLiquidityRate | 0.999 % | 0 % |
+| currentVariableBorrowRate | 2.363 % | 0 % |
 | maxVariableBorrowRate | / | 83.8 % |
 | baseStableBorrowRate | 6.8 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -35,6 +43,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x136848FdaedEB56245bE0e61E28A3CB8c0B45CaA](https://basescan.org/address/0x136848FdaedEB56245bE0e61E28A3CB8c0B45CaA) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://basescan.org/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.011 | 1.011 |
+| variableBorrowIndex | 1.014 | 1.014 |
+| currentLiquidityRate | 13.666 % | 0 % |
+| currentVariableBorrowRate | 16.548 % | 0 % |
 | maxVariableBorrowRate | / | 66 % |
 | baseStableBorrowRate | 6 % | / |
 | maxExcessStableToTotalDebtRatio | 100 % | / |
@@ -49,6 +61,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9](https://basescan.org/address/0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://basescan.org/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.001 | 1.001 |
+| variableBorrowIndex | 1.003 | 1.003 |
+| currentLiquidityRate | 0 % | 0 % |
+| currentVariableBorrowRate | 0.033 % | 0 % |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -63,6 +79,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xDBea12F69D3Fcb4Be9FD14dd450AAe2B2a3d4de7](https://basescan.org/address/0xDBea12F69D3Fcb4Be9FD14dd450AAe2B2a3d4de7) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://basescan.org/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.032 | 1.032 |
+| variableBorrowIndex | 1.044 | 1.044 |
+| currentLiquidityRate | 27.445 % | 0 % |
+| currentVariableBorrowRate | 36.613 % | 0 % |
 | maxVariableBorrowRate | / | 87 % |
 | baseStableBorrowRate | 8 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -88,33 +108,113 @@
   },
   "reserves": {
     "0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22": {
+      "currentLiquidityRate": {
+        "from": "1621790731956576277488",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "544791982216586968344429",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0x05295489b6aE0d97ae7C49a42989497294F7F428",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1001048635193603967819909502",
+        "to": "1001048635236950611585294888"
+      },
+      "variableBorrowIndex": {
+        "from": "1005713194759164897775593265",
+        "to": "1005713209388020163155350256"
       }
     },
     "0x4200000000000000000000000000000000000006": {
+      "currentLiquidityRate": {
+        "from": "9990949666923718684492204",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "23628748919580163629238068",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0xC1F6588f4A1145D0B7F94c86a773bB47F0eC0759",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1007897624355689179459063536",
+        "to": "1007897633296452883219560870"
+      },
+      "variableBorrowIndex": {
+        "from": "1015238906558798102520854807",
+        "to": "1015238927857856729335318274"
       }
     },
     "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
+      "currentLiquidityRate": {
+        "from": "136657331296183815799729659",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "165480360592873530779805642",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0x136848FdaedEB56245bE0e61E28A3CB8c0B45CaA",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1010500673186893656463069355",
+        "to": "1010500970950659460903409402"
+      },
+      "variableBorrowIndex": {
+        "from": "1013835746058730777089549681",
+        "to": "1013836107815311653972104953"
       }
     },
     "0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452": {
+      "currentLiquidityRate": {
+        "from": "603969081228678089649",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "332460959174431364340680",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1001130144763686775945307266",
+        "to": "1001130144785045919218002240"
+      },
+      "variableBorrowIndex": {
+        "from": "1002991460318644100538370444",
+        "to": "1002991472097862532042893549"
       }
     },
     "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA": {
+      "currentLiquidityRate": {
+        "from": "274454840099208349550759669",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "366128769322124799672700136",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0xDBea12F69D3Fcb4Be9FD14dd450AAe2B2a3d4de7",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1032282887243731116874220653",
+        "to": "1032283408307658559364900493"
+      },
+      "variableBorrowIndex": {
+        "from": "1044238834607814178976222225",
+        "to": "1044239537769544965150708206"
       }
     }
   },

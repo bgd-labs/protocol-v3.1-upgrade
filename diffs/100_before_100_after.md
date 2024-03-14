@@ -7,6 +7,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB](https://gnosisscan.io/address/0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.003 | 1.003 |
+| variableBorrowIndex | 1.007 | 1.007 |
+| currentLiquidityRate | 0.796 % | 0 % |
+| currentVariableBorrowRate | 1.966 % | 0 % |
 | maxVariableBorrowRate | / | 83.3 % |
 | baseStableBorrowRate | 5.3 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -21,6 +25,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b](https://gnosisscan.io/address/0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1 | 1 |
+| variableBorrowIndex | 1 | 1 |
+| currentLiquidityRate | 0 % | 0 % |
+| currentVariableBorrowRate | 0.007 % | 0 % |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -35,6 +43,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731](https://gnosisscan.io/address/0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1 | 1 |
+| variableBorrowIndex | 1.001 | 1.001 |
+| currentLiquidityRate | 0.018 % | 0 % |
+| currentVariableBorrowRate | 0.648 % | 0 % |
 | maxVariableBorrowRate | / | 95 % |
 | baseStableBorrowRate | 17 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -49,6 +61,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xE74CD4ADF9103370144c327457bd294753E2E856](https://gnosisscan.io/address/0xE74CD4ADF9103370144c327457bd294753E2E856) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.009 | 1.009 |
+| variableBorrowIndex | 1.014 | 1.014 |
+| currentLiquidityRate | 0.855 % | 0 % |
+| currentVariableBorrowRate | 2.516 % | 0 % |
 | maxVariableBorrowRate | / | 81 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -77,6 +93,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.006 | 1.006 |
+| variableBorrowIndex | 1.01 | 1.01 |
+| currentLiquidityRate | 1.526 % | 0 % |
+| currentVariableBorrowRate | 2.825 % | 0 % |
 | maxVariableBorrowRate | / | 79 % |
 | baseStableBorrowRate | 5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -91,6 +111,10 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xE74CD4ADF9103370144c327457bd294753E2E856](https://gnosisscan.io/address/0xE74CD4ADF9103370144c327457bd294753E2E856) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| liquidityIndex | 1.013 | 1.013 |
+| variableBorrowIndex | 1.018 | 1.018 |
+| currentLiquidityRate | 0.391 % | 0 % |
+| currentVariableBorrowRate | 1.701 % | 0 % |
 | maxVariableBorrowRate | / | 81 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -116,27 +140,91 @@
   },
   "reserves": {
     "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1": {
+      "currentLiquidityRate": {
+        "from": "7962972733329895616405770",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "19658036083161817035873160",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1003059318946295285420513922",
+        "to": "1003059757114986037561616857"
+      },
+      "variableBorrowIndex": {
+        "from": "1006961920318614087766779931",
+        "to": "1006963006226296292790272732"
       }
     },
     "0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6": {
+      "currentLiquidityRate": {
+        "from": "30398744857918576504",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "74586654259364751322989",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1000000024941701115543454717",
+        "to": "1000000024944163976878093662"
+      },
+      "variableBorrowIndex": {
+        "from": "1000003842192936945570941858",
+        "to": "1000003848235860411154749931"
       }
     },
     "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb": {
+      "currentLiquidityRate": {
+        "from": "179017370342114630219533",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "6477437469704598889598836",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1000013170484006594320888838",
+        "to": "1000013283818889625380281450"
+      },
+      "variableBorrowIndex": {
+        "from": "1000633127163878640041402878",
+        "to": "1000637230543561965808210388"
       }
     },
     "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83": {
+      "currentLiquidityRate": {
+        "from": "8548821358438831540871900",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "25164380114579110342533224",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0xE74CD4ADF9103370144c327457bd294753E2E856",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1009084265735509784174604931",
+        "to": "1009084714347541822170491069"
+      },
+      "variableBorrowIndex": {
+        "from": "1014077934725944486491865659",
+        "to": "1014079261799804715718594655"
       }
     },
     "0xaf204776c7245bF4147c2612BF6e5972Ee483701": {
@@ -146,15 +234,47 @@
       }
     },
     "0xcB444e90D8198415266c6a2724b7900fb12FC56E": {
+      "currentLiquidityRate": {
+        "from": "15264413313633277451422414",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "28251358520063968383141461",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1005844577698451831769420575",
+        "to": "1005845398058107688674582827"
+      },
+      "variableBorrowIndex": {
+        "from": "1009925806398468001260680733",
+        "to": "1009927330880928781872342768"
       }
     },
     "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d": {
+      "currentLiquidityRate": {
+        "from": "3905062615262570573374319",
+        "to": 0
+      },
+      "currentVariableBorrowRate": {
+        "from": "17007759917956775988669826",
+        "to": 0
+      },
       "interestRateStrategy": {
         "from": "0xE74CD4ADF9103370144c327457bd294753E2E856",
         "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+      },
+      "liquidityIndex": {
+        "from": "1012919514367066073876637811",
+        "to": "1012919678678440612512477508"
+      },
+      "variableBorrowIndex": {
+        "from": "1017732411505184539263483719",
+        "to": "1017733130532789795164101975"
       }
     }
   },
