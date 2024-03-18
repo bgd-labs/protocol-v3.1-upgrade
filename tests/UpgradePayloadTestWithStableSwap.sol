@@ -24,9 +24,8 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
   }
 
   // ****** tests for swap to variable ******
-  function test_swap_to_variable_works(address user) public {
+  function test_swap_to_variable_works(address user) public proposalExecuted {
     vm.assume(user != address(0));
-    _executePayload();
     (
       ,
       uint256 currentStableDebtBefore,
@@ -41,7 +40,7 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
 
     vm.deal(user, 1e18);
     vm.prank(user);
-    IPool(POOL).swapToVariable(RESERVE_WITH_STABLE, USER_WITH_STABLE);
+    POOL.swapToVariable(RESERVE_WITH_STABLE, USER_WITH_STABLE);
 
     (
       ,
@@ -59,8 +58,7 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
     assertEq(currentVariableDebtAfter, currentStableDebtBefore + currentVariableDebtBefore);
   }
 
-  function test_swap_stable_to_variable_works() public {
-    _executePayload();
+  function test_swap_stable_to_variable_works() public proposalExecuted {
     (
       ,
       uint256 currentStableDebtBefore,
@@ -92,25 +90,22 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
     assertEq(currentVariableDebtAfter, currentStableDebtBefore + currentVariableDebtBefore);
   }
 
-  function test_not_reverts_swap_borrow_rate_reserve_frozen() public {
-    _executePayload();
+  function test_not_reverts_swap_borrow_rate_reserve_frozen() public proposalExecuted {
     vm.prank(ACL_ADMIN);
     CONFIGURATOR.setReserveFreeze(RESERVE_WITH_STABLE, true);
 
     vm.prank(USER_WITH_STABLE);
-    IPool(POOL).swapBorrowRateMode(RESERVE_WITH_STABLE, 1);
+    POOL.swapBorrowRateMode(RESERVE_WITH_STABLE, 1);
   }
 
-  function test_not_reverts_swap_to_variable_reserve_frozen(address user) public {
+  function test_not_reverts_swap_to_variable_reserve_frozen(address user) public proposalExecuted {
     vm.assume(user != address(0));
-
-    _executePayload();
 
     vm.prank(ACL_ADMIN);
     CONFIGURATOR.setReserveFreeze(RESERVE_WITH_STABLE, true);
 
     vm.deal(user, 1e18);
     vm.prank(user);
-    IPool(POOL).swapToVariable(RESERVE_WITH_STABLE, USER_WITH_STABLE);
+    POOL.swapToVariable(RESERVE_WITH_STABLE, USER_WITH_STABLE);
   }
 }
