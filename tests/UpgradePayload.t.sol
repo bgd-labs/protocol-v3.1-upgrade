@@ -6,6 +6,7 @@ import {GovV3Helpers} from 'aave-helpers/GovV3helpers.sol';
 import {ProtocolV3TestBase, IPool as IOldPool, ReserveConfig, IERC20} from 'aave-helpers/ProtocolV3TestBase.sol';
 import {IPoolAddressesProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPoolConfigurator.sol';
+import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
 import {Errors} from 'aave-v3-factory/core/contracts/protocol/libraries/helpers/Errors.sol';
 import {IPoolDataProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolDataProvider.sol';
 import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
@@ -22,7 +23,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
   IPoolAddressesProvider internal POOL_ADDRESSES_PROVIDER;
   IPoolConfigurator internal CONFIGURATOR;
   IPoolDataProvider internal AAVE_PROTOCOL_DATA_PROVIDER;
-  address internal POOL;
+  IPool internal POOL;
   UpgradePayload internal PAYLOAD;
 
   constructor(string memory network, uint256 blocknumber) {
@@ -35,8 +36,13 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     PAYLOAD = UpgradePayload(_getPayload());
     POOL_ADDRESSES_PROVIDER = PAYLOAD.POOL_ADDRESSES_PROVIDER();
     CONFIGURATOR = PAYLOAD.CONFIGURATOR();
-    POOL = POOL_ADDRESSES_PROVIDER.getPool();
+    POOL = IPool(POOL_ADDRESSES_PROVIDER.getPool());
     AAVE_PROTOCOL_DATA_PROVIDER = IPoolDataProvider(POOL_ADDRESSES_PROVIDER.getPoolDataProvider());
+  }
+
+  modifier proposalExecuted() {
+    GovV3Helpers.executePayload(vm, address(PAYLOAD));
+    _;
   }
 
   function _getPayload() internal virtual returns (address);
@@ -49,7 +55,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
    * Creating a config diff & running our default e2e suite.
    */
   function test_default() external {
-    defaultTest(vm.toString(block.chainid), IOldPool(POOL), address(PAYLOAD));
+    defaultTest(vm.toString(block.chainid), IOldPool(address(POOL)), address(PAYLOAD));
   }
 
   /**
@@ -64,7 +70,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
    */
   function test_ceiling() external {
     vm.startPrank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
-    ReserveConfig[] memory configs = _getReservesConfigs(IOldPool(POOL));
+    ReserveConfig[] memory configs = _getReservesConfigs(IOldPool(address(POOL)));
     /**
      * Try setting ceiling under current limitations
      */
@@ -187,5 +193,40 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
       ) return configs[i].underlying;
     }
     revert('ERROR: No usable collateral found');
+  }
+
+  /**
+   * Test the library getters are available
+   */
+  function test_getFlashLoanLogic() public proposalExecuted {
+    assertNotEq(POOL.getFlashLoanLogic(), address(0));
+  }
+
+  function test_getBorrowLogic() public proposalExecuted {
+    assertNotEq(POOL.getBorrowLogic(), address(0));
+  }
+
+  function test_getBridgeLogic() public proposalExecuted {
+    assertNotEq(POOL.getBridgeLogic(), address(0));
+  }
+
+  function test_getEModeLogic() public proposalExecuted {
+    assertNotEq(POOL.getEModeLogic(), address(0));
+  }
+
+  function test_getLiquidationLogic() public proposalExecuted {
+    assertNotEq(POOL.getLiquidationLogic(), address(0));
+  }
+
+  function test_getPoolLogic() public proposalExecuted {
+    assertNotEq(POOL.getPoolLogic(), address(0));
+  }
+
+  function test_getSupplyLogic() public proposalExecuted {
+    assertNotEq(POOL.getSupplyLogic(), address(0));
+  }
+
+  function test_getConfiguratorLogic() public proposalExecuted {
+    assertNotEq(CONFIGURATOR.getConfiguratorLogic(), address(0));
   }
 }
