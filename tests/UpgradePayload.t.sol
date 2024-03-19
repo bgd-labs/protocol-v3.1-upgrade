@@ -97,13 +97,13 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
 
   function test_liquidationGracePeriod() external {
     _executePayload();
-    ReserveConfig[] memory reserveConfigs = _getReservesConfigs(IOldPool(POOL));
+    ReserveConfig[] memory reserveConfigs = _getReservesConfigs(IOldPool(address(POOL)));
 
     address collateralAsset = _getGoodCollateralAsset(reserveConfigs);
     address debtAsset = _getGoodBorrowableAsset(reserveConfigs, collateralAsset);
 
-    uint256 collateralAssetAmount = _getTokenAmountByDollarValue(IOldPool(POOL), _findReserveConfig(reserveConfigs, collateralAsset), 10000);
-    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(POOL), _findReserveConfig(reserveConfigs, debtAsset), 100);
+    uint256 collateralAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, collateralAsset), 10000);
+    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, debtAsset), 100);
     address user = address(5);
 
     address[] memory assets = new address[](1);
@@ -127,14 +127,14 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
 
     _deposit(
       _findReserveConfig(reserveConfigs, collateralAsset),
-      IOldPool(POOL),
+      IOldPool(address(POOL)),
       user,
       collateralAssetAmount
     );
 
     this._borrow(
       _findReserveConfig(reserveConfigs, debtAsset),
-      IOldPool(POOL),
+      IOldPool(address(POOL)),
       user,
       debtAssetAmount,
       false
@@ -160,7 +160,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     vm.warp(until[0] + 1);
     deal2(debtAsset, address(this), debtAssetAmount);
 
-    IERC20(debtAsset).approve(POOL, debtAssetAmount);
+    IERC20(debtAsset).approve(address(POOL), debtAssetAmount);
     IPool(POOL).liquidationCall(
       collateralAsset,
       debtAsset,
