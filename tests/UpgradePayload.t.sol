@@ -8,7 +8,9 @@ import {IPoolAddressesProvider} from 'aave-v3-factory/core/contracts/interfaces/
 import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPoolConfigurator.sol';
 import {Errors} from 'aave-v3-factory/core/contracts/protocol/libraries/helpers/Errors.sol';
 import {IPoolDataProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolDataProvider.sol';
-
+import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
+import {IPriceOracleGetter} from 'aave-v3-factory/core/contracts/interfaces/IPriceOracleGetter.sol';
+import {DataTypes} from 'aave-v3-factory/core/contracts/protocol/libraries/types/DataTypes.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
 
 /**
@@ -85,5 +87,105 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
         vm.expectRevert(bytes(Errors.RESERVE_LIQUIDITY_NOT_ZERO));
       CONFIGURATOR.setDebtCeiling(configs[i].underlying, configs[i].debtCeiling + 1e8);
     }
+  }
+
+  function test_liquidationGracePeriod() external {
+    _executePayload();
+    ReserveConfig[] memory reserveConfigs = _getReservesConfigs(IOldPool(POOL));
+
+    address collateralAsset = _getGoodCollateralAsset(reserveConfigs);
+    address debtAsset = _getGoodBorrowableAsset(reserveConfigs, collateralAsset);
+
+    uint256 collateralAssetAmount = _getTokenAmountByDollarValue(IOldPool(POOL), _findReserveConfig(reserveConfigs, collateralAsset), 10000);
+    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(POOL), _findReserveConfig(reserveConfigs, debtAsset), 100);
+    address user = address(5);
+
+    address[] memory assets = new address[](1);
+    uint40[] memory until = new uint40[](1);
+
+    assets[0] = collateralAsset;
+    until[0] = uint40(block.timestamp + 1 hours);
+
+    vm.prank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
+    CONFIGURATOR.setLiquidationGracePeriod(assets, until);
+
+    assertEq(
+      IPool(POOL).getLiquidationGracePeriod(assets[0]),
+      until[0]
+    );
+
+    if (_findReserveConfig(reserveConfigs, collateralAsset).supplyCap != 0) {
+      vm.prank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
+      CONFIGURATOR.setSupplyCap(collateralAsset, 0);
+    }
+
+    _deposit(
+      _findReserveConfig(reserveConfigs, collateralAsset),
+      IOldPool(POOL),
+      user,
+      collateralAssetAmount
+    );
+
+    this._borrow(
+      _findReserveConfig(reserveConfigs, debtAsset),
+      IOldPool(POOL),
+      user,
+      debtAssetAmount,
+      false
+    );
+
+    vm.mockCall(
+      POOL_ADDRESSES_PROVIDER.getPriceOracle(),
+      abi.encodeWithSelector(IPriceOracleGetter.getAssetPrice.selector, collateralAsset),
+      abi.encode(1e4)
+    );
+
+    // liquidation should revert as grace period has not passed
+    vm.expectRevert(bytes(Errors.LIQUIDATION_GRACE_SENTINEL_CHECK_FAILED));
+    IPool(POOL).liquidationCall(
+      collateralAsset,
+      debtAsset,
+      user,
+      debtAssetAmount / 3,
+      false
+    );
+
+    // liquidation should be allowed after grace period has passed
+    vm.warp(until[0] + 1);
+    deal2(debtAsset, address(this), debtAssetAmount);
+
+    IERC20(debtAsset).approve(POOL, debtAssetAmount);
+    IPool(POOL).liquidationCall(
+      collateralAsset,
+      debtAsset,
+      user,
+      debtAssetAmount / 3,
+      false
+    );
+  }
+
+  function _getGoodBorrowableAsset(
+    ReserveConfig[] memory reserveConfigs, address collateralAsset
+  ) internal returns (address) {
+    for (uint i = 0; i < reserveConfigs.length; i++) {
+      if (reserveConfigs[i].borrowingEnabled && _includeInE2e(reserveConfigs[i]) && reserveConfigs[i].underlying != collateralAsset) {
+        return reserveConfigs[i].underlying;
+      }
+    }
+    revert('ERROR: No usable borrowable asset found');
+  }
+
+  function _getGoodCollateralAsset(
+    ReserveConfig[] memory configs
+  ) internal pure returns (address) {
+    for (uint256 i = 0; i < configs.length; i++) {
+      if (
+        _includeInE2e(configs[i]) &&
+        configs[i].usageAsCollateralEnabled &&
+        !configs[i].stableBorrowRateEnabled &&
+        configs[i].debtCeiling == 0
+      ) return configs[i].underlying;
+    }
+    revert('ERROR: No usable collateral found');
   }
 }
