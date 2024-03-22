@@ -64,7 +64,6 @@ contract UpgradePayload is IProposalGenericExecutor {
 
       if (reserves[i] == AaveV3EthereumAssets.GHO_UNDERLYING) {
         currentUOpt = DEFAULT_IR.MAX_OPTIMAL_POINT();
-        // TODO: virtual accounting
       } else {
         currentUOpt =
           ILegacyDefaultInterestRateStrategy(reserveData.interestRateStrategyAddress)

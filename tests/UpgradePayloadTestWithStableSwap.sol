@@ -16,8 +16,9 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
     uint256 blocknumber,
     address userWithStable,
     address reserveWithStable,
-    address aclAdmin
-  ) UpgradePayloadTest(network, blocknumber) {
+    address aclAdmin,
+    uint256 voOffLimit
+  ) UpgradePayloadTest(network, blocknumber, voOffLimit) {
     USER_WITH_STABLE = userWithStable;
     RESERVE_WITH_STABLE = reserveWithStable;
     ACL_ADMIN = aclAdmin;
