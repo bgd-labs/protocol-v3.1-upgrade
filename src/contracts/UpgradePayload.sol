@@ -44,18 +44,27 @@ contract UpgradePayload is IProposalGenericExecutor {
   DefaultReserveInterestRateStrategyV2 public immutable DEFAULT_IR;
 
   address public immutable POOL_IMPL;
+  address public immutable POOL_DATA_PROVIDER;
 
-  constructor(address poolAddressesProvider, address pool, address configurator, address poolImpl) {
+  constructor(
+    address poolAddressesProvider,
+    address pool,
+    address configurator,
+    address poolImpl,
+    address poolDataProvider
+  ) {
     POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressesProvider);
     POOL = IPool(pool);
     CONFIGURATOR = IPoolConfigurator(configurator);
     DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(poolAddressesProvider));
     POOL_IMPL = poolImpl;
+    POOL_DATA_PROVIDER = poolDataProvider;
   }
 
   function execute() external {
     POOL_ADDRESSES_PROVIDER.setPoolConfiguratorImpl(address(new PoolConfiguratorInstance()));
     POOL_ADDRESSES_PROVIDER.setPoolImpl(POOL_IMPL);
+    POOL_ADDRESSES_PROVIDER.setPoolDataProvider(POOL_DATA_PROVIDER);
 
     address[] memory reserves = POOL.getReservesList();
     for (uint256 i = 0; i < reserves.length; i++) {

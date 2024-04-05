@@ -6,11 +6,11 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x83e654d42f437915bf849dE04c19AAd8C5e8c01E](https://andromeda-explorer.metis.io/address/0x83e654d42f437915bf849dE04c19AAd8C5e8c01E) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://andromeda-explorer.metis.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x83e654d42f437915bf849dE04c19AAd8C5e8c01E](https://andromeda-explorer.metis.io/address/0x83e654d42f437915bf849dE04c19AAd8C5e8c01E) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://andromeda-explorer.metis.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.008 | 1.008 |
 | variableBorrowIndex | 1.024 | 1.024 |
-| currentLiquidityRate | 1.368 % | 0 % |
-| currentVariableBorrowRate | 3.31 % | 1 % |
+| currentLiquidityRate | 1.368 % | 1.368 % |
+| currentVariableBorrowRate | 3.31 % | 3.31 % |
 | maxVariableBorrowRate | / | 84.8 % |
 | baseStableBorrowRate | 6.8 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -18,17 +18,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 3.8 % | / |
 | stableRateSlope2 | 80 % | / |
-| interestRate | ![before](/.assets/7396caa31f7811576cb04a4e90aac9ea03560ba2.svg) | ![after](/.assets/73c86c0c37880c7504482ece8d040ad1240d449f.svg) |
+| interestRate | ![before](/.assets/7396caa31f7811576cb04a4e90aac9ea03560ba2.svg) | ![after](/.assets/5a3627ed73a1449a64b53e29c773e4da96cb3301.svg) |
 
 #### m.DAI ([0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0](https://andromeda-explorer.metis.io/address/0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://andromeda-explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://andromeda-explorer.metis.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://andromeda-explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://andromeda-explorer.metis.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.037 | 1.037 |
 | variableBorrowIndex | 1.055 | 1.055 |
-| currentLiquidityRate | 4.871 % | 0 % |
-| currentVariableBorrowRate | 6.881 % | 0 % |
+| currentLiquidityRate | 4.871 % | 4.871 % |
+| currentVariableBorrowRate | 6.881 % | 6.881 % |
 | maxVariableBorrowRate | / | 82 % |
 | baseStableBorrowRate | 8 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -36,15 +36,15 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/c6fa9124f760db4b0557689f57b9f7017089a88d.svg) | ![after](/.assets/e74c4ac55525e51b6deb682a4871b019c2a92c22.svg) |
+| interestRate | ![before](/.assets/c6fa9124f760db4b0557689f57b9f7017089a88d.svg) | ![after](/.assets/4c72764197d6862c50d6bbcd8c287ef1854f6373.svg) |
 
 #### Metis ([0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://andromeda-explorer.metis.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://andromeda-explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://andromeda-explorer.metis.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://andromeda-explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://andromeda-explorer.metis.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | currentLiquidityRate | 0 % | 0 % |
-| currentVariableBorrowRate | 0.063 % | 0 % |
+| currentVariableBorrowRate | 0.063 % | 0.063 % |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -52,17 +52,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 7 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/a19c1b94633e136232f50e003d480584e1ad239b.svg) | ![after](/.assets/4c8464f0aa51e7cae16ab1f0a9546a2315ace0b7.svg) |
+| interestRate | ![before](/.assets/a19c1b94633e136232f50e003d480584e1ad239b.svg) | ![after](/.assets/0912a3391c20167931529d13c3e50c1075c05cef.svg) |
 
 #### m.USDC ([0xEA32A96608495e54156Ae48931A7c20f0dcc1a21](https://andromeda-explorer.metis.io/address/0xEA32A96608495e54156Ae48931A7c20f0dcc1a21))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://andromeda-explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://andromeda-explorer.metis.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://andromeda-explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://andromeda-explorer.metis.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.013 | 1.013 |
 | variableBorrowIndex | 1.023 | 1.023 |
-| currentLiquidityRate | 2.985 % | 0 % |
-| currentVariableBorrowRate | 4.702 % | 0 % |
+| currentLiquidityRate | 2.985 % | 2.985 % |
+| currentVariableBorrowRate | 4.702 % | 4.702 % |
 | maxVariableBorrowRate | / | 66 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -70,17 +70,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 60 % | / |
-| interestRate | ![before](/.assets/523a434a2e52b9c3f17fb1ecb160ce80decc5883.svg) | ![after](/.assets/9e86ae8d13ac6eee132ca94ac3731b867f08fdcc.svg) |
+| interestRate | ![before](/.assets/523a434a2e52b9c3f17fb1ecb160ce80decc5883.svg) | ![after](/.assets/8388655a05f092c9b29e002a96e2b3dddd54d164.svg) |
 
 #### m.USDT ([0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC](https://andromeda-explorer.metis.io/address/0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://andromeda-explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://andromeda-explorer.metis.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://andromeda-explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://andromeda-explorer.metis.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.029 | 1.029 |
 | variableBorrowIndex | 1.04 | 1.04 |
-| currentLiquidityRate | 4.592 % | 0 % |
-| currentVariableBorrowRate | 5.832 % | 0 % |
+| currentLiquidityRate | 4.592 % | 4.592 % |
+| currentVariableBorrowRate | 5.832 % | 5.832 % |
 | maxVariableBorrowRate | / | 81 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -88,7 +88,7 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/828c0e1697d4b7add216986b9bc4fa9ffb936a91.svg) | ![after](/.assets/c84055ae5d72ada853b3cf74d1f7944fe3fe2de5.svg) |
+| interestRate | ![before](/.assets/828c0e1697d4b7add216986b9bc4fa9ffb936a91.svg) | ![after](/.assets/0cdd24569ccc22e4b9bde9cad8720535e2d414fe.svg) |
 
 ## Raw diff
 
@@ -102,21 +102,25 @@
     "poolImpl": {
       "from": "0x8adB6916Bc161d7E3D46286ADAD3C77eef84Eb5d",
       "to": "0x4c553509592FEb3fc70e11b3ffbCeF3Ff6FcA0F0"
+    },
+    "protocolDataProvider": {
+      "from": "0x99411FC17Ad1B56f49719E3850B2CDcc0f9bBFd8",
+      "to": "0xda3464b755344CF98B5c7386A368F2d065066356"
     }
   },
   "reserves": {
     "0x420000000000000000000000000000000000000A": {
       "currentLiquidityRate": {
         "from": "13684020604221156454594444",
-        "to": 0
+        "to": "13684812527877483016665437"
       },
       "currentVariableBorrowRate": {
         "from": "33101517202091021024585558",
-        "to": "10000000000000000000000000"
+        "to": "33102304596183617525200243"
       },
       "interestRateStrategy": {
         "from": "0x83e654d42f437915bf849dE04c19AAd8C5e8c01E",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1008409828206657551896382502",
@@ -130,15 +134,15 @@
     "0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0": {
       "currentLiquidityRate": {
         "from": "48705442566963814529961307",
-        "to": 0
+        "to": "48707420527893555798961262"
       },
       "currentVariableBorrowRate": {
         "from": "68813162699276055900172381",
-        "to": 0
+        "to": "68814559959605174406732001"
       },
       "interestRateStrategy": {
         "from": "0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1036539928851859353129911813",
@@ -152,29 +156,29 @@
     "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000": {
       "currentLiquidityRate": {
         "from": "2134703475754638474549",
-        "to": 0
+        "to": "2134703476099944241824"
       },
       "currentVariableBorrowRate": {
         "from": "625031749892273785096164",
-        "to": 0
+        "to": "625031749942825786910507"
       },
       "interestRateStrategy": {
         "from": "0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       }
     },
     "0xEA32A96608495e54156Ae48931A7c20f0dcc1a21": {
       "currentLiquidityRate": {
         "from": "29852398256405954587537700",
-        "to": 0
+        "to": "29852413725507068235481181"
       },
       "currentVariableBorrowRate": {
         "from": "47024342204158203555654042",
-        "to": 0
+        "to": "47024354387839458838430517"
       },
       "interestRateStrategy": {
         "from": "0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1013029044758457070029674466",
@@ -188,15 +192,15 @@
     "0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC": {
       "currentLiquidityRate": {
         "from": "45917223829676259969212478",
-        "to": 0
+        "to": "45917323163873472839926960"
       },
       "currentVariableBorrowRate": {
         "from": "58320458153509721174271009",
-        "to": 0
+        "to": "58320521236730737496900871"
       },
       "interestRateStrategy": {
         "from": "0xEDeA87920826abfE28C2D57AC7665B7031f64EfF",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1029018575086313337191816145",
@@ -212,7 +216,7 @@
     "0x420000000000000000000000000000000000000A": {
       "address": {
         "from": "0x83e654d42f437915bf849dE04c19AAd8C5e8c01E",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "68000000000000000000000000",
@@ -246,7 +250,7 @@
     "0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0": {
       "address": {
         "from": "0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "80000000000000000000000000",
@@ -280,7 +284,7 @@
     "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000": {
       "address": {
         "from": "0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "90000000000000000000000000",
@@ -314,7 +318,7 @@
     "0xEA32A96608495e54156Ae48931A7c20f0dcc1a21": {
       "address": {
         "from": "0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",
@@ -348,7 +352,7 @@
     "0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC": {
       "address": {
         "from": "0xEDeA87920826abfE28C2D57AC7665B7031f64EfF",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",

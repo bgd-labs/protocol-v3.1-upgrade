@@ -136,21 +136,25 @@
     "poolImpl": {
       "from": "0x5b522140fabeB6b6232336295581e63902e9b4ad",
       "to": "0x4c553509592FEb3fc70e11b3ffbCeF3Ff6FcA0F0"
+    },
+    "protocolDataProvider": {
+      "from": "0x501B4c19dd9C2e06E94dA7b6D5Ed4ddA013EC741",
+      "to": "0xda3464b755344CF98B5c7386A368F2d065066356"
     }
   },
   "reserves": {
     "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1": {
       "currentLiquidityRate": {
         "from": "7962972733329895616405770",
-        "to": 0
+        "to": "7962983261155962947959420"
       },
       "currentVariableBorrowRate": {
         "from": "19658036083161817035873160",
-        "to": 0
+        "to": "19658049078077361486640704"
       },
       "interestRateStrategy": {
         "from": "0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1003059318946295285420513922",
@@ -164,15 +168,15 @@
     "0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6": {
       "currentLiquidityRate": {
         "from": "30398744857918576504",
-        "to": 0
+        "to": "30398745225162276630"
       },
       "currentVariableBorrowRate": {
         "from": "74586654259364751322989",
-        "to": 0
+        "to": "74586654709901096418253"
       },
       "interestRateStrategy": {
         "from": "0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1000000024941701115543454717",
@@ -186,15 +190,15 @@
     "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb": {
       "currentLiquidityRate": {
         "from": "179017370342114630219533",
-        "to": 0
+        "to": "179018797996469395944143"
       },
       "currentVariableBorrowRate": {
         "from": "6477437469704598889598836",
-        "to": 0
+        "to": "6477463298269046516358681"
       },
       "interestRateStrategy": {
         "from": "0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1000013170484006594320888838",
@@ -208,15 +212,15 @@
     "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83": {
       "currentLiquidityRate": {
         "from": "8548821358438831540871900",
-        "to": 0
+        "to": "8548836764383574747349099"
       },
       "currentVariableBorrowRate": {
         "from": "25164380114579110342533224",
-        "to": 0
+        "to": "25164402789101048879984460"
       },
       "interestRateStrategy": {
         "from": "0xE74CD4ADF9103370144c327457bd294753E2E856",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1009084265735509784174604931",
@@ -230,21 +234,21 @@
     "0xaf204776c7245bF4147c2612BF6e5972Ee483701": {
       "interestRateStrategy": {
         "from": "0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       }
     },
     "0xcB444e90D8198415266c6a2724b7900fb12FC56E": {
       "currentLiquidityRate": {
         "from": "15264413313633277451422414",
-        "to": 0
+        "to": "15264436245331028024503883"
       },
       "currentVariableBorrowRate": {
         "from": "28251358520063968383141461",
-        "to": 0
+        "to": "28251379741035845834750383"
       },
       "interestRateStrategy": {
         "from": "0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1005844577698451831769420575",
@@ -258,15 +262,15 @@
     "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d": {
       "currentLiquidityRate": {
         "from": "3905062615262570573374319",
-        "to": 0
+        "to": "3905067287546643924067452"
       },
       "currentVariableBorrowRate": {
         "from": "17007759917956775988669826",
-        "to": 0
+        "to": "17007770092577498855946522"
       },
       "interestRateStrategy": {
         "from": "0xE74CD4ADF9103370144c327457bd294753E2E856",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "liquidityIndex": {
         "from": "1012919514367066073876637811",
@@ -282,7 +286,7 @@
     "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1": {
       "address": {
         "from": "0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "53000000000000000000000000",
@@ -316,7 +320,7 @@
     "0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6": {
       "address": {
         "from": "0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "90000000000000000000000000",
@@ -350,7 +354,7 @@
     "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb": {
       "address": {
         "from": "0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "170000000000000000000000000",
@@ -384,7 +388,7 @@
     "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83": {
       "address": {
         "from": "0xE74CD4ADF9103370144c327457bd294753E2E856",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",
@@ -418,7 +422,7 @@
     "0xaf204776c7245bF4147c2612BF6e5972Ee483701": {
       "address": {
         "from": "0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "50000000000000000000000000",
@@ -452,7 +456,7 @@
     "0xcB444e90D8198415266c6a2724b7900fb12FC56E": {
       "address": {
         "from": "0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "50000000000000000000000000",
@@ -486,7 +490,7 @@
     "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d": {
       "address": {
         "from": "0xE74CD4ADF9103370144c327457bd294753E2E856",
-        "to": "0x24716D8e4CEB186017c3D7be3C04190E8c77269c"
+        "to": "0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",

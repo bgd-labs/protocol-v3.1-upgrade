@@ -14,7 +14,7 @@ import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
 
 /**
- * Basetest to be executed on all networks
+ * Base test to be executed on all networks
  */
 abstract contract UpgradePayloadTest is ProtocolV3TestBase {
   string public NETWORK;
@@ -38,7 +38,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     POOL_ADDRESSES_PROVIDER = PAYLOAD.POOL_ADDRESSES_PROVIDER();
     CONFIGURATOR = PAYLOAD.CONFIGURATOR();
     POOL = IPool(POOL_ADDRESSES_PROVIDER.getPool());
-    AAVE_PROTOCOL_DATA_PROVIDER = IPoolDataProvider(POOL_ADDRESSES_PROVIDER.getPoolDataProvider());
+    AAVE_PROTOCOL_DATA_PROVIDER = IPoolDataProvider(PAYLOAD.POOL_DATA_PROVIDER());
   }
 
   modifier proposalExecuted() {
@@ -66,20 +66,28 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     _executePayload();
   }
 
+  function test_aave_data_provider_upgraded() external proposalExecuted {
+    assertEq(POOL_ADDRESSES_PROVIDER.getPoolDataProvider(), address(AAVE_PROTOCOL_DATA_PROVIDER));
+  }
+
   function test_virtualAccounting() external proposalExecuted {
     address[] memory reserves = POOL.getReservesList();
     for (uint256 i = 0; i < reserves.length; i++) {
       address underlying = reserves[i];
       DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(underlying);
+      bool isVirtualAccActive = AAVE_PROTOCOL_DATA_PROVIDER.getIsVirtualAccActive(underlying);
+
       if (underlying == AaveV3EthereumAssets.GHO_UNDERLYING) {
         assertEq(
           reserveData.virtualUnderlyingBalance,
           0,
           string.concat('virtual accounting is not correct for GHO')
         );
+        assertFalse(isVirtualAccActive);
       } else {
         uint256 realUnderlying = IERC20(underlying).balanceOf(reserveData.aTokenAddress);
 
+        assertTrue(isVirtualAccActive, 'no virtual accounting set');
         assertGe(
           realUnderlying,
           reserveData.virtualUnderlyingBalance,
