@@ -3,17 +3,18 @@ pragma solidity ^0.8.0;
 
 import 'forge-std/Test.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3helpers.sol';
-import {ProtocolV3TestBase, IPool as IOldPool, ReserveConfig, IERC20} from 'aave-helpers/ProtocolV3TestBase.sol';
+import {ProtocolV3TestBase, IPool as IOldPool, ReserveConfig, IERC20, IERC20Metadata} from 'aave-helpers/ProtocolV3TestBase.sol';
 import {IPoolAddressesProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPoolConfigurator.sol';
-import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
+import {IPool, DataTypes} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
 import {Errors} from 'aave-v3-factory/core/contracts/protocol/libraries/helpers/Errors.sol';
 import {IPoolDataProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolDataProvider.sol';
+import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
 
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
 
 /**
- * Basetest to be executed on all networks
+ * Base test to be executed on all networks
  */
 abstract contract UpgradePayloadTest is ProtocolV3TestBase {
   string public NETWORK;
@@ -23,10 +24,12 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
   IPoolDataProvider internal AAVE_PROTOCOL_DATA_PROVIDER;
   IPool internal POOL;
   UpgradePayload internal PAYLOAD;
+  uint256 internal VIRTUAL_ACCOUNTING_TO_ATOKEN_OFF_LIMIT; // 1e7 is 100%
 
-  constructor(string memory network, uint256 blocknumber) {
+  constructor(string memory network, uint256 blocknumber, uint256 voOffLimit) {
     NETWORK = network;
     BLOCK_NUMBER = blocknumber;
+    VIRTUAL_ACCOUNTING_TO_ATOKEN_OFF_LIMIT = voOffLimit;
   }
 
   function setUp() public {
@@ -35,11 +38,11 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     POOL_ADDRESSES_PROVIDER = PAYLOAD.POOL_ADDRESSES_PROVIDER();
     CONFIGURATOR = PAYLOAD.CONFIGURATOR();
     POOL = IPool(POOL_ADDRESSES_PROVIDER.getPool());
-    AAVE_PROTOCOL_DATA_PROVIDER = IPoolDataProvider(POOL_ADDRESSES_PROVIDER.getPoolDataProvider());
+    AAVE_PROTOCOL_DATA_PROVIDER = IPoolDataProvider(PAYLOAD.POOL_DATA_PROVIDER());
   }
 
   modifier proposalExecuted() {
-    GovV3Helpers.executePayload(vm, address(PAYLOAD));
+    _executePayload();
     _;
   }
 
@@ -61,6 +64,52 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
    */
   function test_upgrade() external {
     _executePayload();
+  }
+
+  function test_aave_data_provider_upgraded() external proposalExecuted {
+    assertEq(POOL_ADDRESSES_PROVIDER.getPoolDataProvider(), address(AAVE_PROTOCOL_DATA_PROVIDER));
+  }
+
+  function test_virtualAccounting() external proposalExecuted {
+    address[] memory reserves = POOL.getReservesList();
+    for (uint256 i = 0; i < reserves.length; i++) {
+      address underlying = reserves[i];
+      DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(underlying);
+      bool isVirtualAccActive = AAVE_PROTOCOL_DATA_PROVIDER.getIsVirtualAccActive(underlying);
+
+      if (underlying == AaveV3EthereumAssets.GHO_UNDERLYING) {
+        assertEq(
+          reserveData.virtualUnderlyingBalance,
+          0,
+          string.concat('virtual accounting is not correct for GHO')
+        );
+        assertFalse(isVirtualAccActive);
+      } else {
+        uint256 realUnderlying = IERC20(underlying).balanceOf(reserveData.aTokenAddress);
+
+        assertTrue(isVirtualAccActive, 'no virtual accounting set');
+        assertGe(
+          realUnderlying,
+          reserveData.virtualUnderlyingBalance,
+          string.concat(
+            'the balance of underlying can not be below VO: ',
+            underlying == 0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2
+              ? 'MKR'
+              : IERC20Metadata(underlying).symbol()
+          )
+        );
+        assertLe(
+          ((realUnderlying - reserveData.virtualUnderlyingBalance) * 1e7) / realUnderlying,
+          VIRTUAL_ACCOUNTING_TO_ATOKEN_OFF_LIMIT,
+          string.concat(
+            'the balance of underlying is off VO more then the limit: ',
+            underlying == 0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2
+              ? 'MKR'
+              : IERC20Metadata(underlying).symbol()
+          )
+        );
+      }
+    }
   }
 
   /**

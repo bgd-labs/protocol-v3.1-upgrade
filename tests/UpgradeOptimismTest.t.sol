@@ -12,7 +12,8 @@ contract UpgradeOptimismTest is
     117104603,
     0x583891495AF8624fbc88Cc5e8AA45C91d089A508,
     AaveV3OptimismAssets.USDC_UNDERLYING,
-    AaveV3Optimism.ACL_ADMIN
+    AaveV3Optimism.ACL_ADMIN,
+    1.5 * 1e3 // limit is 0.015%
   )
 {
   function _getPayload() internal virtual override returns (address) {
