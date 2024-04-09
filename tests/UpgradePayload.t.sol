@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import 'forge-std/Test.sol';
-import {GovV3Helpers} from 'aave-helpers/GovV3helpers.sol';
+import {GovV3Helpers} from 'aave-helpers/GovV3Helpers.sol';
 import {ProtocolV3TestBase, IPool as IOldPool, ReserveConfig, IERC20, IERC20Metadata} from 'aave-helpers/ProtocolV3TestBase.sol';
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {IPoolConfigurator} from 'aave-v3-origin/core/contracts/interfaces/IPoolConfigurator.sol';
