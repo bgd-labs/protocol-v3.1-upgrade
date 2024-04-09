@@ -11,6 +11,7 @@ import {AaveV3Metis} from 'aave-address-book/AaveV3Metis.sol';
 import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
+import {AaveProtocolDataProvider} from 'aave-v3-origin/core/contracts/misc/AaveProtocolDataProvider.sol';
 import {PoolInstanceWithCustomInitialize} from '../src/contracts/PoolInstance.sol';
 import {L2PoolInstanceWithCustomInitialize} from '../src/contracts/L2PoolInstance.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
@@ -44,7 +45,20 @@ library DeploymentLibrary {
     address poolConfigurator,
     address poolImpl
   ) internal returns (address) {
-    return address(new UpgradePayload(poolAddressesProvider, pool, poolConfigurator, poolImpl));
+    address poolDataProvider = address(
+      new AaveProtocolDataProvider(IPoolAddressesProvider(poolAddressesProvider))
+    );
+
+    return
+      address(
+        new UpgradePayload(
+          poolAddressesProvider,
+          pool,
+          poolConfigurator,
+          poolImpl,
+          poolDataProvider
+        )
+      );
   }
 
   function _deployPolygon() internal returns (address) {
