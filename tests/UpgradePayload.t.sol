@@ -4,14 +4,14 @@ pragma solidity ^0.8.0;
 import 'forge-std/Test.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3helpers.sol';
 import {ProtocolV3TestBase, IPool as IOldPool, ReserveConfig, IERC20} from 'aave-helpers/ProtocolV3TestBase.sol';
-import {IPoolAddressesProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolAddressesProvider.sol';
-import {IPoolConfigurator} from 'aave-v3-factory/core/contracts/interfaces/IPoolConfigurator.sol';
-import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
-import {Errors} from 'aave-v3-factory/core/contracts/protocol/libraries/helpers/Errors.sol';
-import {IPoolDataProvider} from 'aave-v3-factory/core/contracts/interfaces/IPoolDataProvider.sol';
-import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
-import {IPriceOracleGetter} from 'aave-v3-factory/core/contracts/interfaces/IPriceOracleGetter.sol';
-import {DataTypes} from 'aave-v3-factory/core/contracts/protocol/libraries/types/DataTypes.sol';
+import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
+import {IPoolConfigurator} from 'aave-v3-origin/core/contracts/interfaces/IPoolConfigurator.sol';
+import {IPool} from 'aave-v3-origin/core/contracts/interfaces/IPool.sol';
+import {Errors} from 'aave-v3-origin/core/contracts/protocol/libraries/helpers/Errors.sol';
+import {IPoolDataProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolDataProvider.sol';
+import {IPool} from 'aave-v3-origin/core/contracts/interfaces/IPool.sol';
+import {IPriceOracleGetter} from 'aave-v3-origin/core/contracts/interfaces/IPriceOracleGetter.sol';
+import {DataTypes} from 'aave-v3-origin/core/contracts/protocol/libraries/types/DataTypes.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
 
 /**

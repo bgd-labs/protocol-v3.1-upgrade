@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import {PoolInstance} from 'aave-v3-factory/core/instances/PoolInstance.sol';
-import {Pool, IPoolAddressesProvider, Errors} from 'aave-v3-factory/core/contracts/protocol/pool/Pool.sol';
+import {PoolInstance} from 'aave-v3-origin/core/instances/PoolInstance.sol';
+import {Pool, IPoolAddressesProvider, Errors} from 'aave-v3-origin/core/contracts/protocol/pool/Pool.sol';
 
 /**
  * @notice Pool instance with custom initialize for existing pools
