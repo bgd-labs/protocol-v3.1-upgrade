@@ -149,7 +149,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
 
     vm.assume(gracePeriod != 0 && gracePeriod < CONFIGURATOR.MAX_GRACE_PERIOD());
     vm.assume(collateralUsdAmount > 100 && collateralUsdAmount < 100_000);
-    vm.assume(user != address(0));
+    vm.assume(user != address(0) && user != address(POOL_ADDRESSES_PROVIDER));
 
     ReserveConfig[] memory reserveConfigs = _getReservesConfigs(IOldPool(address(POOL)));
 
@@ -195,16 +195,17 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     deal2(debtAsset, address(this), debtAssetAmount);
     IERC20(debtAsset).approve(address(POOL), debtAssetAmount);
 
+    uint256 snapshotBeforeLiquidation = vm.snapshot();
+
     // check liquidations are allowed before setting grace period
     IPool(POOL).liquidationCall(
       collateralAsset,
       debtAsset,
       user,
-      debtAssetAmount / 10,
+      debtAssetAmount,
       false
     );
-    // subtracting by debtAssetAmount / 10 as that amount is now liquidated
-    debtAssetAmount = debtAssetAmount - (debtAssetAmount / 10);
+    vm.revertTo(snapshotBeforeLiquidation);
 
     vm.startPrank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
     CONFIGURATOR.setReservePause(collateralAsset, false, gracePeriod);
