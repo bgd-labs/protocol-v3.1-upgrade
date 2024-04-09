@@ -95,43 +95,38 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     }
   }
 
-  function test_liquidationGracePeriod() external {
+  function test_liquidationGracePeriod(uint40 gracePeriod, address user, uint128 collateralUsdAmount) external {
     _executePayload();
+
+    vm.assume(gracePeriod != 0 && gracePeriod < CONFIGURATOR.MAX_GRACE_PERIOD());
+    vm.assume(collateralUsdAmount > 100 && collateralUsdAmount < 100_000);
+    vm.assume(user != address(0));
+
     ReserveConfig[] memory reserveConfigs = _getReservesConfigs(IOldPool(address(POOL)));
 
     address collateralAsset = _getGoodCollateralAsset(reserveConfigs);
     address debtAsset = _getGoodBorrowableAsset(reserveConfigs, collateralAsset);
 
-    uint256 collateralAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, collateralAsset), 10000);
-    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, debtAsset), 100);
-    address user = address(5);
+    uint256 collateralAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, collateralAsset), collateralUsdAmount);
+    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, debtAsset), collateralUsdAmount / 3);
 
-    address[] memory assets = new address[](1);
-    uint40[] memory until = new uint40[](1);
-
-    assets[0] = collateralAsset;
-    until[0] = uint40(block.timestamp + 1 hours);
-
-    vm.prank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
-    CONFIGURATOR.setLiquidationGracePeriod(assets, until);
-
-    assertEq(
-      IPool(POOL).getLiquidationGracePeriod(assets[0]),
-      until[0]
-    );
-
+    // increase protocol borrow / supply cap to maximum
     if (_findReserveConfig(reserveConfigs, collateralAsset).supplyCap != 0) {
       vm.prank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
       CONFIGURATOR.setSupplyCap(collateralAsset, 0);
     }
+    if (_findReserveConfig(reserveConfigs, debtAsset).borrowCap != 0) {
+      vm.prank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
+      CONFIGURATOR.setBorrowCap(debtAsset, 0);
+    }
 
+    // create a position of the user
     _deposit(
       _findReserveConfig(reserveConfigs, collateralAsset),
       IOldPool(address(POOL)),
       user,
       collateralAssetAmount
     );
-
     this._borrow(
       _findReserveConfig(reserveConfigs, debtAsset),
       IOldPool(address(POOL)),
@@ -140,11 +135,36 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
       false
     );
 
+    // we reduce the price of collateral so the position could be liquidated
+    address aaveOracle = POOL_ADDRESSES_PROVIDER.getPriceOracle();
     vm.mockCall(
-      POOL_ADDRESSES_PROVIDER.getPriceOracle(),
+      aaveOracle,
       abi.encodeWithSelector(IPriceOracleGetter.getAssetPrice.selector, collateralAsset),
-      abi.encode(1e4)
+      abi.encode(IPriceOracleGetter(aaveOracle).getAssetPrice(collateralAsset) / 10)
     );
+
+    deal2(debtAsset, address(this), debtAssetAmount);
+    IERC20(debtAsset).approve(address(POOL), debtAssetAmount);
+
+    // check liquidations are allowed before setting grace period
+    vm.warp(block.timestamp + gracePeriod + 1);
+    IPool(POOL).liquidationCall(
+      collateralAsset,
+      debtAsset,
+      user,
+      debtAssetAmount / 10,
+      false
+    );
+    // subtracting by debtAssetAmount / 10 as that amount is now liquidated
+    debtAssetAmount = debtAssetAmount - (debtAssetAmount / 10);
+
+    vm.startPrank(POOL_ADDRESSES_PROVIDER.getACLAdmin());
+    CONFIGURATOR.setReservePause(collateralAsset, false, gracePeriod);
+    assertEq(
+      IPool(POOL).getLiquidationGracePeriod(collateralAsset),
+      block.timestamp + gracePeriod
+    );
+    vm.stopPrank();
 
     // liquidation should revert as grace period has not passed
     vm.expectRevert(bytes(Errors.LIQUIDATION_GRACE_SENTINEL_CHECK_FAILED));
@@ -152,27 +172,24 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
       collateralAsset,
       debtAsset,
       user,
-      debtAssetAmount / 3,
+      debtAssetAmount,
       false
     );
 
     // liquidation should be allowed after grace period has passed
-    vm.warp(until[0] + 1);
-    deal2(debtAsset, address(this), debtAssetAmount);
-
-    IERC20(debtAsset).approve(address(POOL), debtAssetAmount);
+    vm.warp(block.timestamp + gracePeriod + 1);
     IPool(POOL).liquidationCall(
       collateralAsset,
       debtAsset,
       user,
-      debtAssetAmount / 3,
+      debtAssetAmount,
       false
     );
   }
 
   function _getGoodBorrowableAsset(
     ReserveConfig[] memory reserveConfigs, address collateralAsset
-  ) internal returns (address) {
+  ) internal pure returns (address) {
     for (uint i = 0; i < reserveConfigs.length; i++) {
       if (reserveConfigs[i].borrowingEnabled && _includeInE2e(reserveConfigs[i]) && reserveConfigs[i].underlying != collateralAsset) {
         return reserveConfigs[i].underlying;
