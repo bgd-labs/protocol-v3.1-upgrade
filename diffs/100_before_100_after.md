@@ -6,11 +6,11 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB](https://gnosisscan.io/address/0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB](https://gnosisscan.io/address/0xD84d86083010FB683f1e8fA3809ee8DC90A4C4DB) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.003 | 1.003 |
 | variableBorrowIndex | 1.007 | 1.007 |
-| currentLiquidityRate | 0.796 % | 0 % |
-| currentVariableBorrowRate | 1.966 % | 0 % |
+| currentLiquidityRate | 0.796 % | 0.796 % |
+| currentVariableBorrowRate | 1.966 % | 1.966 % |
 | maxVariableBorrowRate | / | 83.3 % |
 | baseStableBorrowRate | 5.3 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -18,17 +18,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 4 % | / |
 | stableRateSlope2 | 80 % | / |
-| interestRate | ![before](/.assets/1a2d00464fd0707711f315bbce0579c505aef532.svg) | ![after](/.assets/9797f1ce928890df285581b7d7eafea570e226b4.svg) |
+| interestRate | ![before](/.assets/1a2d00464fd0707711f315bbce0579c505aef532.svg) | ![after](/.assets/c033f7986a5101ee62821afbe44d95f6aeda3d85.svg) |
 
 #### wstETH ([0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6](https://gnosisscan.io/address/0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b](https://gnosisscan.io/address/0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b](https://gnosisscan.io/address/0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1 | 1 |
 | variableBorrowIndex | 1 | 1 |
 | currentLiquidityRate | 0 % | 0 % |
-| currentVariableBorrowRate | 0.007 % | 0 % |
+| currentVariableBorrowRate | 0.007 % | 0.007 % |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -36,17 +36,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 7 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/4d06f4d6d8a078984bb3069ccc64e42f1eaea206.svg) | ![after](/.assets/4c8464f0aa51e7cae16ab1f0a9546a2315ace0b7.svg) |
+| interestRate | ![before](/.assets/4d06f4d6d8a078984bb3069ccc64e42f1eaea206.svg) | ![after](/.assets/0912a3391c20167931529d13c3e50c1075c05cef.svg) |
 
 #### GNO ([0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosisscan.io/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731](https://gnosisscan.io/address/0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731](https://gnosisscan.io/address/0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1 | 1 |
 | variableBorrowIndex | 1.001 | 1.001 |
-| currentLiquidityRate | 0.018 % | 0 % |
-| currentVariableBorrowRate | 0.648 % | 0 % |
+| currentLiquidityRate | 0.018 % | 0.018 % |
+| currentVariableBorrowRate | 0.648 % | 0.648 % |
 | maxVariableBorrowRate | / | 95 % |
 | baseStableBorrowRate | 17 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -54,17 +54,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 7 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/040ee878e4c27fa98448dcca1559572aefa4e034.svg) | ![after](/.assets/e3db0093137e6c74a0727b8df9737a613c608629.svg) |
+| interestRate | ![before](/.assets/040ee878e4c27fa98448dcca1559572aefa4e034.svg) | ![after](/.assets/bc11b022801e3aaac2da4d8f7e076d7afa3e4878.svg) |
 
 #### USDC ([0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83](https://gnosisscan.io/address/0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xE74CD4ADF9103370144c327457bd294753E2E856](https://gnosisscan.io/address/0xE74CD4ADF9103370144c327457bd294753E2E856) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0xE74CD4ADF9103370144c327457bd294753E2E856](https://gnosisscan.io/address/0xE74CD4ADF9103370144c327457bd294753E2E856) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.009 | 1.009 |
 | variableBorrowIndex | 1.014 | 1.014 |
-| currentLiquidityRate | 0.855 % | 0 % |
-| currentVariableBorrowRate | 2.516 % | 0 % |
+| currentLiquidityRate | 0.855 % | 0.855 % |
+| currentVariableBorrowRate | 2.516 % | 2.516 % |
 | maxVariableBorrowRate | / | 81 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -72,13 +72,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/f4b1b8f3a89d9f171e1de97ae32be0c4decc7291.svg) | ![after](/.assets/c84055ae5d72ada853b3cf74d1f7944fe3fe2de5.svg) |
+| interestRate | ![before](/.assets/f4b1b8f3a89d9f171e1de97ae32be0c4decc7291.svg) | ![after](/.assets/0cdd24569ccc22e4b9bde9cad8720535e2d414fe.svg) |
 
 #### sDAI ([0xaf204776c7245bF4147c2612BF6e5972Ee483701](https://gnosisscan.io/address/0xaf204776c7245bF4147c2612BF6e5972Ee483701))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | maxVariableBorrowRate | / | 79 % |
 | baseStableBorrowRate | 5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -86,17 +86,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 4 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/79d2d01632de8f7a1295d120d64fe0b8930a59f2.svg) | ![after](/.assets/e44f779654e6258d627efa380acbb3d9c455180e.svg) |
+| interestRate | ![before](/.assets/79d2d01632de8f7a1295d120d64fe0b8930a59f2.svg) | ![after](/.assets/0469a73f39d2d6bd3871deaaf051955c003cce3c.svg) |
 
 #### EURe ([0xcB444e90D8198415266c6a2724b7900fb12FC56E](https://gnosisscan.io/address/0xcB444e90D8198415266c6a2724b7900fb12FC56E))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.006 | 1.006 |
 | variableBorrowIndex | 1.01 | 1.01 |
-| currentLiquidityRate | 1.526 % | 0 % |
-| currentVariableBorrowRate | 2.825 % | 0 % |
+| currentLiquidityRate | 1.526 % | 1.526 % |
+| currentVariableBorrowRate | 2.825 % | 2.825 % |
 | maxVariableBorrowRate | / | 79 % |
 | baseStableBorrowRate | 5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -104,17 +104,17 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 4 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/79d2d01632de8f7a1295d120d64fe0b8930a59f2.svg) | ![after](/.assets/e44f779654e6258d627efa380acbb3d9c455180e.svg) |
+| interestRate | ![before](/.assets/79d2d01632de8f7a1295d120d64fe0b8930a59f2.svg) | ![after](/.assets/0469a73f39d2d6bd3871deaaf051955c003cce3c.svg) |
 
 #### WXDAI ([0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d](https://gnosisscan.io/address/0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xE74CD4ADF9103370144c327457bd294753E2E856](https://gnosisscan.io/address/0xE74CD4ADF9103370144c327457bd294753E2E856) | [0x24716D8e4CEB186017c3D7be3C04190E8c77269c](https://gnosisscan.io/address/0x24716D8e4CEB186017c3D7be3C04190E8c77269c) |
+| interestRateStrategy | [0xE74CD4ADF9103370144c327457bd294753E2E856](https://gnosisscan.io/address/0xE74CD4ADF9103370144c327457bd294753E2E856) | [0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d](https://gnosisscan.io/address/0x1E468e82AFb0780A03f6C2cCaE250f8C5943F70d) |
 | liquidityIndex | 1.013 | 1.013 |
 | variableBorrowIndex | 1.018 | 1.018 |
-| currentLiquidityRate | 0.391 % | 0 % |
-| currentVariableBorrowRate | 1.701 % | 0 % |
+| currentLiquidityRate | 0.391 % | 0.391 % |
+| currentVariableBorrowRate | 1.701 % | 1.701 % |
 | maxVariableBorrowRate | / | 81 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -122,7 +122,7 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/f4b1b8f3a89d9f171e1de97ae32be0c4decc7291.svg) | ![after](/.assets/c84055ae5d72ada853b3cf74d1f7944fe3fe2de5.svg) |
+| interestRate | ![before](/.assets/f4b1b8f3a89d9f171e1de97ae32be0c4decc7291.svg) | ![after](/.assets/0cdd24569ccc22e4b9bde9cad8720535e2d414fe.svg) |
 
 ## Raw diff
 
