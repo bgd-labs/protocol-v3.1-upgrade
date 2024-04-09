@@ -108,7 +108,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     address debtAsset = _getGoodBorrowableAsset(reserveConfigs, collateralAsset);
 
     uint256 collateralAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, collateralAsset), collateralUsdAmount);
-    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, debtAsset), collateralUsdAmount / 3);
+    uint256 debtAssetAmount = _getTokenAmountByDollarValue(IOldPool(address(POOL)), _findReserveConfig(reserveConfigs, debtAsset), collateralUsdAmount / 2);
 
     // increase protocol borrow / supply cap to maximum
     if (_findReserveConfig(reserveConfigs, collateralAsset).supplyCap != 0) {
