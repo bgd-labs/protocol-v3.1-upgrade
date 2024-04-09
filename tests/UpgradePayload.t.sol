@@ -147,7 +147,6 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     IERC20(debtAsset).approve(address(POOL), debtAssetAmount);
 
     // check liquidations are allowed before setting grace period
-    vm.warp(block.timestamp + gracePeriod + 1);
     IPool(POOL).liquidationCall(
       collateralAsset,
       debtAsset,
