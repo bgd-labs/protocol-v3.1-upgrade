@@ -1,9 +1,9 @@
 ds-test/=lib/aave-helpers/lib/forge-std/lib/ds-test/src/
 forge-std/=lib/aave-helpers/lib/forge-std/src/
-aave-v3-factory/=lib/aave-v3-factory/src
+aave-v3-origin/=lib/aave-v3-origin/src
 aave-helpers/=lib/aave-helpers/src
 aave-address-book/=lib/aave-helpers/lib/aave-address-book/src/
 solidity-utils/=lib/aave-helpers/lib/solidity-utils/src
 lib/aave-helpers/lib/aave-address-book:aave-v3-core/=lib/aave-helpers/lib/aave-address-book/lib/aave-v3-core/
 lib/aave-helpers:aave-v3-core/=lib/aave-helpers/lib/aave-address-book/lib/aave-v3-core/
-aave-v3-core/=lib/aave-v3-factory/src/core
+aave-v3-core/=lib/aave-v3-origin/src/core

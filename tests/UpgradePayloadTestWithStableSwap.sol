@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import {IPool} from 'aave-v3-factory/core/contracts/interfaces/IPool.sol';
+import {IPool} from 'aave-v3-origin/core/contracts/interfaces/IPool.sol';
 
 import {UpgradePayloadTest} from './UpgradePayload.t.sol';
 
