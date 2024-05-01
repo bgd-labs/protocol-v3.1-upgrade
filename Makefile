@@ -28,3 +28,7 @@ download-pool-etherscan :;
 	cast etherscan-source --chain 100 -d etherscan/v3PoolGnosis 0xb1532b76d054c9f9e61b25c4d91f69b4133e4671
 	cast etherscan-source --chain 8453 -d etherscan/v3PoolBase 0xdc9bafe7b1df4f7af863fcada6827e488d06bb20
 	cast etherscan-source --chain 1088 -d etherscan/v3PoolMetis 0x8adb6916bc161d7e3d46286adad3c77eef84eb5d
+
+diff-mainnet-local :;
+	mkdir -p diffs/MAINNET_FACTORY_LOCAL
+	npx tsx ./diff.ts MAINNET FACTORY_LOCAL
