@@ -8,6 +8,7 @@ update:; forge update
 # Build & test
 build  :; forge build --sizes
 test   :; forge test -vvv
+test-contract :; forge test --match-contract ${filter} -vvv
 
 get-proxy-impl :;
 	@cast implementation ${address} --rpc-url ${rpc}

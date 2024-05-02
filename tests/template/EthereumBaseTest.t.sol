@@ -12,6 +12,7 @@ import {GovernanceV3Ethereum} from 'aave-address-book/GovernanceV3Ethereum.sol';
 // The `proposalExecutor` modifier is to be used if the test only needs to do checks without a pre-execution state.
 // While adding manually the _executePayload() gives more flexibility to for example initialize some data before the update and check changes done by the update itself.
 // The protocol contracts could be accessed via `AaveV3Ethereum` and the listed assets via `AaveV3EthereumAssets` from the aave-address-book.
+// command to test: make test-contract filter=EthereumBaseTest
 contract EthereumBaseTest is
   BaseTest('mainnet', 19476859)
 {
