@@ -1,11 +1,12 @@
 ```diff
 diff --git a/./downloads/MAINNET/DEFAULT_VARIABLE_DEBT_TOKEN_IMPL.sol b/./downloads/FACTORY_LOCAL/DEFAULT_VARIABLE_DEBT_TOKEN_IMPL.sol
-index d195593..abf5c3e 100644
+index d195593..b660eb9 100644
 --- a/./downloads/MAINNET/DEFAULT_VARIABLE_DEBT_TOKEN_IMPL.sol
 +++ b/./downloads/FACTORY_LOCAL/DEFAULT_VARIABLE_DEBT_TOKEN_IMPL.sol
 @@ -1,7 +1,7 @@
- // SPDX-License-Identifier: BUSL-1.1
+-// SPDX-License-Identifier: BUSL-1.1
 -pragma solidity =0.8.10 ^0.8.0;
++// SPDX-License-Identifier: MIT
 +pragma solidity ^0.8.0 ^0.8.10;
  
 -// downloads/MAINNET/DEFAULT_VARIABLE_DEBT_TOKEN_IMPL/VariableDebtToken/@aave/core-v3/contracts/dependencies/openzeppelin/contracts/Context.sol
@@ -547,4 +548,52 @@ index d195593..abf5c3e 100644
  
    /// @inheritdoc IERC20
    function balanceOf(address user) public view virtual override returns (uint256) {
+@@ -3056,3 +3179,47 @@ contract VariableDebtToken is DebtTokenBase, ScaledBalanceTokenBase, IVariableDe
+     return _underlyingAsset;
+   }
+ }
++
++// lib/aave-v3-origin/src/core/instances/VariableDebtTokenInstance.sol
++
++contract VariableDebtTokenInstance is VariableDebtToken {
++  uint256 public constant DEBT_TOKEN_REVISION = 1;
++
++  constructor(IPool pool) VariableDebtToken(pool) {}
++
++  /// @inheritdoc VersionedInitializable
++  function getRevision() internal pure virtual override returns (uint256) {
++    return DEBT_TOKEN_REVISION;
++  }
++
++  /// @inheritdoc IInitializableDebtToken
++  function initialize(
++    IPool initializingPool,
++    address underlyingAsset,
++    IAaveIncentivesController incentivesController,
++    uint8 debtTokenDecimals,
++    string memory debtTokenName,
++    string memory debtTokenSymbol,
++    bytes calldata params
++  ) external override initializer {
++    require(initializingPool == POOL, Errors.POOL_ADDRESSES_DO_NOT_MATCH);
++    _setName(debtTokenName);
++    _setSymbol(debtTokenSymbol);
++    _setDecimals(debtTokenDecimals);
++
++    _underlyingAsset = underlyingAsset;
++    _incentivesController = incentivesController;
++
++    _domainSeparator = _calculateDomainSeparator();
++
++    emit Initialized(
++      underlyingAsset,
++      address(POOL),
++      address(incentivesController),
++      debtTokenDecimals,
++      debtTokenName,
++      debtTokenSymbol,
++      params
++    );
++  }
++}
 ```

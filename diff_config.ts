@@ -9,11 +9,11 @@ const CONTRACTS: ContractsType = {
   [Networks.FACTORY_LOCAL]: {
     POOL: {
       name: 'Pool',
-      path: 'lib/aave-v3-origin/src/core/contracts/protocol/pool/Pool.sol',
+      path: 'lib/aave-v3-origin/src/core/instances/PoolInstance.sol',
     },
     POOL_CONFIGURATOR: {
       name: 'PoolConfigurator',
-      path: 'lib/aave-v3-origin/src/core/contracts/protocol/pool/PoolConfigurator.sol',
+      path: 'lib/aave-v3-origin/src/core/instances/PoolConfiguratorInstance.sol',
     },
     AAVE_PROTOCOL_DATA_PROVIDER: {
       name: 'AaveProtocolDataProvider',
@@ -21,15 +21,15 @@ const CONTRACTS: ContractsType = {
     },
     DEFAULT_A_TOKEN_IMPL: {
       name: 'AToken',
-      path: 'lib/aave-v3-origin/src/core/contracts/protocol/tokenization/AToken.sol',
+      path: 'lib/aave-v3-origin/src/core/instances/ATokenInstance.sol',
     },
     DEFAULT_VARIABLE_DEBT_TOKEN_IMPL: {
       name: 'VariableDebtToken',
-      path: 'lib/aave-v3-origin/src/core/contracts/protocol/tokenization/VariableDebtToken.sol',
+      path: 'lib/aave-v3-origin/src/core/instances/VariableDebtTokenInstance.sol',
     },
     DEFAULT_STABLE_DEBT_TOKEN_IMPL: {
       name: 'StableDebtToken',
-      path: 'lib/aave-v3-origin/src/core/contracts/protocol/tokenization/StableDebtToken.sol',
+      path: 'lib/aave-v3-origin/src/core/instances/StableDebtTokenInstance.sol',
     },
     UI_POOL_DATA_PROVIDER: {
       name: 'UiPoolDataProviderV3',
