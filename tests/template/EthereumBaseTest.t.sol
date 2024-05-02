@@ -7,8 +7,10 @@ import {AaveV3Ethereum, AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethe
 import {VersionedInitializable} from 'aave-v3-origin/core/contracts/protocol/libraries/aave-upgradeability/VersionedInitializable.sol';
 import {GovernanceV3Ethereum} from 'aave-address-book/GovernanceV3Ethereum.sol';
 
-// The current state of this test contract, is on the protocol version 3.0.2.
-// To test the protocol on the upgraded state, please add `proposalExecuted` modifier to your test or call the interal method `_executePayload()` on your tests.
+// The current state of this test contract is on the protocol version 3.0.2.
+// To test the protocol on the upgraded state, please add `proposalExecuted` modifier to your test or call the internal method `_executePayload()` on your tests.
+// The `proposalExecutor` modifier is to be used if the test only needs to do checks without a pre-execution state.
+// While adding manually the _executePayload() gives more flexibility to for example initialize some data before the update and check changes done by the update itself.
 // The protocol contracts could be accessed via `AaveV3Ethereum` and the listed assets via `AaveV3EthereumAssets` from the aave-address-book.
 contract EthereumBaseTest is
   BaseTest('mainnet', 19476859)
