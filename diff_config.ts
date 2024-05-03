@@ -15,10 +15,6 @@ const CONTRACTS: ContractsType = {
       name: 'PoolConfigurator',
       path: 'lib/aave-v3-origin/src/core/instances/PoolConfiguratorInstance.sol',
     },
-    AAVE_PROTOCOL_DATA_PROVIDER: {
-      name: 'AaveProtocolDataProvider',
-      path: 'lib/aave-v3-origin/src/core/contracts/misc/AaveProtocolDataProvider.sol',
-    },
     DEFAULT_A_TOKEN_IMPL: {
       name: 'AToken',
       path: 'lib/aave-v3-origin/src/core/instances/ATokenInstance.sol',
@@ -26,18 +22,6 @@ const CONTRACTS: ContractsType = {
     DEFAULT_VARIABLE_DEBT_TOKEN_IMPL: {
       name: 'VariableDebtToken',
       path: 'lib/aave-v3-origin/src/core/instances/VariableDebtTokenInstance.sol',
-    },
-    DEFAULT_STABLE_DEBT_TOKEN_IMPL: {
-      name: 'StableDebtToken',
-      path: 'lib/aave-v3-origin/src/core/instances/StableDebtTokenInstance.sol',
-    },
-    UI_POOL_DATA_PROVIDER: {
-      name: 'UiPoolDataProviderV3',
-      path: 'lib/aave-v3-origin/src/periphery/contracts/misc/UiPoolDataProviderV3.sol',
-    },
-    UI_INCENTIVE_DATA_PROVIDER: {
-      name: 'UiIncentiveDataProviderV3',
-      path: 'lib/aave-v3-origin/src/periphery/contracts/misc/UiIncentiveDataProviderV3.sol',
     },
     BORROW_LOGIC: {
       name: 'BorrowLogic',
@@ -87,11 +71,6 @@ const CONTRACTS: ContractsType = {
       path: 'PoolConfigurator/@aave/core-v3/contracts/protocol/pool/PoolConfigurator.sol',
       address: AaveV3Ethereum.POOL_CONFIGURATOR,
     },
-    AAVE_PROTOCOL_DATA_PROVIDER: {
-      name: 'AaveProtocolDataProvider',
-      path: 'AaveProtocolDataProvider/@aave/core-v3/contracts/misc/AaveProtocolDataProvider.sol',
-      address: AaveV3Ethereum.AAVE_PROTOCOL_DATA_PROVIDER,
-    },
     DEFAULT_A_TOKEN_IMPL: {
       name: 'AToken',
       path: 'AToken/@aave/core-v3/contracts/protocol/tokenization/AToken.sol',
@@ -101,21 +80,6 @@ const CONTRACTS: ContractsType = {
       name: 'VariableDebtToken',
       path: 'VariableDebtToken/@aave/core-v3/contracts/protocol/tokenization/VariableDebtToken.sol',
       address: AaveV3Ethereum.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1,
-    },
-    DEFAULT_STABLE_DEBT_TOKEN_IMPL: {
-      name: 'StableDebtToken',
-      path: 'StableDebtToken/@aave/core-v3/contracts/protocol/tokenization/StableDebtToken.sol',
-      address: AaveV3Ethereum.DEFAULT_STABLE_DEBT_TOKEN_IMPL_REV_1,
-    },
-    UI_POOL_DATA_PROVIDER: {
-      name: 'UiPoolDataProviderV3',
-      path: 'UiPoolDataProviderV3/@aave/periphery-v3/contracts/misc/UiPoolDataProviderV3.sol',
-      address: AaveV3Ethereum.UI_POOL_DATA_PROVIDER,
-    },
-    UI_INCENTIVE_DATA_PROVIDER: {
-      name: 'UiIncentiveDataProviderV3',
-      path: 'UiIncentiveDataProviderV3/@aave/periphery-v3/contracts/misc/UiIncentiveDataProviderV3.sol',
-      address: AaveV3Ethereum.UI_INCENTIVE_DATA_PROVIDER,
     },
     BORROW_LOGIC: {
       name: 'BorrowLogic',
