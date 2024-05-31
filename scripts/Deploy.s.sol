@@ -13,6 +13,7 @@ import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {AaveProtocolDataProvider} from 'aave-v3-origin/core/contracts/misc/AaveProtocolDataProvider.sol';
+import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfiguratorInstance.sol';
 import {PoolInstanceWithCustomInitialize} from '../src/contracts/PoolInstanceWithCustomInitialize.sol';
 import {L2PoolInstanceWithCustomInitialize} from '../src/contracts/L2PoolInstanceWithCustomInitialize.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
@@ -27,7 +28,14 @@ library DeploymentLibrary {
     address poolImpl = address(
       new L2PoolInstanceWithCustomInitialize(IPoolAddressesProvider(poolAddressesProvider))
     );
-    return _deployPayload(poolAddressesProvider, pool, poolConfigurator, poolImpl, proofOfReserveExecutor);
+    return
+      _deployPayload(
+        poolAddressesProvider,
+        pool,
+        poolConfigurator,
+        poolImpl,
+        proofOfReserveExecutor
+      );
   }
 
   function _deployL1(
@@ -39,7 +47,14 @@ library DeploymentLibrary {
     address poolImpl = address(
       new PoolInstanceWithCustomInitialize(IPoolAddressesProvider(poolAddressesProvider))
     );
-    return _deployPayload(poolAddressesProvider, pool, poolConfigurator, poolImpl, proofOfReserveExecutor);
+    return
+      _deployPayload(
+        poolAddressesProvider,
+        pool,
+        poolConfigurator,
+        poolImpl,
+        proofOfReserveExecutor
+      );
   }
 
   function _deployPayload(
@@ -49,6 +64,7 @@ library DeploymentLibrary {
     address poolImpl,
     address proofOfReserveExecutor
   ) internal returns (address) {
+    address poolConfiguratorImpl = address(new PoolConfiguratorInstance());
     address poolDataProvider = address(
       new AaveProtocolDataProvider(IPoolAddressesProvider(poolAddressesProvider))
     );
@@ -60,6 +76,7 @@ library DeploymentLibrary {
           pool,
           poolConfigurator,
           poolImpl,
+          poolConfiguratorImpl,
           poolDataProvider,
           proofOfReserveExecutor
         )
