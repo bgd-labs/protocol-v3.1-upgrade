@@ -106,9 +106,10 @@ contract UpgradePayload is IProposalGenericExecutor {
       );
     }
 
-      if (PROOF_OF_RESERVE_EXECUTOR != address(0)) {
-        IACLManager(POOL_ADDRESSES_PROVIDER.getACLManager()).removeRiskAdmin(PROOF_OF_RESERVE_EXECUTOR);
-
-      }
+    if (PROOF_OF_RESERVE_EXECUTOR != address(0)) {
+      IACLManager(POOL_ADDRESSES_PROVIDER.getACLManager()).removeRiskAdmin(
+        PROOF_OF_RESERVE_EXECUTOR
+      );
+    }
   }
 }
