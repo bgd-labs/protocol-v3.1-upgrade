@@ -7,7 +7,7 @@ import {IPoolConfigurator} from 'aave-v3-origin/core/contracts/interfaces/IPoolC
 import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfiguratorInstance.sol';
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
-import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
+import {AaveV3EthereumAssets, IACLManager} from 'aave-address-book/AaveV3Ethereum.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -45,13 +45,15 @@ contract UpgradePayload is IProposalGenericExecutor {
 
   address public immutable POOL_IMPL;
   address public immutable POOL_DATA_PROVIDER;
+  address public immutable PROOF_OF_RESERVE_EXECUTOR;
 
   constructor(
     address poolAddressesProvider,
     address pool,
     address configurator,
     address poolImpl,
-    address poolDataProvider
+    address poolDataProvider,
+    address proofOfReserveExecutor
   ) {
     POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressesProvider);
     POOL = IPool(pool);
@@ -59,6 +61,7 @@ contract UpgradePayload is IProposalGenericExecutor {
     DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(poolAddressesProvider));
     POOL_IMPL = poolImpl;
     POOL_DATA_PROVIDER = poolDataProvider;
+    PROOF_OF_RESERVE_EXECUTOR = proofOfReserveExecutor;
   }
 
   function execute() external {
@@ -102,5 +105,10 @@ contract UpgradePayload is IProposalGenericExecutor {
         )
       );
     }
+
+      if (PROOF_OF_RESERVE_EXECUTOR != address(0)) {
+        IACLManager(POOL_ADDRESSES_PROVIDER.getACLManager()).removeRiskAdmin(PROOF_OF_RESERVE_EXECUTOR);
+
+      }
   }
 }
