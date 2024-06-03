@@ -323,6 +323,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
       if (reserveData.configuration.getFrozen()) {
         (uint256 ltv, , , , , ) = reserveData.configuration.getParams();
         assertEq(ltv, 0);
+        // TODO: update getter interface after Cantina related update will be merged to origin main
         (uint256 pendingLtv, ) = CONFIGURATOR.getPendingLtv(reserves[i]);
         assertEq(pendingLtv, 0);
       }
