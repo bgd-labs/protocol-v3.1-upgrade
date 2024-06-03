@@ -8,6 +8,7 @@ import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfig
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
 import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
+import {ReserveConfiguration} from 'aave-v3-origin/core/contracts/protocol/libraries/configuration/ReserveConfiguration.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -43,6 +44,8 @@ contract UpgradePayload is IProposalGenericExecutor {
   IPoolConfigurator public immutable CONFIGURATOR;
   DefaultReserveInterestRateStrategyV2 public immutable DEFAULT_IR;
 
+  using ReserveConfiguration for DataTypes.ReserveConfigurationMap;
+
   address public immutable POOL_IMPL;
   address public immutable POOL_DATA_PROVIDER;
 
@@ -70,6 +73,11 @@ contract UpgradePayload is IProposalGenericExecutor {
     for (uint256 i = 0; i < reserves.length; i++) {
       DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(reserves[i]);
       uint256 currentUOpt;
+
+      if (reserveData.configuration.getFrozen() && reserveData.configuration.getLtv() != 0) {
+        CONFIGURATOR.setReserveFreeze(reserves[i], false);
+        CONFIGURATOR.setReserveFreeze(reserves[i], true);
+      }
 
       if (reserves[i] == AaveV3EthereumAssets.GHO_UNDERLYING) {
         currentUOpt = DEFAULT_IR.MAX_OPTIMAL_POINT();
