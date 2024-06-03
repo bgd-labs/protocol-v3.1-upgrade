@@ -6,8 +6,6 @@ import {IPool} from 'aave-v3-origin/core/contracts/interfaces/IPool.sol';
 import {UpgradePayloadTest} from './UpgradePayload.t.sol';
 
 abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
-  address internal ACL_ADMIN;
-
   address internal USER_WITH_STABLE;
   address internal RESERVE_WITH_STABLE;
 
@@ -16,12 +14,10 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
     uint256 blocknumber,
     address userWithStable,
     address reserveWithStable,
-    address aclAdmin,
     uint256 voOffLimit
   ) UpgradePayloadTest(network, blocknumber, voOffLimit) {
     USER_WITH_STABLE = userWithStable;
     RESERVE_WITH_STABLE = reserveWithStable;
-    ACL_ADMIN = aclAdmin;
   }
 
   // ****** tests for swap to variable ******

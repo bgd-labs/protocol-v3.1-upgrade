@@ -74,6 +74,9 @@ contract UpgradePayload is IProposalGenericExecutor {
       DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(reserves[i]);
       uint256 currentUOpt;
 
+      // @dev the decision to use setReserveFreeze was taken to not query and iterate 2 times over getReserveDataExtended() data
+      // on unfreezing reserve existing ltv will be overridden with _pendingLtv which was not set and is 0 for all assets
+      // then after freezing back both pending and current LTV's stays 0
       if (reserveData.configuration.getFrozen() && reserveData.configuration.getLtv() != 0) {
         CONFIGURATOR.setReserveFreeze(reserves[i], false);
         CONFIGURATOR.setReserveFreeze(reserves[i], true);
