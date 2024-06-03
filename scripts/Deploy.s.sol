@@ -16,6 +16,77 @@ import {AaveProtocolDataProvider} from 'aave-v3-origin/core/contracts/misc/AaveP
 import {PoolInstanceWithCustomInitialize} from '../src/contracts/PoolInstanceWithCustomInitialize.sol';
 import {L2PoolInstanceWithCustomInitialize} from '../src/contracts/L2PoolInstanceWithCustomInitialize.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
+import {EthereumScript, PolygonScript, AvalancheScript, OptimismScript, ArbitrumScript, BaseScript, GnosisScript, MetisScript, BNBScript, ScrollScript} from 'aave-helpers/ScriptUtils.sol';
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployEthereum chain=mainnet
+contract DeployEthereum is EthereumScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployEthereum();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployPolygon chain=polygon
+contract DeployPolygon is PolygonScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployPolygon();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployAvalanche chain=avalanche
+contract DeployAvalanche is AvalancheScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployAvalanche();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployArbitrum chain=arbitrum
+contract DeployArbitrum is ArbitrumScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployArbitrum();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployOptimism chain=optimism
+contract DeployOptimism is OptimismScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployOptimism();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployBase chain=base
+contract DeployBase is BaseScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployBase();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployGnosis chain=gnosis
+contract DeployGnosis is GnosisScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployGnosis();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployMetis chain=metis
+contract DeployMetis is MetisScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployMetis();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployBNB chain=bnb
+contract DeployBNB is BNBScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployBNB();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployScroll chain=scroll
+contract DeployScroll is ScrollScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployScroll();
+  }
+}
 
 library DeploymentLibrary {
   function _deployL2(
