@@ -4,10 +4,9 @@ import {IProposalGenericExecutor} from 'aave-helpers/interfaces/IProposalGeneric
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {IPool, DataTypes} from 'aave-v3-origin/core/contracts/interfaces/IPool.sol';
 import {IPoolConfigurator} from 'aave-v3-origin/core/contracts/interfaces/IPoolConfigurator.sol';
-import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfiguratorInstance.sol';
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
-import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
+import {AaveV3EthereumAssets, IACLManager} from 'aave-address-book/AaveV3Ethereum.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -44,25 +43,31 @@ contract UpgradePayload is IProposalGenericExecutor {
   DefaultReserveInterestRateStrategyV2 public immutable DEFAULT_IR;
 
   address public immutable POOL_IMPL;
+  address public immutable POOL_CONFIGURATOR_IMPL;
   address public immutable POOL_DATA_PROVIDER;
+  address public immutable PROOF_OF_RESERVE_EXECUTOR;
 
   constructor(
     address poolAddressesProvider,
     address pool,
     address configurator,
     address poolImpl,
-    address poolDataProvider
+    address poolConfiguratorImpl,
+    address poolDataProvider,
+    address proofOfReserveExecutor
   ) {
     POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressesProvider);
     POOL = IPool(pool);
     CONFIGURATOR = IPoolConfigurator(configurator);
     DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(poolAddressesProvider));
     POOL_IMPL = poolImpl;
+    POOL_CONFIGURATOR_IMPL = poolConfiguratorImpl;
     POOL_DATA_PROVIDER = poolDataProvider;
+    PROOF_OF_RESERVE_EXECUTOR = proofOfReserveExecutor;
   }
 
   function execute() external {
-    POOL_ADDRESSES_PROVIDER.setPoolConfiguratorImpl(address(new PoolConfiguratorInstance()));
+    POOL_ADDRESSES_PROVIDER.setPoolConfiguratorImpl(POOL_CONFIGURATOR_IMPL);
     POOL_ADDRESSES_PROVIDER.setPoolImpl(POOL_IMPL);
     POOL_ADDRESSES_PROVIDER.setPoolDataProvider(POOL_DATA_PROVIDER);
 
@@ -100,6 +105,12 @@ contract UpgradePayload is IProposalGenericExecutor {
             )
           })
         )
+      );
+    }
+
+    if (PROOF_OF_RESERVE_EXECUTOR != address(0)) {
+      IACLManager(POOL_ADDRESSES_PROVIDER.getACLManager()).removeRiskAdmin(
+        PROOF_OF_RESERVE_EXECUTOR
       );
     }
   }

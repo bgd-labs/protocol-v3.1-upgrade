@@ -13,6 +13,7 @@ import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {AaveProtocolDataProvider} from 'aave-v3-origin/core/contracts/misc/AaveProtocolDataProvider.sol';
+import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfiguratorInstance.sol';
 import {PoolInstanceWithCustomInitialize} from '../src/contracts/PoolInstanceWithCustomInitialize.sol';
 import {L2PoolInstanceWithCustomInitialize} from '../src/contracts/L2PoolInstanceWithCustomInitialize.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
@@ -21,31 +22,49 @@ library DeploymentLibrary {
   function _deployL2(
     address poolAddressesProvider,
     address pool,
-    address poolConfigurator
+    address poolConfigurator,
+    address proofOfReserveExecutor
   ) internal returns (address) {
     address poolImpl = address(
       new L2PoolInstanceWithCustomInitialize(IPoolAddressesProvider(poolAddressesProvider))
     );
-    return _deployPayload(poolAddressesProvider, pool, poolConfigurator, poolImpl);
+    return
+      _deployPayload(
+        poolAddressesProvider,
+        pool,
+        poolConfigurator,
+        poolImpl,
+        proofOfReserveExecutor
+      );
   }
 
   function _deployL1(
     address poolAddressesProvider,
     address pool,
-    address poolConfigurator
+    address poolConfigurator,
+    address proofOfReserveExecutor
   ) internal returns (address) {
     address poolImpl = address(
       new PoolInstanceWithCustomInitialize(IPoolAddressesProvider(poolAddressesProvider))
     );
-    return _deployPayload(poolAddressesProvider, pool, poolConfigurator, poolImpl);
+    return
+      _deployPayload(
+        poolAddressesProvider,
+        pool,
+        poolConfigurator,
+        poolImpl,
+        proofOfReserveExecutor
+      );
   }
 
   function _deployPayload(
     address poolAddressesProvider,
     address pool,
     address poolConfigurator,
-    address poolImpl
+    address poolImpl,
+    address proofOfReserveExecutor
   ) internal returns (address) {
+    address poolConfiguratorImpl = address(new PoolConfiguratorInstance());
     address poolDataProvider = address(
       new AaveProtocolDataProvider(IPoolAddressesProvider(poolAddressesProvider))
     );
@@ -57,7 +76,9 @@ library DeploymentLibrary {
           pool,
           poolConfigurator,
           poolImpl,
-          poolDataProvider
+          poolConfiguratorImpl,
+          poolDataProvider,
+          proofOfReserveExecutor
         )
       );
   }
@@ -67,7 +88,8 @@ library DeploymentLibrary {
       _deployL1(
         address(AaveV3Polygon.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Polygon.POOL),
-        address(AaveV3Polygon.POOL_CONFIGURATOR)
+        address(AaveV3Polygon.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -76,7 +98,8 @@ library DeploymentLibrary {
       _deployL1(
         address(AaveV3Ethereum.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Ethereum.POOL),
-        address(AaveV3Ethereum.POOL_CONFIGURATOR)
+        address(AaveV3Ethereum.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -85,7 +108,8 @@ library DeploymentLibrary {
       _deployL1(
         address(AaveV3Avalanche.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Avalanche.POOL),
-        address(AaveV3Avalanche.POOL_CONFIGURATOR)
+        address(AaveV3Avalanche.POOL_CONFIGURATOR),
+        AaveV3Avalanche.PROOF_OF_RESERVE
       );
   }
 
@@ -94,7 +118,8 @@ library DeploymentLibrary {
       _deployL2(
         address(AaveV3Arbitrum.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Arbitrum.POOL),
-        address(AaveV3Arbitrum.POOL_CONFIGURATOR)
+        address(AaveV3Arbitrum.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -103,7 +128,8 @@ library DeploymentLibrary {
       _deployL2(
         address(AaveV3Optimism.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Optimism.POOL),
-        address(AaveV3Optimism.POOL_CONFIGURATOR)
+        address(AaveV3Optimism.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -112,7 +138,8 @@ library DeploymentLibrary {
       _deployL2(
         address(AaveV3Base.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Base.POOL),
-        address(AaveV3Base.POOL_CONFIGURATOR)
+        address(AaveV3Base.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -121,7 +148,8 @@ library DeploymentLibrary {
       _deployL1(
         address(AaveV3Gnosis.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Gnosis.POOL),
-        address(AaveV3Gnosis.POOL_CONFIGURATOR)
+        address(AaveV3Gnosis.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -130,7 +158,8 @@ library DeploymentLibrary {
       _deployL2(
         address(AaveV3Metis.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Metis.POOL),
-        address(AaveV3Metis.POOL_CONFIGURATOR)
+        address(AaveV3Metis.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -139,7 +168,8 @@ library DeploymentLibrary {
       _deployL1(
         address(AaveV3BNB.POOL_ADDRESSES_PROVIDER),
         address(AaveV3BNB.POOL),
-        address(AaveV3BNB.POOL_CONFIGURATOR)
+        address(AaveV3BNB.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 
@@ -148,7 +178,8 @@ library DeploymentLibrary {
       _deployL2(
         address(AaveV3Scroll.POOL_ADDRESSES_PROVIDER),
         address(AaveV3Scroll.POOL),
-        address(AaveV3Scroll.POOL_CONFIGURATOR)
+        address(AaveV3Scroll.POOL_CONFIGURATOR),
+        address(0)
       );
   }
 }
