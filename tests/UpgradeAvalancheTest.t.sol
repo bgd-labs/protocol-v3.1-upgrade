@@ -14,6 +14,10 @@ contract UpgradeAvalancheTest is
     5 * 1e3 // limit raised to 0.05%, because of FRAX(0.016%) and MAI(0.05%)
   )
 {
+  function test_proofOfReserveExecutor_riskAdmin_removed() public proposalExecuted {
+    assertFalse(AaveV3Avalanche.ACL_MANAGER.isRiskAdmin(PAYLOAD.PROOF_OF_RESERVE_EXECUTOR()));
+  }
+
   function _getPayload() internal virtual override returns (address) {
     return DeploymentLibrary._deployAvalanche();
   }
