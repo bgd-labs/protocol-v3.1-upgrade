@@ -22,7 +22,7 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
 
   // ****** tests for swap to variable ******
   function test_swap_to_variable_works(address user) public proposalExecuted {
-    vm.assume(user != address(0));
+    _adjustUser(user);
     (
       ,
       uint256 currentStableDebtBefore,
@@ -96,7 +96,7 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
   }
 
   function test_not_reverts_swap_to_variable_reserve_frozen(address user) public proposalExecuted {
-    vm.assume(user != address(0));
+    _adjustUser(user);
 
     vm.prank(ACL_ADMIN);
     CONFIGURATOR.setReserveFreeze(RESERVE_WITH_STABLE, true);

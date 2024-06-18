@@ -59,6 +59,14 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
     GovV3Helpers.executePayload(vm, address(PAYLOAD));
   }
 
+  function _adjustUser(address user) internal view {
+    vm.assume(
+      user != address(0) &&
+        user != address(POOL_ADDRESSES_PROVIDER) &&
+        user != address(CONFIGURATOR)
+    );
+  }
+
   /**
    * Creating a config diff & running our default e2e suite.
    */
@@ -158,7 +166,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
 
     vm.assume(gracePeriod != 0 && gracePeriod < CONFIGURATOR.MAX_GRACE_PERIOD());
     vm.assume(collateralUsdAmount > 100 && collateralUsdAmount < 100_000);
-    vm.assume(user != address(0) && user != address(POOL_ADDRESSES_PROVIDER));
+    _adjustUser(user);
 
     ReserveConfig[] memory reserveConfigs = _getReservesConfigs(IOldPool(address(POOL)));
 
@@ -323,8 +331,7 @@ abstract contract UpgradePayloadTest is ProtocolV3TestBase {
       if (reserveData.configuration.getFrozen()) {
         (uint256 ltv, , , , , ) = reserveData.configuration.getParams();
         assertEq(ltv, 0);
-        // TODO: update getter interface after Cantina related update will be merged to origin main
-        (uint256 pendingLtv, ) = CONFIGURATOR.getPendingLtv(reserves[i]);
+        uint256 pendingLtv = CONFIGURATOR.getPendingLtv(reserves[i]);
         assertEq(pendingLtv, 0);
       }
     }
