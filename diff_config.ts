@@ -15,14 +15,6 @@ const CONTRACTS: ContractsType = {
       name: 'PoolConfigurator',
       path: 'lib/aave-v3-origin/src/core/instances/PoolConfiguratorInstance.sol',
     },
-    DEFAULT_A_TOKEN_IMPL: {
-      name: 'AToken',
-      path: 'lib/aave-v3-origin/src/core/instances/ATokenInstance.sol',
-    },
-    DEFAULT_VARIABLE_DEBT_TOKEN_IMPL: {
-      name: 'VariableDebtToken',
-      path: 'lib/aave-v3-origin/src/core/instances/VariableDebtTokenInstance.sol',
-    },
     BORROW_LOGIC: {
       name: 'BorrowLogic',
       path: 'lib/aave-v3-origin/src/core/contracts/protocol/libraries/logic/BorrowLogic.sol',
@@ -58,7 +50,11 @@ const CONTRACTS: ContractsType = {
     CALLDATA_LOGIC: {
       name: 'CalldataLogic',
       path: 'lib/aave-v3-origin/src/core/contracts/protocol/libraries/logic/CalldataLogic.sol',
-    }
+    },
+    DEFAULT_INTEREST_RATE_STRATEGY: {
+      name: 'DefaultReserveInterestRateStrategy',
+      path: 'lib/aave-v3-origin/src/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol',
+    },
   },
   [Networks.MAINNET]: {
     POOL: {
@@ -70,16 +66,6 @@ const CONTRACTS: ContractsType = {
       name: 'PoolConfigurator',
       path: 'PoolConfigurator/@aave/core-v3/contracts/protocol/pool/PoolConfigurator.sol',
       address: AaveV3Ethereum.POOL_CONFIGURATOR,
-    },
-    DEFAULT_A_TOKEN_IMPL: {
-      name: 'AToken',
-      path: 'AToken/@aave/core-v3/contracts/protocol/tokenization/AToken.sol',
-      address: AaveV3Ethereum.DEFAULT_A_TOKEN_IMPL_REV_1,
-    },
-    DEFAULT_VARIABLE_DEBT_TOKEN_IMPL: {
-      name: 'VariableDebtToken',
-      path: 'VariableDebtToken/@aave/core-v3/contracts/protocol/tokenization/VariableDebtToken.sol',
-      address: AaveV3Ethereum.DEFAULT_VARIABLE_DEBT_TOKEN_IMPL_REV_1,
     },
     BORROW_LOGIC: {
       name: 'BorrowLogic',
@@ -120,6 +106,11 @@ const CONTRACTS: ContractsType = {
       name: 'SupplyLogic',
       path: 'SupplyLogic/src/core/contracts/protocol/libraries/logic/SupplyLogic.sol',
       address: '0x589F82Ff8162Fa96545b435435713E9D6ca79fBB',
+    },
+    DEFAULT_INTEREST_RATE_STRATEGY: {
+      name: 'DefaultReserveInterestRateStrategy',
+      path: 'DefaultReserveInterestRateStrategy/lib/aave-address-book/lib/aave-v3-core/contracts/protocol/pool/DefaultReserveInterestRateStrategy.sol',
+      address: '0xf1e5355cEcaA71036CE21cdF8F9d04061B1BC6E1',
     },
   }
 };

@@ -1,6 +1,6 @@
 ```diff
 diff --git a/./downloads/MAINNET/POOL_CONFIGURATOR_IMPL.sol b/./downloads/FACTORY_LOCAL/POOL_CONFIGURATOR_IMPL.sol
-index b5e47e8..027ad1d 100644
+index b5e47e8..38b6ea7 100644
 --- a/./downloads/MAINNET/POOL_CONFIGURATOR_IMPL.sol
 +++ b/./downloads/FACTORY_LOCAL/POOL_CONFIGURATOR_IMPL.sol
 
@@ -18,17 +18,18 @@ index b5e47e8..027ad1d 100644
    string public constant INVALID_LTV = '63'; // 'Invalid ltv parameter for the reserve'
    string public constant INVALID_LIQ_THRESHOLD = '64'; // 'Invalid liquidity threshold parameter for the reserve'
    string public constant INVALID_LIQ_BONUS = '65'; // 'Invalid liquidity bonus parameter for the reserve'
-@@ -556,9 +799,16 @@ library Errors {
+@@ -556,9 +799,17 @@ library Errors {
    string public constant SILOED_BORROWING_VIOLATION = '89'; // 'User is trying to borrow multiple assets including a siloed one'
    string public constant RESERVE_DEBT_NOT_ZERO = '90'; // the total debt of the reserve needs to be 0
    string public constant FLASHLOAN_DISABLED = '91'; // FlashLoaning for this asset is disabled
-+  string public constant INVALID_MAXRATE = '92'; // The expect maximum borrow rate is invalid
++  string public constant INVALID_MAX_RATE = '92'; // The expect maximum borrow rate is invalid
 +  string public constant WITHDRAW_TO_ATOKEN = '93'; // Withdrawing to the aToken is not allowed
 +  string public constant SUPPLY_TO_ATOKEN = '94'; // Supplying to the aToken is not allowed
 +  string public constant SLOPE_2_MUST_BE_GTE_SLOPE_1 = '95'; // Variable interest rate slope 2 can not be lower than slope 1
 +  string public constant CALLER_NOT_RISK_OR_POOL_OR_EMERGENCY_ADMIN = '96'; // 'The caller of the function is not a risk, pool or emergency admin'
 +  string public constant LIQUIDATION_GRACE_SENTINEL_CHECK_FAILED = '97'; // 'Liquidation grace sentinel validation failed'
 +  string public constant INVALID_GRACE_PERIOD = '98'; // Grace period above a valid range
++  string public constant INVALID_FREEZE_STATE = '99'; // Reserve is already in the passed freeze state
  }
 
 -// downloads/MAINNET/POOL_CONFIGURATOR_IMPL/PoolConfigurator/@aave/core-v3/contracts/protocol/pool/PoolConfigurator.sol
@@ -48,14 +49,13 @@ index b5e47e8..027ad1d 100644
    IPool internal _pool;
 
 +  mapping(address => uint256) internal _pendingLtv;
-+  mapping(address => bool) internal _isPendingLtvSet;
 +
 +  uint40 public constant MAX_GRACE_PERIOD = 4 hours;
 +
    /**
     * @dev Only pool admin can call functions marked by this modifier.
     */
-@@ -3750,14 +4482,6 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -3750,14 +4496,6 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
      _;
    }
 
@@ -70,7 +70,7 @@ index b5e47e8..027ad1d 100644
    /**
     * @dev Only emergency or pool admin can call functions marked by this modifier.
     */
-@@ -3782,17 +4506,15 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -3782,25 +4520,29 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
      _;
    }
 
@@ -95,12 +95,11 @@ index b5e47e8..027ad1d 100644
 
    /// @inheritdoc IPoolConfigurator
    function initReserves(
-@@ -3800,7 +4522,14 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+     ConfiguratorInputTypes.InitReserveInput[] calldata input
    ) external override onlyAssetListingOrPoolAdmins {
      IPool cachedPool = _pool;
-     for (uint256 i = 0; i < input.length; i++) {
-+      require(IERC20Detailed(input[i].underlyingAsset).decimals() > 5, Errors.INVALID_DECIMALS);
 +
+     for (uint256 i = 0; i < input.length; i++) {
        ConfiguratorLogic.executeInitReserve(cachedPool, input[i]);
 +      emit ReserveInterestRateDataChanged(
 +        input[i].underlyingAsset,
@@ -110,14 +109,16 @@ index b5e47e8..027ad1d 100644
      }
    }
 
-@@ -3875,7 +4604,15 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -3875,13 +4617,23 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
        _checkNoSuppliers(asset);
      }
 
 -    currentConfig.setLtv(ltv);
++    uint256 newLtv = ltv;
++
 +    if (currentConfig.getFrozen()) {
 +      _pendingLtv[asset] = ltv;
-+      _isPendingLtvSet[asset] = true;
++      newLtv = 0;
 +
 +      emit PendingLtvChanged(asset, ltv);
 +    } else {
@@ -127,7 +128,14 @@ index b5e47e8..027ad1d 100644
      currentConfig.setLiquidationThreshold(liquidationThreshold);
      currentConfig.setLiquidationBonus(liquidationBonus);
 
-@@ -3920,9 +4657,29 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+     _pool.setConfiguration(asset, currentConfig);
+
+-    emit CollateralConfigurationChanged(asset, ltv, liquidationThreshold, liquidationBonus);
++    emit CollateralConfigurationChanged(asset, newLtv, liquidationThreshold, liquidationBonus);
+   }
+
+   /// @inheritdoc IPoolConfigurator
+@@ -3920,9 +4672,37 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
    }
 
    /// @inheritdoc IPoolConfigurator
@@ -137,28 +145,36 @@ index b5e47e8..027ad1d 100644
 +    bool freeze
 +  ) external override onlyRiskOrPoolOrEmergencyAdmins {
      DataTypes.ReserveConfigurationMap memory currentConfig = _pool.getConfiguration(asset);
++
++    require(freeze != currentConfig.getFrozen(), Errors.INVALID_FREEZE_STATE);
++
      currentConfig.setFrozen(freeze);
 +
++    uint256 ltvSet;
++    uint256 pendingLtvSet;
++
 +    if (freeze) {
-+      _pendingLtv[asset] = currentConfig.getLtv();
-+      _isPendingLtvSet[asset] = true;
++      pendingLtvSet = currentConfig.getLtv();
++      _pendingLtv[asset] = pendingLtvSet;
 +      currentConfig.setLtv(0);
-+
-+      emit PendingLtvChanged(asset, currentConfig.getLtv());
-+    } else if (_isPendingLtvSet[asset]) {
-+      uint256 ltv = _pendingLtv[asset];
-+      currentConfig.setLtv(ltv);
-+
++    } else {
++      ltvSet = _pendingLtv[asset];
++      currentConfig.setLtv(ltvSet);
 +      delete _pendingLtv[asset];
-+      delete _isPendingLtvSet[asset];
-+
-+      emit PendingLtvRemoved(asset);
 +    }
++
++    emit PendingLtvChanged(asset, pendingLtvSet);
++    emit CollateralConfigurationChanged(
++      asset,
++      ltvSet,
++      currentConfig.getLiquidationThreshold(),
++      currentConfig.getLiquidationBonus()
++    );
 +
      _pool.setConfiguration(asset, currentConfig);
      emit ReserveFrozen(asset, freeze);
    }
-@@ -3939,24 +4696,46 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -3939,24 +4719,54 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
    }
 
    /// @inheritdoc IPoolConfigurator
@@ -187,6 +203,14 @@ index b5e47e8..027ad1d 100644
 +    setReservePause(asset, paused, 0);
 +  }
 +
++  /// @inheritdoc IPoolConfigurator
++  function disableLiquidationGracePeriod(address asset) external override onlyEmergencyOrPoolAdmin {
++    // set the liquidation grace period in the past to disable liquidation grace period
++    _pool.setLiquidationGracePeriod(asset, 0);
++
++    emit LiquidationGracePeriodDisabled(asset);
++  }
++
    /// @inheritdoc IPoolConfigurator
    function setReserveFactor(
      address asset,
@@ -206,7 +230,7 @@ index b5e47e8..027ad1d 100644
    }
 
    /// @inheritdoc IPoolConfigurator
-@@ -3967,7 +4746,7 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -3967,7 +4777,7 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
      DataTypes.ReserveConfigurationMap memory currentConfig = _pool.getConfiguration(asset);
 
      uint256 oldDebtCeiling = currentConfig.getDebtCeiling();
@@ -215,7 +239,20 @@ index b5e47e8..027ad1d 100644
        _checkNoSuppliers(asset);
      }
      currentConfig.setDebtCeiling(newDebtCeiling);
-@@ -4122,28 +4901,41 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -4069,7 +4879,11 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+     for (uint256 i = 0; i < reserves.length; i++) {
+       DataTypes.ReserveConfigurationMap memory currentConfig = _pool.getConfiguration(reserves[i]);
+       if (categoryId == currentConfig.getEModeCategory()) {
+-        require(ltv > currentConfig.getLtv(), Errors.INVALID_EMODE_CATEGORY_PARAMS);
++        uint256 currentLtv = currentConfig.getFrozen()
++          ? _pendingLtv[reserves[i]]
++          : currentConfig.getLtv();
++        require(ltv > currentLtv, Errors.INVALID_EMODE_CATEGORY_PARAMS);
++
+         require(
+           liquidationThreshold > currentConfig.getLiquidationThreshold(),
+           Errors.INVALID_EMODE_CATEGORY_PARAMS
+@@ -4122,28 +4936,41 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
      emit UnbackedMintCapChanged(asset, oldUnbackedMintCap, newUnbackedMintCap);
    }
 
@@ -264,13 +301,13 @@ index b5e47e8..027ad1d 100644
    /// @inheritdoc IPoolConfigurator
    function updateBridgeProtocolFee(uint256 newBridgeProtocolFee) external override onlyPoolAdmin {
      require(
-@@ -4184,12 +4976,50 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -4184,12 +5011,50 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
      );
    }
 
 +  /// @inheritdoc IPoolConfigurator
-+  function getPendingLtv(address asset) external view override returns (uint256, bool) {
-+    return (_pendingLtv[asset], _isPendingLtvSet[asset]);
++  function getPendingLtv(address asset) external view override returns (uint256) {
++    return _pendingLtv[asset];
 +  }
 +
 +  /// @inheritdoc IPoolConfigurator
@@ -319,7 +356,7 @@ index b5e47e8..027ad1d 100644
    }
 
    function _checkNoBorrowers(address asset) internal view {
-@@ -4204,11 +5034,6 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -4204,11 +5069,6 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
      require(aclManager.isPoolAdmin(msg.sender), Errors.CALLER_NOT_POOL_ADMIN);
    }
 
@@ -331,7 +368,7 @@ index b5e47e8..027ad1d 100644
    function _onlyPoolOrEmergencyAdmin() internal view {
      IACLManager aclManager = IACLManager(_addressesProvider.getACLManager());
      require(
-@@ -4232,4 +5057,30 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
+@@ -4232,4 +5092,30 @@ contract PoolConfigurator is VersionedInitializable, IPoolConfigurator {
        Errors.CALLER_NOT_RISK_OR_POOL_ADMIN
      );
    }

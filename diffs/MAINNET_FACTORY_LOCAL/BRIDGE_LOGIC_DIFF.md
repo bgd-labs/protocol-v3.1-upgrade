@@ -1,6 +1,6 @@
 ```diff
 diff --git a/./downloads/MAINNET/BRIDGE_LOGIC.sol b/./downloads/FACTORY_LOCAL/BRIDGE_LOGIC.sol
-index 6eb71fc..25d7cff 100644
+index 6eb71fc..9ee0328 100644
 --- a/./downloads/MAINNET/BRIDGE_LOGIC.sol
 +++ b/./downloads/FACTORY_LOCAL/BRIDGE_LOGIC.sol
 
@@ -9,7 +9,7 @@ index 6eb71fc..25d7cff 100644
 
  library BridgeLogic {
    using ReserveLogic for DataTypes.ReserveCache;
-@@ -5755,7 +5973,7 @@ library BridgeLogic {
+@@ -5755,7 +5979,7 @@ library BridgeLogic {
 
      reserve.updateState(reserveCache);
 
@@ -18,7 +18,7 @@ index 6eb71fc..25d7cff 100644
 
      uint256 unbackedMintCap = reserveCache.reserveConfiguration.getUnbackedMintCap();
      uint256 reserveDecimals = reserveCache.reserveConfiguration.getDecimals();
-@@ -5767,7 +5985,7 @@ library BridgeLogic {
+@@ -5767,7 +5991,7 @@ library BridgeLogic {
        Errors.UNBACKED_MINT_CAP_EXCEEDED
      );
 
@@ -27,7 +27,7 @@ index 6eb71fc..25d7cff 100644
 
      bool isFirstSupply = IAToken(reserveCache.aTokenAddress).mint(
        msg.sender,
-@@ -5831,7 +6049,7 @@ library BridgeLogic {
+@@ -5831,7 +6055,7 @@ library BridgeLogic {
      reserve.accruedToTreasury += feeToProtocol.rayDiv(reserveCache.nextLiquidityIndex).toUint128();
 
      reserve.unbacked -= backingAmount.toUint128();

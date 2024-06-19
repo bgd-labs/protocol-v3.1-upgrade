@@ -1,6 +1,6 @@
 ```diff
 diff --git a/./downloads/MAINNET/BORROW_LOGIC.sol b/./downloads/FACTORY_LOCAL/BORROW_LOGIC.sol
-index 4581361..f55a4cc 100644
+index 4581361..6e38ae2 100644
 --- a/./downloads/MAINNET/BORROW_LOGIC.sol
 +++ b/./downloads/FACTORY_LOCAL/BORROW_LOGIC.sol
 
@@ -9,7 +9,7 @@ index 4581361..f55a4cc 100644
 
  /**
   * @title BorrowLogic library
-@@ -5827,6 +6045,7 @@ library BorrowLogic {
+@@ -5827,6 +6051,7 @@ library BorrowLogic {
      DataTypes.InterestRateMode interestRateMode
    );
    event IsolationModeTotalDebtUpdated(address indexed asset, uint256 totalDebt);
@@ -17,7 +17,7 @@ index 4581361..f55a4cc 100644
 
    /**
     * @notice Implements the borrow feature. Borrowing allows users that provided collateral to draw liquidity from the
-@@ -5845,7 +6064,7 @@ library BorrowLogic {
+@@ -5845,7 +6070,7 @@ library BorrowLogic {
      mapping(uint8 => DataTypes.EModeCategory) storage eModeCategories,
      DataTypes.UserConfigurationMap storage userConfig,
      DataTypes.ExecuteBorrowParams memory params
@@ -26,7 +26,7 @@ index 4581361..f55a4cc 100644
      DataTypes.ReserveData storage reserve = reservesData[params.asset];
      DataTypes.ReserveCache memory reserveCache = reserve.cache();
 
-@@ -5917,7 +6136,7 @@ library BorrowLogic {
+@@ -5917,7 +6142,7 @@ library BorrowLogic {
        );
      }
 
@@ -35,7 +35,7 @@ index 4581361..f55a4cc 100644
        reserveCache,
        params.asset,
        0,
-@@ -5999,7 +6218,7 @@ library BorrowLogic {
+@@ -5999,7 +6224,7 @@ library BorrowLogic {
        ).burn(params.onBehalfOf, paybackAmount, reserveCache.nextVariableBorrowIndex);
      }
 
@@ -44,7 +44,7 @@ index 4581361..f55a4cc 100644
        reserveCache,
        params.asset,
        params.useATokens ? 0 : paybackAmount,
-@@ -6025,6 +6244,11 @@ library BorrowLogic {
+@@ -6025,6 +6250,11 @@ library BorrowLogic {
          paybackAmount,
          reserveCache.nextLiquidityIndex
        );
@@ -56,7 +56,7 @@ index 4581361..f55a4cc 100644
      } else {
        IERC20(params.asset).safeTransferFrom(msg.sender, reserveCache.aTokenAddress, paybackAmount);
        IAToken(reserveCache.aTokenAddress).handleRepayment(
-@@ -6066,7 +6290,7 @@ library BorrowLogic {
+@@ -6066,7 +6296,7 @@ library BorrowLogic {
      (, reserveCache.nextTotalStableDebt, reserveCache.nextAvgStableBorrowRate) = stableDebtToken
        .mint(user, user, stableDebt, reserve.currentStableBorrowRate);
 
@@ -65,7 +65,14 @@ index 4581361..f55a4cc 100644
 
      emit RebalanceStableBorrowRate(asset, user);
    }
-@@ -6083,16 +6307,14 @@ library BorrowLogic {
+@@ -6077,22 +6307,21 @@ library BorrowLogic {
+    * @param reserve The of the reserve of the asset being repaid
+    * @param userConfig The user configuration mapping that tracks the supplied/borrowed assets
+    * @param asset The asset of the position being swapped
++   * @param user The user whose debt position is being swapped
+    * @param interestRateMode The current interest rate mode of the position being swapped
+    */
+   function executeSwapBorrowRateMode(
      DataTypes.ReserveData storage reserve,
      DataTypes.UserConfigurationMap storage userConfig,
      address asset,
@@ -84,7 +91,7 @@ index 4581361..f55a4cc 100644
 
      ValidationLogic.validateSwapRateMode(
        reserve,
-@@ -6106,23 +6328,23 @@ library BorrowLogic {
+@@ -6106,23 +6335,23 @@ library BorrowLogic {
      if (interestRateMode == DataTypes.InterestRateMode.STABLE) {
        (reserveCache.nextTotalStableDebt, reserveCache.nextAvgStableBorrowRate) = IStableDebtToken(
          reserveCache.stableDebtTokenAddress
