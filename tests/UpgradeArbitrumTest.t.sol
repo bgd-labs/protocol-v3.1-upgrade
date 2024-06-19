@@ -12,7 +12,6 @@ contract UpgradeArbitrumTest is
     187970620,
     0x62B8e137ee87Ab3CaEB2FEA3B88D04abeA7C5579,
     AaveV3ArbitrumAssets.USDC_UNDERLYING,
-    AaveV3Arbitrum.ACL_ADMIN,
     1.5 * 1e3 // limit is 0.015%
   )
 {

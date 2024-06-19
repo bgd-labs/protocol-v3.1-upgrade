@@ -7,6 +7,7 @@ import {IPoolConfigurator} from 'aave-v3-origin/core/contracts/interfaces/IPoolC
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
 import {AaveV3EthereumAssets, IACLManager} from 'aave-address-book/AaveV3Ethereum.sol';
+import {ReserveConfiguration} from 'aave-v3-origin/core/contracts/protocol/libraries/configuration/ReserveConfiguration.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
   /**
@@ -42,6 +43,8 @@ contract UpgradePayload is IProposalGenericExecutor {
   IPoolConfigurator public immutable CONFIGURATOR;
   DefaultReserveInterestRateStrategyV2 public immutable DEFAULT_IR;
 
+  using ReserveConfiguration for DataTypes.ReserveConfigurationMap;
+
   address public immutable POOL_IMPL;
   address public immutable POOL_CONFIGURATOR_IMPL;
   address public immutable POOL_DATA_PROVIDER;
@@ -75,6 +78,14 @@ contract UpgradePayload is IProposalGenericExecutor {
     for (uint256 i = 0; i < reserves.length; i++) {
       DataTypes.ReserveData memory reserveData = POOL.getReserveDataExtended(reserves[i]);
       uint256 currentUOpt;
+
+      // @dev the decision to use setReserveFreeze was taken to not query and iterate 2 times over getReserveDataExtended() data
+      // on unfreezing reserve existing ltv will be overridden with _pendingLtv which was not set and is 0 for all assets
+      // then after freezing back both pending and current LTV's stays 0
+      if (reserveData.configuration.getFrozen() && reserveData.configuration.getLtv() != 0) {
+        CONFIGURATOR.setReserveFreeze(reserves[i], false);
+        CONFIGURATOR.setReserveFreeze(reserves[i], true);
+      }
 
       if (reserves[i] == AaveV3EthereumAssets.GHO_UNDERLYING) {
         currentUOpt = DEFAULT_IR.MAX_OPTIMAL_POINT();
