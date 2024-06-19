@@ -1,6 +1,6 @@
 ```diff
 diff --git a/./downloads/MAINNET/POOL_IMPL.sol b/./downloads/FACTORY_LOCAL/POOL_IMPL.sol
-index a6fb24f..9faf316 100644
+index a6fb24f..56a489f 100644
 --- a/./downloads/MAINNET/POOL_IMPL.sol
 +++ b/./downloads/FACTORY_LOCAL/POOL_IMPL.sol
 
@@ -9,17 +9,18 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title Errors library
-@@ -1189,9 +1189,16 @@ library Errors {
+@@ -1189,9 +1189,17 @@ library Errors {
    string public constant SILOED_BORROWING_VIOLATION = '89'; // 'User is trying to borrow multiple assets including a siloed one'
    string public constant RESERVE_DEBT_NOT_ZERO = '90'; // the total debt of the reserve needs to be 0
    string public constant FLASHLOAN_DISABLED = '91'; // FlashLoaning for this asset is disabled
-+  string public constant INVALID_MAXRATE = '92'; // The expect maximum borrow rate is invalid
++  string public constant INVALID_MAX_RATE = '92'; // The expect maximum borrow rate is invalid
 +  string public constant WITHDRAW_TO_ATOKEN = '93'; // Withdrawing to the aToken is not allowed
 +  string public constant SUPPLY_TO_ATOKEN = '94'; // Supplying to the aToken is not allowed
 +  string public constant SLOPE_2_MUST_BE_GTE_SLOPE_1 = '95'; // Variable interest rate slope 2 can not be lower than slope 1
 +  string public constant CALLER_NOT_RISK_OR_POOL_OR_EMERGENCY_ADMIN = '96'; // 'The caller of the function is not a risk, pool or emergency admin'
 +  string public constant LIQUIDATION_GRACE_SENTINEL_CHECK_FAILED = '97'; // 'Liquidation grace sentinel validation failed'
 +  string public constant INVALID_GRACE_PERIOD = '98'; // Grace period above a valid range
++  string public constant INVALID_FREEZE_STATE = '99'; // Reserve is already in the passed freeze state
  }
 
 -// downloads/MAINNET/POOL_IMPL/Pool/lib/aave-v3-factory/src/core/contracts/protocol/libraries/types/DataTypes.sol
@@ -66,16 +67,16 @@ index a6fb24f..9faf316 100644
    struct ReserveData {
      //stores the reserve configuration
      ReserveConfigurationMap configuration;
-@@ -1398,6 +1442,8 @@ library DataTypes {
+@@ -1398,6 +1443,8 @@ library DataTypes {
      uint40 lastUpdateTimestamp;
      //the id of the reserve. Represents the position in the list of the active reserves
      uint16 id;
-+    //timestamp in the future, until when liquidations are not allowed on the reserve
++    //timestamp until when liquidations are not allowed on the reserve, if set to past liquidations will be allowed
 +    uint40 liquidationGracePeriodUntil;
      //aToken address
      address aTokenAddress;
      //stableDebtToken address
-@@ -1412,6 +1458,8 @@ library DataTypes {
+@@ -1412,6 +1459,8 @@ library DataTypes {
      uint128 unbacked;
      //the outstanding debt borrowed against this asset in isolation mode
      uint128 isolationModeTotalDebt;
@@ -84,7 +85,7 @@ index a6fb24f..9faf316 100644
    }
 
    struct ReserveConfigurationMap {
-@@ -1428,13 +1476,14 @@ library DataTypes {
+@@ -1428,13 +1477,14 @@ library DataTypes {
      //bit 62: siloed borrowing enabled
      //bit 63: flashloaning enabled
      //bit 64-79: reserve factor
@@ -106,7 +107,7 @@ index a6fb24f..9faf316 100644
 
      uint256 data;
    }
-@@ -1634,7 +1683,8 @@ library DataTypes {
+@@ -1634,7 +1684,8 @@ library DataTypes {
      uint256 averageStableBorrowRate;
      uint256 reserveFactor;
      address reserve;
@@ -116,7 +117,7 @@ index a6fb24f..9faf316 100644
    }
 
    struct InitReserveParams {
-@@ -1648,7 +1698,7 @@ library DataTypes {
+@@ -1648,7 +1699,7 @@ library DataTypes {
    }
  }
 
@@ -159,7 +160,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title MathUtils library
-@@ -2157,7 +2215,7 @@ library MathUtils {
+@@ -2157,7 +2216,7 @@ library MathUtils {
    }
  }
 
@@ -168,22 +169,22 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title IPool
-@@ -2535,6 +2593,14 @@ interface IPool {
+@@ -2535,6 +2594,14 @@ interface IPool {
     */
    function swapBorrowRateMode(address asset, uint256 interestRateMode) external;
 
 +  /**
-+   * @notice Allows a borrower to swap his debt between stable and variable mode,
-+   * @dev introduce in a flavor stable rate deprecation
++   * @notice Permissionless method which allows anyone to swap a users stable debt to variable debt
++   * @dev Introduced in favor of stable rate deprecation
 +   * @param asset The address of the underlying asset borrowed
-+   * @param user The address of the user to be swapped
++   * @param user The address of the user whose debt will be swapped from stable to variable
 +   */
 +  function swapToVariable(address asset, address user) external;
 +
    /**
     * @notice Rebalances the stable interest rate of a user to the current stable rate defined on the reserve.
     * - Users can be rebalanced if the following conditions are satisfied:
-@@ -2679,6 +2745,22 @@ interface IPool {
+@@ -2679,6 +2746,22 @@ interface IPool {
      address rateStrategyAddress
    ) external;
 
@@ -206,7 +207,7 @@ index a6fb24f..9faf316 100644
    /**
     * @notice Sets the configuration bitmap of the reserve as a whole
     * @dev Only callable by the PoolConfigurator contract
-@@ -2734,7 +2816,23 @@ interface IPool {
+@@ -2734,7 +2817,23 @@ interface IPool {
     * @param asset The address of the underlying asset of the reserve
     * @return The state and configuration data of the reserve
     */
@@ -231,7 +232,7 @@ index a6fb24f..9faf316 100644
 
    /**
     * @notice Validates and finalizes an aToken transfer
-@@ -2839,6 +2937,22 @@ interface IPool {
+@@ -2839,6 +2938,22 @@ interface IPool {
     */
    function resetIsolationModeTotalDebt(address asset) external;
 
@@ -254,7 +255,7 @@ index a6fb24f..9faf316 100644
    /**
     * @notice Returns the percentage of available liquidity that can be borrowed at once at stable rate
     * @return The percentage of available liquidity to borrow, expressed in bps
-@@ -2896,9 +3010,44 @@ interface IPool {
+@@ -2896,9 +3011,44 @@ interface IPool {
     *   0 if the action is executed directly by the user, without any middle-man
     */
    function deposit(address asset, uint256 amount, address onBehalfOf, uint16 referralCode) external;
@@ -300,15 +301,15 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title ReserveConfiguration library
-@@ -2925,6 +3074,7 @@ library ReserveConfiguration {
+@@ -2925,6 +3075,7 @@ library ReserveConfiguration {
    uint256 internal constant EMODE_CATEGORY_MASK =            0xFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF; // prettier-ignore
    uint256 internal constant UNBACKED_MINT_CAP_MASK =         0xFFFFFFFFFFF000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF; // prettier-ignore
    uint256 internal constant DEBT_CEILING_MASK =              0xF0000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF; // prettier-ignore
-+  uint256 internal constant VIRTUAL_ACC_ACTIVE =             0xEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF; // prettier-ignore
++  uint256 internal constant VIRTUAL_ACC_ACTIVE_MASK =        0xEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF; // prettier-ignore
 
    /// @dev For the LTV, the start bit is 0 (up to 15), hence no bitshifting is needed
    uint256 internal constant LIQUIDATION_THRESHOLD_START_BIT_POSITION = 16;
-@@ -2945,6 +3095,7 @@ library ReserveConfiguration {
+@@ -2945,6 +3096,7 @@ library ReserveConfiguration {
    uint256 internal constant EMODE_CATEGORY_START_BIT_POSITION = 168;
    uint256 internal constant UNBACKED_MINT_CAP_START_BIT_POSITION = 176;
    uint256 internal constant DEBT_CEILING_START_BIT_POSITION = 212;
@@ -316,7 +317,7 @@ index a6fb24f..9faf316 100644
 
    uint256 internal constant MAX_VALID_LTV = 65535;
    uint256 internal constant MAX_VALID_LIQUIDATION_THRESHOLD = 65535;
-@@ -3440,6 +3591,31 @@ library ReserveConfiguration {
+@@ -3440,6 +3592,33 @@ library ReserveConfiguration {
      return (self.data & ~FLASHLOAN_ENABLED_MASK) != 0;
    }
 
@@ -330,25 +331,26 @@ index a6fb24f..9faf316 100644
 +    bool active
 +  ) internal pure {
 +    self.data =
-+      (self.data & VIRTUAL_ACC_ACTIVE) |
++      (self.data & VIRTUAL_ACC_ACTIVE_MASK) |
 +      (uint256(active ? 1 : 0) << VIRTUAL_ACC_START_BIT_POSITION);
 +  }
 +
 +  /**
 +   * @notice Gets the virtual account active/not state of the reserve
++   * @dev The state should be true for all normal assets and should be false
++   *  only in special cases (ex. GHO) where an asset is minted instead of supplied.
 +   * @param self The reserve configuration
 +   * @return The active state
 +   */
 +  function getIsVirtualAccActive(
 +    DataTypes.ReserveConfigurationMap memory self
 +  ) internal pure returns (bool) {
-+    return (self.data & ~VIRTUAL_ACC_ACTIVE) != 0;
++    return (self.data & ~VIRTUAL_ACC_ACTIVE_MASK) != 0;
 +  }
 +
    /**
     * @notice Gets the configuration flags of the reserve
     * @param self The reserve configuration
-@@ -3506,7 +3682,7 @@ library ReserveConfiguration {
    }
  }
 
@@ -357,7 +359,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title ReserveLogic library
-@@ -4670,7 +4846,7 @@ library ReserveLogic {
+@@ -4670,7 +4849,7 @@ library ReserveLogic {
      reserve.interestRateStrategyAddress = interestRateStrategyAddress;
    }
 
@@ -366,7 +368,7 @@ index a6fb24f..9faf316 100644
      uint256 nextLiquidityRate;
      uint256 nextStableRate;
      uint256 nextVariableRate;
-@@ -4685,14 +4861,14 @@ library ReserveLogic {
+@@ -4685,14 +4864,14 @@ library ReserveLogic {
     * @param liquidityAdded The amount of liquidity added to the protocol (supply or repay) in the previous action
     * @param liquidityTaken The amount of liquidity taken from the protocol (redeem or borrow)
     */
@@ -383,7 +385,7 @@ index a6fb24f..9faf316 100644
 
      vars.totalVariableDebt = reserveCache.nextScaledVariableDebt.rayMul(
        reserveCache.nextVariableBorrowIndex
-@@ -4712,7 +4888,8 @@ library ReserveLogic {
+@@ -4712,7 +4891,8 @@ library ReserveLogic {
          averageStableBorrowRate: reserveCache.nextAvgStableBorrowRate,
          reserveFactor: reserveCache.reserveFactor,
          reserve: reserveAddress,
@@ -393,7 +395,7 @@ index a6fb24f..9faf316 100644
        })
      );
 
-@@ -4720,6 +4897,16 @@ library ReserveLogic {
+@@ -4720,6 +4900,16 @@ library ReserveLogic {
      reserve.currentStableBorrowRate = vars.nextStableRate.toUint128();
      reserve.currentVariableBorrowRate = vars.nextVariableRate.toUint128();
 
@@ -410,7 +412,34 @@ index a6fb24f..9faf316 100644
      emit ReserveDataUpdated(
        reserveAddress,
        vars.nextLiquidityRate,
-@@ -4877,7 +5064,7 @@ library ReserveLogic {
+@@ -4877,7 +5067,7 @@ library ReserveLogic {
+   }
+ }
+
+-// downloads/MAINNET/POOL_IMPL/Pool/lib/aave-v3-factory/src/core/contracts/protocol/pool/PoolStorage.sol
++// lib/aave-v3-origin/src/core/contracts/protocol/pool/PoolStorage.sol
+
+ /**
+  * @title PoolStorage
+@@ -4923,7 +5113,7 @@ contract PoolStorage {
+   uint16 internal _reservesCount;
+ }
+
+-// downloads/MAINNET/POOL_IMPL/Pool/lib/aave-v3-factory/src/core/contracts/protocol/libraries/logic/EModeLogic.sol
++// lib/aave-v3-origin/src/core/contracts/protocol/libraries/logic/EModeLogic.sol
+
+ /**
+  * @title EModeLogic library
+@@ -5024,7 +5214,7 @@ library EModeLogic {
+   }
+ }
+
+-// downloads/MAINNET/POOL_IMPL/Pool/lib/aave-v3-factory/src/core/contracts/protocol/libraries/logic/GenericLogic.sol
++// lib/aave-v3-origin/src/core/contracts/protocol/libraries/logic/GenericLogic.sol
+
+ /**
+  * @title GenericLogic library
+@@ -5282,7 +5472,7 @@ library GenericLogic {
    }
  }
 
@@ -419,7 +448,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title ReserveLogic library
-@@ -5327,7 +5514,8 @@ library ValidationLogic {
+@@ -5327,7 +5517,8 @@ library ValidationLogic {
    function validateSupply(
      DataTypes.ReserveCache memory reserveCache,
      DataTypes.ReserveData storage reserve,
@@ -429,7 +458,7 @@ index a6fb24f..9faf316 100644
    ) internal view {
      require(amount != 0, Errors.INVALID_AMOUNT);
 
-@@ -5337,6 +5525,7 @@ library ValidationLogic {
+@@ -5337,6 +5528,7 @@ library ValidationLogic {
      require(isActive, Errors.RESERVE_INACTIVE);
      require(!isPaused, Errors.RESERVE_PAUSED);
      require(!isFrozen, Errors.RESERVE_FROZEN);
@@ -437,7 +466,7 @@ index a6fb24f..9faf316 100644
 
      uint256 supplyCap = reserveCache.reserveConfiguration.getSupplyCap();
      require(
-@@ -5419,6 +5608,11 @@ library ValidationLogic {
+@@ -5419,6 +5611,11 @@ library ValidationLogic {
      require(!vars.isPaused, Errors.RESERVE_PAUSED);
      require(!vars.isFrozen, Errors.RESERVE_FROZEN);
      require(vars.borrowingEnabled, Errors.BORROWING_NOT_ENABLED);
@@ -449,7 +478,7 @@ index a6fb24f..9faf316 100644
 
      require(
        params.priceOracleSentinel == address(0) ||
-@@ -5546,7 +5740,7 @@ library ValidationLogic {
+@@ -5546,7 +5743,7 @@ library ValidationLogic {
          Errors.COLLATERAL_SAME_AS_BORROWING_CURRENCY
        );
 
@@ -458,7 +487,7 @@ index a6fb24f..9faf316 100644
 
        //calculate the max available loan size in stable rate mode as a percentage of the
        //available liquidity
-@@ -5622,12 +5816,11 @@ library ValidationLogic {
+@@ -5622,12 +5819,11 @@ library ValidationLogic {
      uint256 variableDebt,
      DataTypes.InterestRateMode currentRateMode
    ) internal view {
@@ -472,7 +501,7 @@ index a6fb24f..9faf316 100644
 
      if (currentRateMode == DataTypes.InterestRateMode.STABLE) {
        require(stableDebt != 0, Errors.NO_OUTSTANDING_STABLE_DEBT);
-@@ -5685,7 +5878,8 @@ library ValidationLogic {
+@@ -5685,7 +5881,8 @@ library ValidationLogic {
            averageStableBorrowRate: 0,
            reserveFactor: reserveCache.reserveFactor,
            reserve: reserveAddress,
@@ -482,16 +511,19 @@ index a6fb24f..9faf316 100644
          })
        );
 
-@@ -5725,7 +5919,7 @@ library ValidationLogic {
+@@ -5725,7 +5922,10 @@ library ValidationLogic {
    ) internal view {
      require(assets.length == amounts.length, Errors.INCONSISTENT_FLASHLOAN_PARAMS);
      for (uint256 i = 0; i < assets.length; i++) {
 -      validateFlashloanSimple(reservesData[assets[i]]);
++      for (uint256 j = i + 1; j < assets.length; j++) {
++        require(assets[i] != assets[j], Errors.INCONSISTENT_FLASHLOAN_PARAMS);
++      }
 +      validateFlashloanSimple(reservesData[assets[i]], amounts[i]);
      }
    }
 
-@@ -5733,11 +5927,19 @@ library ValidationLogic {
+@@ -5733,11 +5933,19 @@ library ValidationLogic {
     * @notice Validates a flashloan action.
     * @param reserve The state of the reserve
     */
@@ -512,7 +544,7 @@ index a6fb24f..9faf316 100644
    }
 
    struct ValidateLiquidationCallLocalVars {
-@@ -5752,11 +5954,13 @@ library ValidationLogic {
+@@ -5752,11 +5960,13 @@ library ValidationLogic {
     * @notice Validates the liquidation action.
     * @param userConfig The user configuration mapping
     * @param collateralReserve The reserve data of the collateral
@@ -526,7 +558,7 @@ index a6fb24f..9faf316 100644
      DataTypes.ValidateLiquidationCallParams memory params
    ) internal view {
      ValidateLiquidationCallLocalVars memory vars;
-@@ -5780,6 +5984,12 @@ library ValidationLogic {
+@@ -5780,6 +5990,12 @@ library ValidationLogic {
        Errors.PRICE_ORACLE_SENTINEL_CHECK_FAILED
      );
 
@@ -539,7 +571,7 @@ index a6fb24f..9faf316 100644
      require(
        params.healthFactor < HEALTH_FACTOR_LIQUIDATION_THRESHOLD,
        Errors.HEALTH_FACTOR_NOT_BELOW_THRESHOLD
-@@ -6016,7 +6226,7 @@ library ValidationLogic {
+@@ -6016,7 +6232,7 @@ library ValidationLogic {
    }
  }
 
@@ -548,7 +580,7 @@ index a6fb24f..9faf316 100644
 
  library BridgeLogic {
    using ReserveLogic for DataTypes.ReserveCache;
-@@ -6067,7 +6277,7 @@ library BridgeLogic {
+@@ -6067,7 +6283,7 @@ library BridgeLogic {
 
      reserve.updateState(reserveCache);
 
@@ -557,7 +589,7 @@ index a6fb24f..9faf316 100644
 
      uint256 unbackedMintCap = reserveCache.reserveConfiguration.getUnbackedMintCap();
      uint256 reserveDecimals = reserveCache.reserveConfiguration.getDecimals();
-@@ -6079,7 +6289,7 @@ library BridgeLogic {
+@@ -6079,7 +6295,7 @@ library BridgeLogic {
        Errors.UNBACKED_MINT_CAP_EXCEEDED
      );
 
@@ -566,7 +598,7 @@ index a6fb24f..9faf316 100644
 
      bool isFirstSupply = IAToken(reserveCache.aTokenAddress).mint(
        msg.sender,
-@@ -6143,7 +6353,7 @@ library BridgeLogic {
+@@ -6143,7 +6359,7 @@ library BridgeLogic {
      reserve.accruedToTreasury += feeToProtocol.rayDiv(reserveCache.nextLiquidityIndex).toUint128();
 
      reserve.unbacked -= backingAmount.toUint128();
@@ -575,7 +607,7 @@ index a6fb24f..9faf316 100644
 
      IERC20(asset).safeTransferFrom(msg.sender, reserveCache.aTokenAddress, added);
 
-@@ -6153,7 +6363,7 @@ library BridgeLogic {
+@@ -6153,7 +6369,7 @@ library BridgeLogic {
    }
  }
 
@@ -584,7 +616,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title PoolLogic library
-@@ -6265,6 +6475,20 @@ library PoolLogic {
+@@ -6265,6 +6481,20 @@ library PoolLogic {
      emit IsolationModeTotalDebtUpdated(asset, 0);
    }
 
@@ -605,7 +637,7 @@ index a6fb24f..9faf316 100644
    /**
     * @notice Drop a reserve
     * @param reservesData The state of all the reserves
-@@ -6329,7 +6553,7 @@ library PoolLogic {
+@@ -6329,7 +6559,7 @@ library PoolLogic {
    }
  }
 
@@ -614,7 +646,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title SupplyLogic library
-@@ -6378,9 +6602,9 @@ library SupplyLogic {
+@@ -6378,9 +6608,9 @@ library SupplyLogic {
 
      reserve.updateState(reserveCache);
 
@@ -626,7 +658,7 @@ index a6fb24f..9faf316 100644
 
      IERC20(params.asset).safeTransferFrom(msg.sender, reserveCache.aTokenAddress, params.amount);
 
-@@ -6431,6 +6655,8 @@ library SupplyLogic {
+@@ -6431,6 +6661,8 @@ library SupplyLogic {
      DataTypes.ReserveData storage reserve = reservesData[params.asset];
      DataTypes.ReserveCache memory reserveCache = reserve.cache();
 
@@ -635,7 +667,7 @@ index a6fb24f..9faf316 100644
      reserve.updateState(reserveCache);
 
      uint256 userBalance = IAToken(reserveCache.aTokenAddress).scaledBalanceOf(msg.sender).rayMul(
-@@ -6445,7 +6671,7 @@ library SupplyLogic {
+@@ -6445,7 +6677,7 @@ library SupplyLogic {
 
      ValidationLogic.validateWithdraw(reserveCache, amountToWithdraw, userBalance);
 
@@ -644,7 +676,7 @@ index a6fb24f..9faf316 100644
 
      bool isCollateral = userConfig.isUsingAsCollateral(reserve.id);
 
-@@ -6504,8 +6730,9 @@ library SupplyLogic {
+@@ -6504,8 +6736,9 @@ library SupplyLogic {
      ValidationLogic.validateTransfer(reserve);
 
      uint256 reserveId = reserve.id;
@@ -655,7 +687,7 @@ index a6fb24f..9faf316 100644
        DataTypes.UserConfigurationMap storage fromConfig = usersConfig[params.from];
 
        if (fromConfig.isUsingAsCollateral(reserveId)) {
-@@ -6614,7 +6841,7 @@ library SupplyLogic {
+@@ -6614,7 +6847,7 @@ library SupplyLogic {
    }
  }
 
@@ -664,7 +696,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title BorrowLogic library
-@@ -6653,6 +6880,7 @@ library BorrowLogic {
+@@ -6653,6 +6886,7 @@ library BorrowLogic {
      DataTypes.InterestRateMode interestRateMode
    );
    event IsolationModeTotalDebtUpdated(address indexed asset, uint256 totalDebt);
@@ -672,7 +704,7 @@ index a6fb24f..9faf316 100644
 
    /**
     * @notice Implements the borrow feature. Borrowing allows users that provided collateral to draw liquidity from the
-@@ -6671,7 +6899,7 @@ library BorrowLogic {
+@@ -6671,7 +6905,7 @@ library BorrowLogic {
      mapping(uint8 => DataTypes.EModeCategory) storage eModeCategories,
      DataTypes.UserConfigurationMap storage userConfig,
      DataTypes.ExecuteBorrowParams memory params
@@ -681,7 +713,7 @@ index a6fb24f..9faf316 100644
      DataTypes.ReserveData storage reserve = reservesData[params.asset];
      DataTypes.ReserveCache memory reserveCache = reserve.cache();
 
-@@ -6743,7 +6971,7 @@ library BorrowLogic {
+@@ -6743,7 +6977,7 @@ library BorrowLogic {
        );
      }
 
@@ -690,7 +722,7 @@ index a6fb24f..9faf316 100644
        reserveCache,
        params.asset,
        0,
-@@ -6825,7 +7053,7 @@ library BorrowLogic {
+@@ -6825,7 +7059,7 @@ library BorrowLogic {
        ).burn(params.onBehalfOf, paybackAmount, reserveCache.nextVariableBorrowIndex);
      }
 
@@ -699,7 +731,7 @@ index a6fb24f..9faf316 100644
        reserveCache,
        params.asset,
        params.useATokens ? 0 : paybackAmount,
-@@ -6851,6 +7079,11 @@ library BorrowLogic {
+@@ -6851,6 +7085,11 @@ library BorrowLogic {
          paybackAmount,
          reserveCache.nextLiquidityIndex
        );
@@ -711,7 +743,7 @@ index a6fb24f..9faf316 100644
      } else {
        IERC20(params.asset).safeTransferFrom(msg.sender, reserveCache.aTokenAddress, paybackAmount);
        IAToken(reserveCache.aTokenAddress).handleRepayment(
-@@ -6892,7 +7125,7 @@ library BorrowLogic {
+@@ -6892,7 +7131,7 @@ library BorrowLogic {
      (, reserveCache.nextTotalStableDebt, reserveCache.nextAvgStableBorrowRate) = stableDebtToken
        .mint(user, user, stableDebt, reserve.currentStableBorrowRate);
 
@@ -720,7 +752,14 @@ index a6fb24f..9faf316 100644
 
      emit RebalanceStableBorrowRate(asset, user);
    }
-@@ -6909,16 +7142,14 @@ library BorrowLogic {
+@@ -6903,22 +7142,21 @@ library BorrowLogic {
+    * @param reserve The of the reserve of the asset being repaid
+    * @param userConfig The user configuration mapping that tracks the supplied/borrowed assets
+    * @param asset The asset of the position being swapped
++   * @param user The user whose debt position is being swapped
+    * @param interestRateMode The current interest rate mode of the position being swapped
+    */
+   function executeSwapBorrowRateMode(
      DataTypes.ReserveData storage reserve,
      DataTypes.UserConfigurationMap storage userConfig,
      address asset,
@@ -739,7 +778,7 @@ index a6fb24f..9faf316 100644
 
      ValidationLogic.validateSwapRateMode(
        reserve,
-@@ -6932,28 +7163,28 @@ library BorrowLogic {
+@@ -6932,28 +7170,28 @@ library BorrowLogic {
      if (interestRateMode == DataTypes.InterestRateMode.STABLE) {
        (reserveCache.nextTotalStableDebt, reserveCache.nextAvgStableBorrowRate) = IStableDebtToken(
          reserveCache.stableDebtTokenAddress
@@ -775,7 +814,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title LiquidationLogic library
-@@ -7066,6 +7297,7 @@ library LiquidationLogic {
+@@ -7066,6 +7304,7 @@ library LiquidationLogic {
      ValidationLogic.validateLiquidationCall(
        userConfig,
        collateralReserve,
@@ -783,7 +822,7 @@ index a6fb24f..9faf316 100644
        DataTypes.ValidateLiquidationCallParams({
          debtReserveCache: vars.debtReserveCache,
          totalDebt: vars.userTotalDebt,
-@@ -7114,7 +7346,7 @@ library LiquidationLogic {
+@@ -7114,7 +7353,7 @@ library LiquidationLogic {
 
      _burnDebtTokens(params, vars);
 
@@ -792,7 +831,7 @@ index a6fb24f..9faf316 100644
        vars.debtReserveCache,
        params.debtAsset,
        vars.actualDebtToLiquidate,
-@@ -7191,7 +7423,7 @@ library LiquidationLogic {
+@@ -7191,7 +7430,7 @@ library LiquidationLogic {
    ) internal {
      DataTypes.ReserveCache memory collateralReserveCache = collateralReserve.cache();
      collateralReserve.updateState(collateralReserveCache);
@@ -801,7 +840,7 @@ index a6fb24f..9faf316 100644
        collateralReserveCache,
        params.collateralAsset,
        0,
-@@ -7462,7 +7694,7 @@ library LiquidationLogic {
+@@ -7462,7 +7701,7 @@ library LiquidationLogic {
    }
  }
 
@@ -810,7 +849,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title FlashLoanLogic library
-@@ -7541,6 +7773,13 @@ library FlashLoanLogic {
+@@ -7541,6 +7780,13 @@ library FlashLoanLogic {
          DataTypes.InterestRateMode.NONE
          ? vars.currentAmount.percentMul(vars.flashloanPremiumTotal)
          : 0;
@@ -824,7 +863,7 @@ index a6fb24f..9faf316 100644
        IAToken(reservesData[params.assets[vars.i]].aTokenAddress).transferUnderlyingTo(
          params.receiverAddress,
          vars.currentAmount
-@@ -7634,10 +7873,15 @@ library FlashLoanLogic {
+@@ -7634,10 +7880,15 @@ library FlashLoanLogic {
      // is altered to (validation -> user payload -> cache -> updateState -> changeState -> updateRates) for flashloans.
      // This is done to protect against reentrance and rate manipulation within the user specified payload.
 
@@ -841,7 +880,7 @@ index a6fb24f..9faf316 100644
      IAToken(reserve.aTokenAddress).transferUnderlyingTo(params.receiverAddress, params.amount);
 
      require(
-@@ -7690,7 +7934,7 @@ library FlashLoanLogic {
+@@ -7690,7 +7941,7 @@ library FlashLoanLogic {
        .rayDiv(reserveCache.nextLiquidityIndex)
        .toUint128();
 
@@ -850,7 +889,7 @@ index a6fb24f..9faf316 100644
 
      IERC20(params.asset).safeTransferFrom(
        params.receiverAddress,
-@@ -7716,7 +7960,7 @@ library FlashLoanLogic {
+@@ -7716,7 +7967,7 @@ library FlashLoanLogic {
    }
  }
 
@@ -859,7 +898,7 @@ index a6fb24f..9faf316 100644
 
  /**
   * @title Pool contract
-@@ -7735,10 +7979,9 @@ library FlashLoanLogic {
+@@ -7735,10 +7986,9 @@ library FlashLoanLogic {
   * @dev All admin functions are callable by the PoolConfigurator contract defined also in the
   *   PoolAddressesProvider
   */
@@ -871,7 +910,7 @@ index a6fb24f..9faf316 100644
    IPoolAddressesProvider public immutable ADDRESSES_PROVIDER;
 
    /**
-@@ -7786,10 +8029,6 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -7786,10 +8036,6 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
      );
    }
 
@@ -882,7 +921,7 @@ index a6fb24f..9faf316 100644
    /**
     * @dev Constructor.
     * @param provider The address of the PoolAddressesProvider contract
-@@ -7805,10 +8044,7 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -7805,10 +8051,7 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
     * @dev Caching the address of the PoolAddressesProvider in order to reduce gas consumption on subsequent operations
     * @param provider The address of the PoolAddressesProvider
     */
@@ -894,7 +933,7 @@ index a6fb24f..9faf316 100644
 
    /// @inheritdoc IPool
    function mintUnbacked(
-@@ -7869,15 +8105,17 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -7869,15 +8112,17 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
      bytes32 permitR,
      bytes32 permitS
    ) public virtual override {
@@ -921,7 +960,7 @@ index a6fb24f..9faf316 100644
      SupplyLogic.executeSupply(
        _reserves,
        _reservesList,
-@@ -7977,7 +8215,7 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -7977,7 +8222,7 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
      bytes32 permitR,
      bytes32 permitS
    ) public virtual override returns (uint256) {
@@ -930,7 +969,7 @@ index a6fb24f..9faf316 100644
        IERC20WithPermit(asset).permit(
          msg.sender,
          address(this),
-@@ -7986,8 +8224,9 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -7986,8 +8231,9 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
          permitV,
          permitR,
          permitS
@@ -942,7 +981,7 @@ index a6fb24f..9faf316 100644
      {
        DataTypes.ExecuteRepayParams memory params = DataTypes.ExecuteRepayParams({
          asset: asset,
-@@ -8027,10 +8266,22 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -8027,10 +8273,22 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
        _reserves[asset],
        _usersConfig[msg.sender],
        asset,
@@ -965,7 +1004,7 @@ index a6fb24f..9faf316 100644
    /// @inheritdoc IPool
    function rebalanceStableBorrowRate(address asset, address user) public virtual override {
      BorrowLogic.executeRebalanceStableBorrowRate(_reserves[asset], asset, user);
-@@ -8146,12 +8397,44 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -8146,12 +8404,44 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
    }
 
    /// @inheritdoc IPool
@@ -1012,7 +1051,7 @@ index a6fb24f..9faf316 100644
    /// @inheritdoc IPool
    function getUserAccountData(
      address user
-@@ -8336,9 +8619,26 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -8336,9 +8626,26 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
    ) external virtual override onlyPoolConfigurator {
      require(asset != address(0), Errors.ZERO_ADDRESS_NOT_VALID);
      require(_reserves[asset].id != 0 || _reservesList[0] == asset, Errors.ASSET_NOT_LISTED);
@@ -1039,7 +1078,7 @@ index a6fb24f..9faf316 100644
    /// @inheritdoc IPool
    function setConfiguration(
      address asset,
-@@ -8410,6 +8710,20 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -8410,6 +8717,20 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
      PoolLogic.executeResetIsolationModeTotalDebt(_reserves, asset);
    }
 
@@ -1060,7 +1099,7 @@ index a6fb24f..9faf316 100644
    /// @inheritdoc IPool
    function rescueTokens(
      address token,
-@@ -8439,4 +8753,63 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
+@@ -8439,4 +8760,63 @@ contract Pool is VersionedInitializable, PoolStorage, IPool {
        })
      );
    }

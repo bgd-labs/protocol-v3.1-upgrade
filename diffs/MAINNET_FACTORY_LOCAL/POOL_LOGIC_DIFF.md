@@ -1,6 +1,6 @@
 ```diff
 diff --git a/./downloads/MAINNET/POOL_LOGIC.sol b/./downloads/FACTORY_LOCAL/POOL_LOGIC.sol
-index 4b36b82..2c5f87f 100644
+index 4b36b82..d076aee 100644
 --- a/./downloads/MAINNET/POOL_LOGIC.sol
 +++ b/./downloads/FACTORY_LOCAL/POOL_LOGIC.sol
 
@@ -9,7 +9,7 @@ index 4b36b82..2c5f87f 100644
 
  /**
   * @title PoolLogic library
-@@ -5816,6 +6034,20 @@ library PoolLogic {
+@@ -5816,6 +6040,20 @@ library PoolLogic {
      emit IsolationModeTotalDebtUpdated(asset, 0);
    }
 

@@ -1,6 +1,6 @@
 ```diff
 diff --git a/./downloads/MAINNET/SUPPLY_LOGIC.sol b/./downloads/FACTORY_LOCAL/SUPPLY_LOGIC.sol
-index f189e0e..8107b1e 100644
+index f189e0e..cf3892e 100644
 --- a/./downloads/MAINNET/SUPPLY_LOGIC.sol
 +++ b/./downloads/FACTORY_LOCAL/SUPPLY_LOGIC.sol
 
@@ -9,7 +9,7 @@ index f189e0e..8107b1e 100644
 
  /**
   * @title SupplyLogic library
-@@ -5753,9 +5971,9 @@ library SupplyLogic {
+@@ -5753,9 +5977,9 @@ library SupplyLogic {
 
      reserve.updateState(reserveCache);
 
@@ -21,7 +21,7 @@ index f189e0e..8107b1e 100644
 
      IERC20(params.asset).safeTransferFrom(msg.sender, reserveCache.aTokenAddress, params.amount);
 
-@@ -5806,6 +6024,8 @@ library SupplyLogic {
+@@ -5806,6 +6030,8 @@ library SupplyLogic {
      DataTypes.ReserveData storage reserve = reservesData[params.asset];
      DataTypes.ReserveCache memory reserveCache = reserve.cache();
 
@@ -30,7 +30,7 @@ index f189e0e..8107b1e 100644
      reserve.updateState(reserveCache);
 
      uint256 userBalance = IAToken(reserveCache.aTokenAddress).scaledBalanceOf(msg.sender).rayMul(
-@@ -5820,7 +6040,7 @@ library SupplyLogic {
+@@ -5820,7 +6046,7 @@ library SupplyLogic {
 
      ValidationLogic.validateWithdraw(reserveCache, amountToWithdraw, userBalance);
 
@@ -39,7 +39,7 @@ index f189e0e..8107b1e 100644
 
      bool isCollateral = userConfig.isUsingAsCollateral(reserve.id);
 
-@@ -5879,8 +6099,9 @@ library SupplyLogic {
+@@ -5879,8 +6105,9 @@ library SupplyLogic {
      ValidationLogic.validateTransfer(reserve);
 
      uint256 reserveId = reserve.id;
