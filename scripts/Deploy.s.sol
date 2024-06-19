@@ -13,51 +13,85 @@ import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {AaveProtocolDataProvider} from 'aave-v3-origin/core/contracts/misc/AaveProtocolDataProvider.sol';
+import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfiguratorInstance.sol';
+import {EthereumScript, PolygonScript, AvalancheScript, OptimismScript, ArbitrumScript, MetisScript, BaseScript, GnosisScript, ScrollScript, BNBScript} from 'aave-helpers/ScriptUtils.sol';
+import {GovV3Helpers} from 'aave-helpers/GovV3Helpers.sol';
+
 import {PoolInstanceWithCustomInitialize} from '../src/contracts/PoolInstanceWithCustomInitialize.sol';
 import {L2PoolInstanceWithCustomInitialize} from '../src/contracts/L2PoolInstanceWithCustomInitialize.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
 
 library DeploymentLibrary {
-  function _deployL2(
-    address poolAddressesProvider,
-    address pool,
-    address poolConfigurator
-  ) internal returns (address) {
-    address poolImpl = address(
-      new L2PoolInstanceWithCustomInitialize(IPoolAddressesProvider(poolAddressesProvider))
-    );
-    return _deployPayload(poolAddressesProvider, pool, poolConfigurator, poolImpl);
+  struct DeployPoolImplementationParams {
+    address poolAddressesProvider;
+    address pool;
+    address poolConfigurator;
+    address proofOfReserveExecutor;
+  }
+  struct DeployPayloadParams {
+    address poolAddressesProvider;
+    address pool;
+    address poolImpl;
+    address poolConfigurator;
+    address proofOfReserveExecutor;
   }
 
-  function _deployL1(
-    address poolAddressesProvider,
-    address pool,
-    address poolConfigurator
-  ) internal returns (address) {
-    address poolImpl = address(
-      new PoolInstanceWithCustomInitialize(IPoolAddressesProvider(poolAddressesProvider))
+  function _deployL2(DeployPoolImplementationParams memory params) internal returns (address) {
+    address poolImpl = GovV3Helpers.deployDeterministic(
+      type(L2PoolInstanceWithCustomInitialize).creationCode,
+      abi.encode(params.poolAddressesProvider)
     );
-    return _deployPayload(poolAddressesProvider, pool, poolConfigurator, poolImpl);
+    return
+      _deployPayload(
+        DeployPayloadParams({
+          poolAddressesProvider: params.poolAddressesProvider,
+          pool: params.pool,
+          poolConfigurator: params.poolConfigurator,
+          poolImpl: poolImpl,
+          proofOfReserveExecutor: params.proofOfReserveExecutor
+        })
+      );
   }
 
-  function _deployPayload(
-    address poolAddressesProvider,
-    address pool,
-    address poolConfigurator,
-    address poolImpl
-  ) internal returns (address) {
-    address poolDataProvider = address(
-      new AaveProtocolDataProvider(IPoolAddressesProvider(poolAddressesProvider))
+  function _deployL1(DeployPoolImplementationParams memory params) internal returns (address) {
+    address poolImpl = GovV3Helpers.deployDeterministic(
+      type(PoolInstanceWithCustomInitialize).creationCode,
+      abi.encode(params.poolAddressesProvider)
+    );
+    return
+      _deployPayload(
+        DeployPayloadParams({
+          poolAddressesProvider: params.poolAddressesProvider,
+          pool: params.pool,
+          poolConfigurator: params.poolConfigurator,
+          poolImpl: poolImpl,
+          proofOfReserveExecutor: params.proofOfReserveExecutor
+        })
+      );
+  }
+
+  function _deployPayload(DeployPayloadParams memory params) internal returns (address) {
+    address poolConfiguratorImpl = GovV3Helpers.deployDeterministic(
+      type(PoolConfiguratorInstance).creationCode
+    );
+    address poolDataProvider = GovV3Helpers.deployDeterministic(
+      type(AaveProtocolDataProvider).creationCode,
+      abi.encode(params.poolAddressesProvider)
     );
 
     return
-      address(
-        new UpgradePayload(
-          poolAddressesProvider,
-          pool,
-          poolConfigurator,
-          poolImpl,
-          poolDataProvider
+      GovV3Helpers.deployDeterministic(
+        type(UpgradePayload).creationCode,
+        abi.encode(
+          UpgradePayload.ConstructorParams({
+            poolAddressesProvider: params.poolAddressesProvider,
+            pool: params.pool,
+            poolConfigurator: params.poolConfigurator,
+            poolImpl: params.poolImpl,
+            poolConfiguratorImpl: poolConfiguratorImpl,
+            poolDataProvider: poolDataProvider,
+            proofOfReserveExecutor: params.proofOfReserveExecutor
+          })
         )
       );
   }
@@ -65,90 +99,190 @@ library DeploymentLibrary {
   function _deployPolygon() internal returns (address) {
     return
       _deployL1(
-        address(AaveV3Polygon.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Polygon.POOL),
-        address(AaveV3Polygon.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Polygon.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Polygon.POOL),
+          poolConfigurator: address(AaveV3Polygon.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployEthereum() internal returns (address) {
     return
       _deployL1(
-        address(AaveV3Ethereum.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Ethereum.POOL),
-        address(AaveV3Ethereum.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Ethereum.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Ethereum.POOL),
+          poolConfigurator: address(AaveV3Ethereum.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployAvalanche() internal returns (address) {
     return
       _deployL1(
-        address(AaveV3Avalanche.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Avalanche.POOL),
-        address(AaveV3Avalanche.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Avalanche.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Avalanche.POOL),
+          poolConfigurator: address(AaveV3Avalanche.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: AaveV3Avalanche.PROOF_OF_RESERVE
+        })
       );
   }
 
   function _deployArbitrum() internal returns (address) {
     return
       _deployL2(
-        address(AaveV3Arbitrum.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Arbitrum.POOL),
-        address(AaveV3Arbitrum.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Arbitrum.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Arbitrum.POOL),
+          poolConfigurator: address(AaveV3Arbitrum.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployOptimism() internal returns (address) {
     return
       _deployL2(
-        address(AaveV3Optimism.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Optimism.POOL),
-        address(AaveV3Optimism.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Optimism.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Optimism.POOL),
+          poolConfigurator: address(AaveV3Optimism.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployBase() internal returns (address) {
     return
       _deployL2(
-        address(AaveV3Base.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Base.POOL),
-        address(AaveV3Base.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Base.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Base.POOL),
+          poolConfigurator: address(AaveV3Base.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployGnosis() internal returns (address) {
     return
       _deployL1(
-        address(AaveV3Gnosis.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Gnosis.POOL),
-        address(AaveV3Gnosis.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Gnosis.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Gnosis.POOL),
+          poolConfigurator: address(AaveV3Gnosis.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployMetis() internal returns (address) {
     return
       _deployL2(
-        address(AaveV3Metis.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Metis.POOL),
-        address(AaveV3Metis.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Metis.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Metis.POOL),
+          poolConfigurator: address(AaveV3Metis.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployBNB() internal returns (address) {
     return
       _deployL1(
-        address(AaveV3BNB.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3BNB.POOL),
-        address(AaveV3BNB.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3BNB.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3BNB.POOL),
+          poolConfigurator: address(AaveV3BNB.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
   }
 
   function _deployScroll() internal returns (address) {
     return
       _deployL2(
-        address(AaveV3Scroll.POOL_ADDRESSES_PROVIDER),
-        address(AaveV3Scroll.POOL),
-        address(AaveV3Scroll.POOL_CONFIGURATOR)
+        DeployPoolImplementationParams({
+          poolAddressesProvider: address(AaveV3Scroll.POOL_ADDRESSES_PROVIDER),
+          pool: address(AaveV3Scroll.POOL),
+          poolConfigurator: address(AaveV3Scroll.POOL_CONFIGURATOR),
+          proofOfReserveExecutor: address(0)
+        })
       );
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployEthereum chain=mainnet
+contract DeployEthereum is EthereumScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployEthereum();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployPolygon chain=polygon
+contract DeployPolygon is PolygonScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployPolygon();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployAvalanche chain=avalanche
+contract DeployAvalanche is AvalancheScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployAvalanche();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployOptimism chain=optimism
+contract DeployOptimism is OptimismScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployOptimism();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployArbitrum chain=arbitrum
+contract DeployArbitrum is ArbitrumScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployArbitrum();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployMetis chain=metis
+contract DeployMetis is MetisScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployMetis();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployBase chain=base
+contract DeployBase is BaseScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployBase();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployGnosis chain=gnosis
+contract DeployGnosis is GnosisScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployGnosis();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployScroll chain=scroll
+contract DeployScroll is ScrollScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployScroll();
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployBNB chain=bnb
+contract DeployBNB is BNBScript {
+  function run() external broadcast {
+    DeploymentLibrary._deployBNB();
   }
 }
