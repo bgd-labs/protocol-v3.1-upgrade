@@ -33,3 +33,9 @@ download-pool-etherscan :;
 diff-mainnet-local :;
 	mkdir -p diffs/MAINNET_FACTORY_LOCAL
 	npx tsx ./diff.ts MAINNET FACTORY_LOCAL
+
+# Deploy
+deploy-ledger :;
+	forge script ${contract} --rpc-url ${chain} $(if ${dry},--sender 0x25F2226B597E8F9514B3F68F00f494cF4f286491 -vvvv, --ledger --mnemonic-indexes ${MNEMONIC_INDEX} --sender ${LEDGER_SENDER} --verify -vvvv --slow --broadcast)
+deploy-pk :;
+	forge script ${contract} --rpc-url ${chain} $(if ${dry},--sender 0x25F2226B597E8F9514B3F68F00f494cF4f286491 -vvvv, --private-key ${PRIVATE_KEY} --verify -vvvv --slow --broadcast)

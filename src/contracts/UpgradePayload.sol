@@ -38,6 +38,15 @@ interface ILegacyDefaultInterestRateStrategy {
 }
 
 contract UpgradePayload is IProposalGenericExecutor {
+  struct ConstructorParams {
+    address poolAddressesProvider;
+    address pool;
+    address poolConfigurator;
+    address poolImpl;
+    address poolConfiguratorImpl;
+    address poolDataProvider;
+    address proofOfReserveExecutor;
+  }
   IPoolAddressesProvider public immutable POOL_ADDRESSES_PROVIDER;
   IPool public immutable POOL;
   IPoolConfigurator public immutable CONFIGURATOR;
@@ -50,23 +59,15 @@ contract UpgradePayload is IProposalGenericExecutor {
   address public immutable POOL_DATA_PROVIDER;
   address public immutable PROOF_OF_RESERVE_EXECUTOR;
 
-  constructor(
-    address poolAddressesProvider,
-    address pool,
-    address configurator,
-    address poolImpl,
-    address poolConfiguratorImpl,
-    address poolDataProvider,
-    address proofOfReserveExecutor
-  ) {
-    POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(poolAddressesProvider);
-    POOL = IPool(pool);
-    CONFIGURATOR = IPoolConfigurator(configurator);
-    DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(poolAddressesProvider));
-    POOL_IMPL = poolImpl;
-    POOL_CONFIGURATOR_IMPL = poolConfiguratorImpl;
-    POOL_DATA_PROVIDER = poolDataProvider;
-    PROOF_OF_RESERVE_EXECUTOR = proofOfReserveExecutor;
+  constructor(ConstructorParams memory params) {
+    POOL_ADDRESSES_PROVIDER = IPoolAddressesProvider(params.poolAddressesProvider);
+    POOL = IPool(params.pool);
+    CONFIGURATOR = IPoolConfigurator(params.poolConfigurator);
+    DEFAULT_IR = new DefaultReserveInterestRateStrategyV2(address(params.poolAddressesProvider));
+    POOL_IMPL = params.poolImpl;
+    POOL_CONFIGURATOR_IMPL = params.poolConfiguratorImpl;
+    POOL_DATA_PROVIDER = params.poolDataProvider;
+    PROOF_OF_RESERVE_EXECUTOR = params.proofOfReserveExecutor;
   }
 
   function execute() external {
