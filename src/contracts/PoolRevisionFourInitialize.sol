@@ -17,13 +17,8 @@ library PoolRevisionFourInitialize {
     mapping(uint256 => address) storage _reservesList,
     mapping(address => DataTypes.ReserveData) storage _reserves
   ) external {
-    address[] memory reserves = new address[](reservesCount);
     for (uint256 i = 0; i < reservesCount; i++) {
-      reserves[i] = _reservesList[i];
-    }
-
-    for (uint256 i = 0; i < reservesCount; i++) {
-      address currentReserveAddress = reserves[i];
+      address currentReserveAddress = _reservesList[i];
       // if this reserve was dropped already - skip
       // GHO is the special case
       if (
