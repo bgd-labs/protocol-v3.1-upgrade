@@ -23,12 +23,7 @@ contract EthereumBaseTest is BaseTest('mainnet', 20160113) {
 
     vm.startPrank(user);
     IERC20(AaveV3EthereumAssets.USDC_UNDERLYING).approve(address(AaveV3Ethereum.POOL), amount);
-    AaveV3Ethereum.POOL.deposit(
-      AaveV3EthereumAssets.USDC_UNDERLYING,
-      amount,
-      user,
-      0
-    );
+    AaveV3Ethereum.POOL.deposit(AaveV3EthereumAssets.USDC_UNDERLYING, amount, user, 0);
     vm.stopPrank();
     assertGe(IERC20(AaveV3EthereumAssets.USDC_A_TOKEN).balanceOf(user), amount);
   }
@@ -44,7 +39,10 @@ contract EthereumBaseTest is BaseTest('mainnet', 20160113) {
 
   // code to test the protocol protocol data provider could be added below.
   function test_data_provider() public {
-    assertEq(POOL_ADDRESSES_PROVIDER.getPoolDataProvider(), address(AaveV3Ethereum.AAVE_PROTOCOL_DATA_PROVIDER));
+    assertEq(
+      POOL_ADDRESSES_PROVIDER.getPoolDataProvider(),
+      address(AaveV3Ethereum.AAVE_PROTOCOL_DATA_PROVIDER)
+    );
 
     _executePayload();
 

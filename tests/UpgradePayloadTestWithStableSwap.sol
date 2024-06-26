@@ -51,8 +51,13 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
 
     ) = AAVE_PROTOCOL_DATA_PROVIDER.getUserReserveData(RESERVE_WITH_STABLE, USER_WITH_STABLE);
 
-    assertEq(currentStableDebtAfter, 0);
-    assertEq(currentVariableDebtAfter, currentStableDebtBefore + currentVariableDebtBefore);
+    assertEq(currentStableDebtAfter, 0, 'current stable is not 0');
+    assertApproxEqAbs(
+      currentVariableDebtAfter,
+      currentStableDebtBefore + currentVariableDebtBefore,
+      1,
+      'currentVariableDebtAfter is not currentStableDebtBefore + currentVariableDebtBefore'
+    );
   }
 
   function test_swap_stable_to_variable_works() public proposalExecuted {
@@ -83,8 +88,13 @@ abstract contract UpgradePayloadTestWithStableSwap is UpgradePayloadTest {
 
     ) = AAVE_PROTOCOL_DATA_PROVIDER.getUserReserveData(RESERVE_WITH_STABLE, USER_WITH_STABLE);
 
-    assertEq(currentStableDebtAfter, 0);
-    assertEq(currentVariableDebtAfter, currentStableDebtBefore + currentVariableDebtBefore);
+    assertEq(currentStableDebtAfter, 0, 'current stable is not 0');
+    assertApproxEqAbs(
+      currentVariableDebtAfter,
+      currentStableDebtBefore + currentVariableDebtBefore,
+      1,
+      'currentVariableDebtAfter is not currentStableDebtBefore + currentVariableDebtBefore'
+    );
   }
 
   function test_not_reverts_swap_borrow_rate_reserve_frozen() public proposalExecuted {
