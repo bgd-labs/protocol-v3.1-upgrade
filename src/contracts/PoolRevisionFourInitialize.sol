@@ -21,7 +21,6 @@ library PoolRevisionFourInitialize {
     for (uint256 i = 0; i < reservesCount; i++) {
       reserves[i] = _reservesList[i];
     }
-    //    PoolLogic.executeMintToTreasury(_reserves, reserves);
 
     for (uint256 i = 0; i < reservesCount; i++) {
       address currentReserveAddress = reserves[i];
