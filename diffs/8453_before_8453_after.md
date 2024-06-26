@@ -6,7 +6,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2](https://basescan.org/address/0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2) | [0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142](https://basescan.org/address/0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142) |
+| interestRateStrategy | [0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2](https://basescan.org/address/0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2) | [0x3D043C97406426804C33485E082c0B957F6f64D4](https://basescan.org/address/0x3D043C97406426804C33485E082c0B957F6f64D4) |
 | liquidityIndex | 1 | 1 |
 | variableBorrowIndex | 1.002 | 1.002 |
 | currentLiquidityRate | 0.403 % | 0.403 % |
@@ -18,13 +18,13 @@
 | optimalStableToTotalDebtRatio | 0 % | / |
 | stableRateSlope1 | 7 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/54e10a13590d5a2968c8308e367ee942724c8f5a.svg) | ![after](/.assets/1a44da41b83e048a07ca47030d50815d3f28d41b.svg) |
+| interestRate | ![before](/.assets/54e10a13590d5a2968c8308e367ee942724c8f5a.svg) | ![after](/.assets/eb9511c0a82fd29f24b0aa3ccdc6c41968640aac.svg) |
 
 #### cbETH ([0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22](https://basescan.org/address/0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x05295489b6aE0d97ae7C49a42989497294F7F428](https://basescan.org/address/0x05295489b6aE0d97ae7C49a42989497294F7F428) | [0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142](https://basescan.org/address/0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142) |
+| interestRateStrategy | [0x05295489b6aE0d97ae7C49a42989497294F7F428](https://basescan.org/address/0x05295489b6aE0d97ae7C49a42989497294F7F428) | [0x3D043C97406426804C33485E082c0B957F6f64D4](https://basescan.org/address/0x3D043C97406426804C33485E082c0B957F6f64D4) |
 | liquidityIndex | 1.001 | 1.001 |
 | variableBorrowIndex | 1.009 | 1.009 |
 | currentLiquidityRate | 0.142 % | 0.142 % |
@@ -36,13 +36,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 4 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/2135c59c3574d13bc06d571c0a7416904c7d3c34.svg) | ![after](/.assets/38b618991b35f4247866c42979150c46019fd7a3.svg) |
+| interestRate | ![before](/.assets/2135c59c3574d13bc06d571c0a7416904c7d3c34.svg) | ![after](/.assets/c403e12877e149c381d9b6eb7142c6dde748e719.svg) |
 
 #### WETH ([0x4200000000000000000000000000000000000006](https://basescan.org/address/0x4200000000000000000000000000000000000006))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C](https://basescan.org/address/0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C) | [0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142](https://basescan.org/address/0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142) |
+| interestRateStrategy | [0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C](https://basescan.org/address/0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C) | [0x3D043C97406426804C33485E082c0B957F6f64D4](https://basescan.org/address/0x3D043C97406426804C33485E082c0B957F6f64D4) |
 | liquidityIndex | 1.01 | 1.01 |
 | variableBorrowIndex | 1.021 | 1.021 |
 | currentLiquidityRate | 0.306 % | 0.306 % |
@@ -54,13 +54,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 4 % | / |
 | stableRateSlope2 | 80 % | / |
-| interestRate | ![before](/.assets/95e717662ee38643eaedf29c7ecf9494cf135da3.svg) | ![after](/.assets/d15b4388f91180a906a1f8afd66fc761120e8537.svg) |
+| interestRate | ![before](/.assets/95e717662ee38643eaedf29c7ecf9494cf135da3.svg) | ![after](/.assets/b844b0d0a51122faa6b33ed7874b46b8faec114c.svg) |
 
 #### USDC ([0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913](https://basescan.org/address/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xA802E6c96572f4C7efbf1e611d161CF63ad74Ef9](https://basescan.org/address/0xA802E6c96572f4C7efbf1e611d161CF63ad74Ef9) | [0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142](https://basescan.org/address/0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142) |
+| interestRateStrategy | [0xA802E6c96572f4C7efbf1e611d161CF63ad74Ef9](https://basescan.org/address/0xA802E6c96572f4C7efbf1e611d161CF63ad74Ef9) | [0x3D043C97406426804C33485E082c0B957F6f64D4](https://basescan.org/address/0x3D043C97406426804C33485E082c0B957F6f64D4) |
 | currentLiquidityRate | 6.379 % | 6.379 % |
 | currentVariableBorrowRate | 8.419 % | 8.419 % |
 | maxVariableBorrowRate | / | 69 % |
@@ -70,13 +70,13 @@
 | optimalStableToTotalDebtRatio | 0 % | / |
 | stableRateSlope1 | 5 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/f5485a1f322764552b7a360d6d4890b45801d1dc.svg) | ![after](/.assets/133a63c8cffb02225c617d530c8b4eef6d4c497c.svg) |
+| interestRate | ![before](/.assets/f5485a1f322764552b7a360d6d4890b45801d1dc.svg) | ![after](/.assets/e5620a08920b1e11e5c294a2b702fba9b0f307e5.svg) |
 
 #### wstETH ([0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452](https://basescan.org/address/0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9](https://basescan.org/address/0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9) | [0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142](https://basescan.org/address/0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142) |
+| interestRateStrategy | [0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9](https://basescan.org/address/0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9) | [0x3D043C97406426804C33485E082c0B957F6f64D4](https://basescan.org/address/0x3D043C97406426804C33485E082c0B957F6f64D4) |
 | liquidityIndex | 1.001 | 1.001 |
 | variableBorrowIndex | 1.005 | 1.005 |
 | currentLiquidityRate | 0.197 % | 0.197 % |
@@ -88,13 +88,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 13 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/d4c5010d048974fa22472a45645a73d256afbc2a.svg) | ![after](/.assets/38b618991b35f4247866c42979150c46019fd7a3.svg) |
+| interestRate | ![before](/.assets/d4c5010d048974fa22472a45645a73d256afbc2a.svg) | ![after](/.assets/c403e12877e149c381d9b6eb7142c6dde748e719.svg) |
 
 #### USDbC ([0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA](https://basescan.org/address/0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D](https://basescan.org/address/0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D) | [0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142](https://basescan.org/address/0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142) |
+| interestRateStrategy | [0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D](https://basescan.org/address/0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D) | [0x3D043C97406426804C33485E082c0B957F6f64D4](https://basescan.org/address/0x3D043C97406426804C33485E082c0B957F6f64D4) |
 | liquidityIndex | 1.059 | 1.059 |
 | variableBorrowIndex | 1.083 | 1.083 |
 | currentLiquidityRate | 5.14 % | 5.14 % |
@@ -106,7 +106,7 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 60 % | / |
-| interestRate | ![before](/.assets/1fcc1b0751c3b07af596103ceace9c8c3c9b63ea.svg) | ![after](/.assets/355fdc60cc93bd4e414c683bc16c5765296cd656.svg) |
+| interestRate | ![before](/.assets/1fcc1b0751c3b07af596103ceace9c8c3c9b63ea.svg) | ![after](/.assets/bc443fb5307bdbd67a25e7a7ae12181554c337c0.svg) |
 
 ## Raw diff
 
@@ -119,7 +119,7 @@
     },
     "poolImpl": {
       "from": "0xE9547fc44C271dBddf94D8E20b46836B87DA6789",
-      "to": "0x27B83d4E11aBf133b1BE3E89f079bbDdc9992f6a"
+      "to": "0x66bC736FF8B306211E6f664D0d30C27a4B21078F"
     },
     "protocolDataProvider": {
       "from": "0x2d8A3C5677189723C4cB8873CfC9C8976FDF38Ac",
@@ -138,7 +138,7 @@
       },
       "interestRateStrategy": {
         "from": "0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "liquidityIndex": {
         "from": "1000230454953511418002124199",
@@ -160,7 +160,7 @@
       },
       "interestRateStrategy": {
         "from": "0x05295489b6aE0d97ae7C49a42989497294F7F428",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "liquidityIndex": {
         "from": "1001424564840625036265449462",
@@ -182,7 +182,7 @@
       },
       "interestRateStrategy": {
         "from": "0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "liquidityIndex": {
         "from": "1009930405085797549906964375",
@@ -204,7 +204,7 @@
       },
       "interestRateStrategy": {
         "from": "0xA802E6c96572f4C7efbf1e611d161CF63ad74Ef9",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       }
     },
     "0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452": {
@@ -218,7 +218,7 @@
       },
       "interestRateStrategy": {
         "from": "0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "liquidityIndex": {
         "from": "1001313374676814583232437698",
@@ -240,7 +240,7 @@
       },
       "interestRateStrategy": {
         "from": "0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "liquidityIndex": {
         "from": "1058616128675585540932645560",
@@ -256,7 +256,7 @@
     "0x04C0599Ae5A44757c0af6F9eC3b93da8976c150A": {
       "address": {
         "from": "0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",
@@ -290,7 +290,7 @@
     "0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22": {
       "address": {
         "from": "0x05295489b6aE0d97ae7C49a42989497294F7F428",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "baseStableBorrowRate": {
         "from": "100000000000000000000000000",
@@ -324,7 +324,7 @@
     "0x4200000000000000000000000000000000000006": {
       "address": {
         "from": "0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "baseStableBorrowRate": {
         "from": "57000000000000000000000000",
@@ -358,7 +358,7 @@
     "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
       "address": {
         "from": "0xA802E6c96572f4C7efbf1e611d161CF63ad74Ef9",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "baseStableBorrowRate": {
         "from": "90000000000000000000000000",
@@ -392,7 +392,7 @@
     "0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452": {
       "address": {
         "from": "0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "baseStableBorrowRate": {
         "from": "100000000000000000000000000",
@@ -426,7 +426,7 @@
     "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA": {
       "address": {
         "from": "0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D",
-        "to": "0xC15184E658e2E5FCE9bd2fDA78eaeEE80c113142"
+        "to": "0x3D043C97406426804C33485E082c0B957F6f64D4"
       },
       "baseStableBorrowRate": {
         "from": "110000000000000000000000000",

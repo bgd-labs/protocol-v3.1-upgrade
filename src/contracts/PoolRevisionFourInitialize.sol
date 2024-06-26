@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import {DataTypes} from 'aave-v3-origin/core/contracts/protocol/pool/Pool.sol';
+import {DataTypes, PoolLogic} from 'aave-v3-origin/core/contracts/protocol/pool/Pool.sol';
 import {IERC20} from 'aave-v3-origin/core/contracts/dependencies/openzeppelin/contracts/IERC20.sol';
 import {SafeCast} from 'aave-v3-origin/core/contracts/dependencies/openzeppelin/contracts/SafeCast.sol';
 import {WadRayMath} from 'aave-v3-origin/core/contracts/protocol/libraries/math/WadRayMath.sol';
@@ -17,8 +17,14 @@ library PoolRevisionFourInitialize {
     mapping(uint256 => address) storage _reservesList,
     mapping(address => DataTypes.ReserveData) storage _reserves
   ) external {
+    address[] memory reserves = new address[](reservesCount);
     for (uint256 i = 0; i < reservesCount; i++) {
-      address currentReserveAddress = _reservesList[i];
+      reserves[i] = _reservesList[i];
+    }
+    //    PoolLogic.executeMintToTreasury(_reserves, reserves);
+
+    for (uint256 i = 0; i < reservesCount; i++) {
+      address currentReserveAddress = reserves[i];
       // if this reserve was dropped already - skip
       // GHO is the special case
       if (

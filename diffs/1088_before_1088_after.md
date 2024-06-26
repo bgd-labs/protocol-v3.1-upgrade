@@ -6,7 +6,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) | [0xBa0e4b8c477365aFa3733f210008bA5923f734e9](https://explorer.metis.io/address/0xBa0e4b8c477365aFa3733f210008bA5923f734e9) |
+| interestRateStrategy | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) | [0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0](https://explorer.metis.io/address/0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0) |
 | liquidityIndex | 1.01 | 1.01 |
 | variableBorrowIndex | 1.03 | 1.03 |
 | currentLiquidityRate | 0.082 % | 0.082 % |
@@ -18,13 +18,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 3.8 % | / |
 | stableRateSlope2 | 80 % | / |
-| interestRate | ![before](/.assets/b5b60c9a6da247fd6707dc572d95d822d367c535.svg) | ![after](/.assets/50d3be9336dbd13edb73f541a3c0131403656552.svg) |
+| interestRate | ![before](/.assets/b5b60c9a6da247fd6707dc572d95d822d367c535.svg) | ![after](/.assets/bfd3ebf77a8bd506cd72c053633285dba4216062.svg) |
 
 #### m.DAI ([0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0](https://explorer.metis.io/address/0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0xBa0e4b8c477365aFa3733f210008bA5923f734e9](https://explorer.metis.io/address/0xBa0e4b8c477365aFa3733f210008bA5923f734e9) |
+| interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0](https://explorer.metis.io/address/0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0) |
 | liquidityIndex | 1.054 | 1.054 |
 | variableBorrowIndex | 1.084 | 1.084 |
 | currentLiquidityRate | 6.644 % | 6.662 % |
@@ -36,13 +36,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/c6fa9124f760db4b0557689f57b9f7017089a88d.svg) | ![after](/.assets/930aa6c2da009454c085f5c8bedda23345ad47f3.svg) |
+| interestRate | ![before](/.assets/c6fa9124f760db4b0557689f57b9f7017089a88d.svg) | ![after](/.assets/4a4b8d279c9c1a52757966f0575157794077b9c8.svg) |
 
 #### Metis ([0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://explorer.metis.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0xBa0e4b8c477365aFa3733f210008bA5923f734e9](https://explorer.metis.io/address/0xBa0e4b8c477365aFa3733f210008bA5923f734e9) |
+| interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0](https://explorer.metis.io/address/0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0) |
 | liquidityIndex | 1 | 1 |
 | variableBorrowIndex | 1.004 | 1.004 |
 | currentLiquidityRate | 0.017 % | 0.017 % |
@@ -54,13 +54,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 7 % | / |
 | stableRateSlope2 | 300 % | / |
-| interestRate | ![before](/.assets/a19c1b94633e136232f50e003d480584e1ad239b.svg) | ![after](/.assets/0bb775694805f7b4f7017f0fef3c6e9c7fa24ce5.svg) |
+| interestRate | ![before](/.assets/a19c1b94633e136232f50e003d480584e1ad239b.svg) | ![after](/.assets/45935e1a77e009f9e765a030b08ccb46cdbe3a86.svg) |
 
 #### m.USDC ([0xEA32A96608495e54156Ae48931A7c20f0dcc1a21](https://explorer.metis.io/address/0xEA32A96608495e54156Ae48931A7c20f0dcc1a21))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0xBa0e4b8c477365aFa3733f210008bA5923f734e9](https://explorer.metis.io/address/0xBa0e4b8c477365aFa3733f210008bA5923f734e9) |
+| interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0](https://explorer.metis.io/address/0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0) |
 | liquidityIndex | 1.026 | 1.026 |
 | variableBorrowIndex | 1.041 | 1.041 |
 | currentLiquidityRate | 4.348 % | 4.348 % |
@@ -72,13 +72,13 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 60 % | / |
-| interestRate | ![before](/.assets/523a434a2e52b9c3f17fb1ecb160ce80decc5883.svg) | ![after](/.assets/6537fbafd03c68b6d47b53150b4568e21926f01e.svg) |
+| interestRate | ![before](/.assets/523a434a2e52b9c3f17fb1ecb160ce80decc5883.svg) | ![after](/.assets/30e7a826fd2cfceabd3afbfeea0abf05cbbf7e55.svg) |
 
 #### m.USDT ([0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC](https://explorer.metis.io/address/0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0xBa0e4b8c477365aFa3733f210008bA5923f734e9](https://explorer.metis.io/address/0xBa0e4b8c477365aFa3733f210008bA5923f734e9) |
+| interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0](https://explorer.metis.io/address/0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0) |
 | liquidityIndex | 1.046 | 1.046 |
 | variableBorrowIndex | 1.062 | 1.062 |
 | currentLiquidityRate | 6.793 % | 6.795 % |
@@ -90,7 +90,7 @@
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/828c0e1697d4b7add216986b9bc4fa9ffb936a91.svg) | ![after](/.assets/44cd7c64d702ac99038bb124eba1417f4ff82936.svg) |
+| interestRate | ![before](/.assets/828c0e1697d4b7add216986b9bc4fa9ffb936a91.svg) | ![after](/.assets/9dc97f1e03b6b0fcbd9cd5f673e5afbbe5daf168.svg) |
 
 ## Raw diff
 
@@ -103,7 +103,7 @@
     },
     "poolImpl": {
       "from": "0x8adB6916Bc161d7E3D46286ADAD3C77eef84Eb5d",
-      "to": "0x81e34A2910C1b77fc66d059bc9a11B74684A7fb6"
+      "to": "0x87938F433349D793851343183148C4F97aC35eBF"
     },
     "protocolDataProvider": {
       "from": "0x99411FC17Ad1B56f49719E3850B2CDcc0f9bBFd8",
@@ -122,7 +122,7 @@
       },
       "interestRateStrategy": {
         "from": "0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "liquidityIndex": {
         "from": "1009519633706174410828760447",
@@ -144,7 +144,7 @@
       },
       "interestRateStrategy": {
         "from": "0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "liquidityIndex": {
         "from": "1054007927356259420056141719",
@@ -166,7 +166,7 @@
       },
       "interestRateStrategy": {
         "from": "0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "liquidityIndex": {
         "from": "1000215232286360312917423398",
@@ -188,7 +188,7 @@
       },
       "interestRateStrategy": {
         "from": "0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "liquidityIndex": {
         "from": "1026061875805953617644739095",
@@ -210,7 +210,7 @@
       },
       "interestRateStrategy": {
         "from": "0xEDeA87920826abfE28C2D57AC7665B7031f64EfF",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "liquidityIndex": {
         "from": "1046345189183187598582833255",
@@ -226,7 +226,7 @@
     "0x420000000000000000000000000000000000000A": {
       "address": {
         "from": "0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "baseStableBorrowRate": {
         "from": "57000000000000000000000000",
@@ -260,7 +260,7 @@
     "0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0": {
       "address": {
         "from": "0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "baseStableBorrowRate": {
         "from": "80000000000000000000000000",
@@ -294,7 +294,7 @@
     "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000": {
       "address": {
         "from": "0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "baseStableBorrowRate": {
         "from": "90000000000000000000000000",
@@ -328,7 +328,7 @@
     "0xEA32A96608495e54156Ae48931A7c20f0dcc1a21": {
       "address": {
         "from": "0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",
@@ -362,7 +362,7 @@
     "0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC": {
       "address": {
         "from": "0xEDeA87920826abfE28C2D57AC7665B7031f64EfF",
-        "to": "0xBa0e4b8c477365aFa3733f210008bA5923f734e9"
+        "to": "0xB815E1DD4AD95D88abC6840aB79Bf5d8498CA7c0"
       },
       "baseStableBorrowRate": {
         "from": "70000000000000000000000000",
