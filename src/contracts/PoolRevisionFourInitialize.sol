@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import {DataTypes, PoolLogic} from 'aave-v3-origin/core/contracts/protocol/pool/Pool.sol';
+import {DataTypes} from 'aave-v3-origin/core/contracts/protocol/pool/Pool.sol';
 import {IERC20} from 'aave-v3-origin/core/contracts/dependencies/openzeppelin/contracts/IERC20.sol';
 import {SafeCast} from 'aave-v3-origin/core/contracts/dependencies/openzeppelin/contracts/SafeCast.sol';
 import {WadRayMath} from 'aave-v3-origin/core/contracts/protocol/libraries/math/WadRayMath.sol';
