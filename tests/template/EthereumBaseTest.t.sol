@@ -13,9 +13,7 @@ import {GovernanceV3Ethereum} from 'aave-address-book/GovernanceV3Ethereum.sol';
 // While adding manually the _executePayload() gives more flexibility to for example initialize some data before the update and check changes done by the update itself.
 // The protocol contracts could be accessed via `AaveV3Ethereum` and the listed assets via `AaveV3EthereumAssets` from the aave-address-book.
 // command to test: make test-contract filter=EthereumBaseTest
-contract EthereumBaseTest is
-  BaseTest('mainnet', 19476859)
-{
+contract EthereumBaseTest is BaseTest('mainnet', 20160113) {
   // code to test the protocol pool could be added below.
   function test_pool() public proposalExecuted {
     address user = address(62409);
@@ -25,12 +23,7 @@ contract EthereumBaseTest is
 
     vm.startPrank(user);
     IERC20(AaveV3EthereumAssets.USDC_UNDERLYING).approve(address(AaveV3Ethereum.POOL), amount);
-    AaveV3Ethereum.POOL.deposit(
-      AaveV3EthereumAssets.USDC_UNDERLYING,
-      amount,
-      user,
-      0
-    );
+    AaveV3Ethereum.POOL.deposit(AaveV3EthereumAssets.USDC_UNDERLYING, amount, user, 0);
     vm.stopPrank();
     assertGe(IERC20(AaveV3EthereumAssets.USDC_A_TOKEN).balanceOf(user), amount);
   }
@@ -46,7 +39,10 @@ contract EthereumBaseTest is
 
   // code to test the protocol protocol data provider could be added below.
   function test_data_provider() public {
-    assertEq(POOL_ADDRESSES_PROVIDER.getPoolDataProvider(), address(AaveV3Ethereum.AAVE_PROTOCOL_DATA_PROVIDER));
+    assertEq(
+      POOL_ADDRESSES_PROVIDER.getPoolDataProvider(),
+      address(AaveV3Ethereum.AAVE_PROTOCOL_DATA_PROVIDER)
+    );
 
     _executePayload();
 

@@ -9,7 +9,7 @@ import {UpgradePayloadTestWithStableSwap} from './UpgradePayloadTestWithStableSw
 contract UpgradePolygonTest is
   UpgradePayloadTestWithStableSwap(
     'polygon',
-    54337710,
+    58586581,
     0xc5543b3a2973dd3b9d156376E1e8E7d0dCAc3664,
     AaveV3PolygonAssets.DAI_UNDERLYING,
     4.3 * 1e3 // limit raised to 0.043%, because of miMATIC(0.024%) and jEUR(0.043%)
