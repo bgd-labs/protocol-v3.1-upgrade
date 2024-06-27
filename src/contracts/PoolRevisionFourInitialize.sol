@@ -6,10 +6,13 @@ import {SafeCast} from 'aave-v3-origin/core/contracts/dependencies/openzeppelin/
 import {WadRayMath} from 'aave-v3-origin/core/contracts/protocol/libraries/math/WadRayMath.sol';
 import {MathUtils} from 'aave-v3-origin/core/contracts/protocol/libraries/math/MathUtils.sol';
 import {ReserveConfiguration} from 'aave-v3-origin/core/contracts/protocol/libraries/configuration/ReserveConfiguration.sol';
+import {ReserveLogic} from 'aave-v3-origin/core/contracts/protocol/libraries/logic/ReserveLogic.sol';
 
 import {AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
 
 library PoolRevisionFourInitialize {
+  using ReserveLogic for DataTypes.ReserveCache;
+  using ReserveLogic for DataTypes.ReserveData;
   using ReserveConfiguration for DataTypes.ReserveConfigurationMap;
 
   function initialize(
@@ -29,24 +32,20 @@ library PoolRevisionFourInitialize {
       }
 
       DataTypes.ReserveData storage currentReserve = _reserves[currentReserveAddress];
-      address currentAToken = currentReserve.aTokenAddress;
-      uint256 balanceOfUnderlying = IERC20(currentReserveAddress).balanceOf(currentAToken);
-      uint256 aTokenTotalSupply = IERC20(currentAToken).totalSupply();
-      uint256 vTokenTotalSupply = IERC20(currentReserve.variableDebtTokenAddress).totalSupply();
-      uint256 sTokenTotalSupply = IERC20(currentReserve.stableDebtTokenAddress).totalSupply();
+      DataTypes.ReserveCache memory reserveCache = currentReserve.cache();
+      currentReserve.updateState(reserveCache);
+
+      uint256 balanceOfUnderlying = IERC20(currentReserveAddress).balanceOf(
+        reserveCache.aTokenAddress
+      );
+      uint256 aTokenTotalSupply = IERC20(reserveCache.aTokenAddress).totalSupply();
+      uint256 vTokenTotalSupply = IERC20(reserveCache.variableDebtTokenAddress).totalSupply();
+      uint256 sTokenTotalSupply = IERC20(reserveCache.stableDebtTokenAddress).totalSupply();
 
       // calculate current accruedToTreasury
-      uint256 cumulatedLiquidityInterest = MathUtils.calculateLinearInterest(
-        currentReserve.currentLiquidityRate,
-        currentReserve.lastUpdateTimestamp
-      );
-      uint256 nextLiquidityIndex = WadRayMath.rayMul(
-        cumulatedLiquidityInterest,
-        currentReserve.liquidityIndex
-      );
       uint256 accruedToTreasury = WadRayMath.rayMul(
         currentReserve.accruedToTreasury,
-        nextLiquidityIndex
+        reserveCache.nextLiquidityIndex
       );
 
       uint256 currentVirtualBalance = (aTokenTotalSupply + accruedToTreasury) -
