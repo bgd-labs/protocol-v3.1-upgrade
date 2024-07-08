@@ -10,6 +10,7 @@ fs_permissions = [{ access = "write", path = "./reports" }]
 ffi = true
 solc = '0.8.19'
 evm_version = 'shanghai'
+bytecode_hash = 'none'
 
 [rpc_endpoints]
 mainnet = "${RPC_MAINNET}"

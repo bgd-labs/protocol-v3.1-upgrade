@@ -17,6 +17,7 @@ import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfig
 import {EthereumScript, PolygonScript, AvalancheScript, OptimismScript, ArbitrumScript, MetisScript, BaseScript, GnosisScript, ScrollScript, BNBScript} from 'aave-helpers/ScriptUtils.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3Helpers.sol';
 
+import {PoolRevisionFourInitialize} from '../src/contracts/PoolRevisionFourInitialize.sol';
 import {PoolInstanceWithCustomInitialize} from '../src/contracts/PoolInstanceWithCustomInitialize.sol';
 import {L2PoolInstanceWithCustomInitialize} from '../src/contracts/L2PoolInstanceWithCustomInitialize.sol';
 import {UpgradePayload} from '../src/contracts/UpgradePayload.sol';
@@ -34,6 +35,10 @@ library DeploymentLibrary {
     address poolImpl;
     address poolConfigurator;
     address proofOfReserveExecutor;
+  }
+
+  function _deployLibrary() internal returns (address) {
+    return GovV3Helpers.deployDeterministic(type(PoolRevisionFourInitialize).creationCode);
   }
 
   function _deployL2(DeployPoolImplementationParams memory params) internal returns (address) {
@@ -214,6 +219,13 @@ library DeploymentLibrary {
           proofOfReserveExecutor: address(0)
         })
       );
+  }
+}
+
+// deploy-command: make deploy-ledger contract=scripts/Deploy.s.sol:DeployLibrary chain=<>
+contract DeployLibrary is Script {
+  function run() external {
+    DeploymentLibrary._deployLibrary();
   }
 }
 
