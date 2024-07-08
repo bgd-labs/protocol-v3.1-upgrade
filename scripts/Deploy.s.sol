@@ -14,7 +14,7 @@ import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {IPoolAddressesProvider} from 'aave-v3-origin/core/contracts/interfaces/IPoolAddressesProvider.sol';
 import {AaveProtocolDataProvider} from 'aave-v3-origin/core/contracts/misc/AaveProtocolDataProvider.sol';
 import {PoolConfiguratorInstance} from 'aave-v3-origin/core/instances/PoolConfiguratorInstance.sol';
-import {EthereumScript, PolygonScript, AvalancheScript, OptimismScript, ArbitrumScript, MetisScript, BaseScript, GnosisScript, ScrollScript, BNBScript} from 'aave-helpers/ScriptUtils.sol';
+import {Script, EthereumScript, PolygonScript, AvalancheScript, OptimismScript, ArbitrumScript, MetisScript, BaseScript, GnosisScript, ScrollScript, BNBScript} from 'aave-helpers/ScriptUtils.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3Helpers.sol';
 
 import {PoolRevisionFourInitialize} from '../src/contracts/PoolRevisionFourInitialize.sol';
