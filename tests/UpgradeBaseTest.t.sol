@@ -7,7 +7,7 @@ import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
 contract UpgradeBaseTest is
   UpgradePayloadTest(
     'base',
-    16212761,
+    17139145,
     1.5 * 1e3 // limit is 0.015%
   )
 {
