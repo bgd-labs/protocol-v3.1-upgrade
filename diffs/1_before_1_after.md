@@ -12,7 +12,7 @@
 | currentLiquidityRate | 0.091 % | 0.091 % |
 | currentVariableBorrowRate | 1.51 % | 1.51 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 2723224657491123211795170 |
+| virtual balance | 0 | 2,723,224 |
 | maxVariableBorrowRate | / | 309 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -32,7 +32,7 @@
 | currentLiquidityRate | 0.024 % | 0.024 % |
 | currentVariableBorrowRate | 0.688 % | 0.688 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 932625431511541033378006 |
+| virtual balance | 0 | 932,625 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -52,7 +52,7 @@
 | currentLiquidityRate | 0.133 % | 0.133 % |
 | currentVariableBorrowRate | 1.214 % | 1.214 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 2,958,309,646,844 |
+| virtual balance | 0 | 29,583 |
 | maxVariableBorrowRate | / | 304 % |
 | baseStableBorrowRate | 6 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -72,7 +72,7 @@
 | currentLiquidityRate | 0 % | 0 % |
 | currentVariableBorrowRate | 0.002 % | 0.002 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 684706313486504681570425 |
+| virtual balance | 0 | 684,706 |
 | maxVariableBorrowRate | / | 309 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -108,7 +108,7 @@
 | currentLiquidityRate | 4.101 % | 4.101 % |
 | currentVariableBorrowRate | 7.843 % | 7.843 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 17735016781747441059087688 |
+| virtual balance | 0 | 17,735,016 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 100 % | / |
@@ -128,7 +128,7 @@
 | currentLiquidityRate | 0.001 % | 0.001 % |
 | currentVariableBorrowRate | 0.171 % | 0.171 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 11126528700520563330508346 |
+| virtual balance | 0 | 11,126,528 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -148,7 +148,7 @@
 | currentLiquidityRate | 0.001 % | 0.001 % |
 | currentVariableBorrowRate | 0.166 % | 0.166 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 5792639278571192727683116 |
+| virtual balance | 0 | 5,792,639 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -168,7 +168,7 @@
 | currentLiquidityRate | 3.282 % | 3.283 % |
 | currentVariableBorrowRate | 6.794 % | 6.794 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 2362697707016099171466958 |
+| virtual balance | 0 | 2,362,697 |
 | maxVariableBorrowRate | / | 96 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -188,7 +188,7 @@
 | currentLiquidityRate | 5.704 % | 5.704 % |
 | currentVariableBorrowRate | 8.625 % | 8.625 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 15801681353728256630989611 |
+| virtual balance | 0 | 15,801,681 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -208,7 +208,7 @@
 | currentLiquidityRate | 35.579 % | 35.58 % |
 | currentVariableBorrowRate | 49.365 % | 49.366 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 2,111,090,398,376 |
+| virtual balance | 0 | 2,111,090 |
 | maxVariableBorrowRate | / | 89 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -224,7 +224,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x24701A6368Ff6D2874d6b8cDadd461552B8A5283](https://etherscan.io/address/0x24701A6368Ff6D2874d6b8cDadd461552B8A5283) | [0x847A3364Cc5fE389283bD821cfC8A477288D9e82](https://etherscan.io/address/0x847A3364Cc5fE389283bD821cfC8A477288D9e82) |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1019780367574976724687644 |
+| virtual balance | 0 | 1,019,780 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -244,7 +244,7 @@
 | currentLiquidityRate | 0.013 % | 0.013 % |
 | currentVariableBorrowRate | 0.536 % | 0.536 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1007196275590562579223528 |
+| virtual balance | 0 | 1,007,196 |
 | maxVariableBorrowRate | / | 84.75 % |
 | baseStableBorrowRate | 7.5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -260,7 +260,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xdef8F50155A6cf21181E29E400E8CffAE2d50968](https://etherscan.io/address/0xdef8F50155A6cf21181E29E400E8CffAE2d50968) | [0x847A3364Cc5fE389283bD821cfC8A477288D9e82](https://etherscan.io/address/0x847A3364Cc5fE389283bD821cfC8A477288D9e82) |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 63557484353419109405131143 |
+| virtual balance | 0 | 63,557,484 |
 | maxVariableBorrowRate | / | 80 % |
 | baseStableBorrowRate | 8 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -280,7 +280,7 @@
 | currentLiquidityRate | 6.055 % | 6.056 % |
 | currentVariableBorrowRate | 8.7 % | 8.7 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 107015623369615694360519 |
+| virtual balance | 0 | 107,015 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -296,7 +296,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x36d32fD7a72AD600be60Ccb71D3718E455025CaA](https://etherscan.io/address/0x36d32fD7a72AD600be60Ccb71D3718E455025CaA) | [0x847A3364Cc5fE389283bD821cfC8A477288D9e82](https://etherscan.io/address/0x847A3364Cc5fE389283bD821cfC8A477288D9e82) |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 579204028766619446789383 |
+| virtual balance | 0 | 579,204 |
 | maxVariableBorrowRate | / | 0 % |
 | baseStableBorrowRate | 0 % | / |
 | maxExcessStableToTotalDebtRatio | 100 % | / |
@@ -316,7 +316,7 @@
 | currentLiquidityRate | 0 % | 0 % |
 | currentVariableBorrowRate | 0.079 % | 0.079 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 13112670146725106753599 |
+| virtual balance | 0 | 13,112 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -336,7 +336,7 @@
 | currentLiquidityRate | 5.785 % | 5.785 % |
 | currentVariableBorrowRate | 7.929 % | 7.929 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 281,163,854,509,450 |
+| virtual balance | 0 | 281,163,854 |
 | maxVariableBorrowRate | / | 69 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -356,7 +356,7 @@
 | currentLiquidityRate | 0.033 % | 0.033 % |
 | currentVariableBorrowRate | 0.778 % | 0.778 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 685056983606019447273 |
+| virtual balance | 0 | 685 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 100 % | / |
@@ -376,7 +376,7 @@
 | currentLiquidityRate | 0 % | 0 % |
 | currentVariableBorrowRate | 0.012 % | 0.012 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 39134007796041322856435 |
+| virtual balance | 0 | 39,134 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -396,7 +396,7 @@
 | currentLiquidityRate | 0.584 % | 0.584 % |
 | currentVariableBorrowRate | 3.27 % | 3.27 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 5864302194288191032864 |
+| virtual balance | 0 | 5,864 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -416,7 +416,7 @@
 | currentLiquidityRate | 0.168 % | 0.168 % |
 | currentVariableBorrowRate | 4.166 % | 4.166 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 837644632913088719239630 |
+| virtual balance | 0 | 837,644 |
 | maxVariableBorrowRate | / | 118 % |
 | baseStableBorrowRate | 18 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -436,7 +436,7 @@
 | currentLiquidityRate | 1.897 % | 1.897 % |
 | currentVariableBorrowRate | 2.587 % | 2.587 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 130555239678722581084615 |
+| virtual balance | 0 | 130,555 |
 | maxVariableBorrowRate | / | 82.7 % |
 | baseStableBorrowRate | 5.7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -456,7 +456,7 @@
 | currentLiquidityRate | 0.016 % | 0.016 % |
 | currentVariableBorrowRate | 0.639 % | 0.639 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 218608148000074256113935 |
+| virtual balance | 0 | 218,608 |
 | maxVariableBorrowRate | / | 309 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -476,7 +476,7 @@
 | currentLiquidityRate | 0.092 % | 0.092 % |
 | currentVariableBorrowRate | 1.829 % | 1.829 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 545122948940175747075151 |
+| virtual balance | 0 | 545,122 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 100 % | / |
@@ -496,7 +496,7 @@
 | currentLiquidityRate | 2.928 % | 2.928 % |
 | currentVariableBorrowRate | 6.236 % | 6.236 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 217012204029408182195577 |
+| virtual balance | 0 | 217,012 |
 | maxVariableBorrowRate | / | 95.5 % |
 | baseStableBorrowRate | 9.5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -516,7 +516,7 @@
 | currentLiquidityRate | 2.082 % | 2.082 % |
 | currentVariableBorrowRate | 9.643 % | 9.643 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 5541886430768250799183378 |
+| virtual balance | 0 | 5,541,886 |
 | maxVariableBorrowRate | / | 317 % |
 | baseStableBorrowRate | 17 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -536,7 +536,7 @@
 | currentLiquidityRate | 0.034 % | 0.034 % |
 | currentVariableBorrowRate | 0.793 % | 0.793 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 43116227218969927130979 |
+| virtual balance | 0 | 43,116 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -556,7 +556,7 @@
 | currentLiquidityRate | 0.787 % | 0.787 % |
 | currentVariableBorrowRate | 8.272 % | 8.272 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1851174219606623178428891 |
+| virtual balance | 0 | 1,851,174 |
 | maxVariableBorrowRate | / | 177 % |
 | baseStableBorrowRate | 27 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -576,7 +576,7 @@
 | currentLiquidityRate | 5.871 % | 5.871 % |
 | currentVariableBorrowRate | 7.988 % | 7.988 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 295,899,747,305,386 |
+| virtual balance | 0 | 295,899,747 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -596,7 +596,7 @@
 | currentLiquidityRate | 0.42 % | 0.422 % |
 | currentVariableBorrowRate | 3.241 % | 3.248 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 51945636825336515156904 |
+| virtual balance | 0 | 51,945 |
 | maxVariableBorrowRate | / | 309 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -616,7 +616,7 @@
 | currentLiquidityRate | 0.02 % | 0.02 % |
 | currentVariableBorrowRate | 0.599 % | 0.599 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1536909514059211260082 |
+| virtual balance | 0 | 1,536 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 7 % | / |
 | maxExcessStableToTotalDebtRatio | 100 % | / |
@@ -636,7 +636,7 @@
 | currentLiquidityRate | 5.492 % | 5.492 % |
 | currentVariableBorrowRate | 8.285 % | 8.285 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 182767008379233923749457 |
+| virtual balance | 0 | 182,767 |
 | maxVariableBorrowRate | / | 89 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -692,7 +692,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "2723224657491123211795170"
+        "to": 2723224
       }
     },
     "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984": {
@@ -722,7 +722,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "932625431511541033378006"
+        "to": 932625
       }
     },
     "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599": {
@@ -752,7 +752,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": 2958309646844
+        "to": 29583
       }
     },
     "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0": {
@@ -782,7 +782,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "684706313486504681570425"
+        "to": 684706
       }
     },
     "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f": {
@@ -822,7 +822,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "17735016781747441059087688"
+        "to": 17735016
       }
     },
     "0x514910771AF9Ca656af840dff83E8264EcF986CA": {
@@ -852,7 +852,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "11126528700520563330508346"
+        "to": 11126528
       }
     },
     "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32": {
@@ -882,7 +882,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "5792639278571192727683116"
+        "to": 5792639
       }
     },
     "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0": {
@@ -912,7 +912,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "2362697707016099171466958"
+        "to": 2362697
       }
     },
     "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
@@ -942,7 +942,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "15801681353728256630989611"
+        "to": 15801681
       }
     },
     "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8": {
@@ -972,7 +972,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": 2111090398376
+        "to": 2111090
       }
     },
     "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9": {
@@ -986,7 +986,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1019780367574976724687644"
+        "to": 1019780
       }
     },
     "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": {
@@ -1016,7 +1016,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1007196275590562579223528"
+        "to": 1007196
       }
     },
     "0x83F20F44975D03b1b09e64809B757c47f942BEeA": {
@@ -1030,7 +1030,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "63557484353419109405131143"
+        "to": 63557484
       }
     },
     "0x853d955aCEf822Db058eb8505911ED77F175b99e": {
@@ -1060,7 +1060,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "107015623369615694360519"
+        "to": 107015
       }
     },
     "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497": {
@@ -1074,7 +1074,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "579204028766619446789383"
+        "to": 579204
       }
     },
     "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2": {
@@ -1104,7 +1104,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "13112670146725106753599"
+        "to": 13112
       }
     },
     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
@@ -1134,7 +1134,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": 281163854509450
+        "to": 281163854
       }
     },
     "0xA35b1B31Ce002FBF2058D22F30f95D405200A15b": {
@@ -1164,7 +1164,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "685056983606019447273"
+        "to": 685
       }
     },
     "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6": {
@@ -1194,7 +1194,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "39134007796041322856435"
+        "to": 39134
       }
     },
     "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704": {
@@ -1224,7 +1224,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "5864302194288191032864"
+        "to": 5864
       }
     },
     "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F": {
@@ -1254,7 +1254,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "837644632913088719239630"
+        "to": 837644
       }
     },
     "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": {
@@ -1284,7 +1284,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "130555239678722581084615"
+        "to": 130555
       }
     },
     "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72": {
@@ -1314,7 +1314,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "218608148000074256113935"
+        "to": 218608
       }
     },
     "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": {
@@ -1344,7 +1344,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "545122948940175747075151"
+        "to": 545122
       }
     },
     "0xD33526068D116cE69F19A9ee46F0bd304F21A51f": {
@@ -1374,7 +1374,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "217012204029408182195577"
+        "to": 217012
       }
     },
     "0xD533a949740bb3306d119CC777fa900bA034cd52": {
@@ -1404,7 +1404,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "5541886430768250799183378"
+        "to": 5541886
       }
     },
     "0xae78736Cd615f374D3085123A210448E74Fc6393": {
@@ -1434,7 +1434,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "43116227218969927130979"
+        "to": 43116
       }
     },
     "0xba100000625a3754423978a60c9317c58a424e3D": {
@@ -1464,7 +1464,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1851174219606623178428891"
+        "to": 1851174
       }
     },
     "0xdAC17F958D2ee523a2206206994597C13D831ec7": {
@@ -1494,7 +1494,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": 295899747305386
+        "to": 295899747
       }
     },
     "0xdeFA4e8a7bcBA345F687a2f1456F5Edd9CE97202": {
@@ -1524,7 +1524,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "51945636825336515156904"
+        "to": 51945
       }
     },
     "0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38": {
@@ -1554,7 +1554,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1536909514059211260082"
+        "to": 1536
       }
     },
     "0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E": {
@@ -1584,7 +1584,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "182767008379233923749457"
+        "to": 182767
       }
     }
   },

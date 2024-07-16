@@ -12,7 +12,7 @@
 | currentLiquidityRate | 0.582 % | 0.582 % |
 | currentVariableBorrowRate | 1.52 % | 1.52 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1529186814020408589378 |
+| virtual balance | 0 | 1,529 |
 | maxVariableBorrowRate | / | 82.7 % |
 | baseStableBorrowRate | 4.7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -32,7 +32,7 @@
 | currentLiquidityRate | 0.029 % | 0.029 % |
 | currentVariableBorrowRate | 0.725 % | 0.725 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 4189317833578430410751 |
+| virtual balance | 0 | 4,189 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -52,7 +52,7 @@
 | currentLiquidityRate | 0.109 % | 0.109 % |
 | currentVariableBorrowRate | 1.6 % | 1.6 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 33186630780886118539577 |
+| virtual balance | 0 | 33,186 |
 | maxVariableBorrowRate | / | 95 % |
 | baseStableBorrowRate | 17 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -72,7 +72,7 @@
 | currentLiquidityRate | 9.177 % | 9.177 % |
 | currentVariableBorrowRate | 11.291 % | 11.292 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 520,488,318,657 |
+| virtual balance | 0 | 520,488 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -88,7 +88,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 24814432444850706219983869 |
+| virtual balance | 0 | 24,814,432 |
 | maxVariableBorrowRate | / | 79 % |
 | baseStableBorrowRate | 5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -108,7 +108,7 @@
 | currentLiquidityRate | 3.138 % | 3.138 % |
 | currentVariableBorrowRate | 6.263 % | 6.263 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1239697790395063732527675 |
+| virtual balance | 0 | 1,239,697 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -128,7 +128,7 @@
 | currentLiquidityRate | 7 % | 7 % |
 | currentVariableBorrowRate | 10.349 % | 10.349 % |
 | virtual accounting active | false | true |
-| virtual balance | 0 | 1290435158531919048467250 |
+| virtual balance | 0 | 1,290,435 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -184,7 +184,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1529186814020408589378"
+        "to": 1529
       }
     },
     "0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6": {
@@ -214,7 +214,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "4189317833578430410751"
+        "to": 4189
       }
     },
     "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb": {
@@ -244,7 +244,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "33186630780886118539577"
+        "to": 33186
       }
     },
     "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83": {
@@ -274,7 +274,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": 520488318657
+        "to": 520488
       }
     },
     "0xaf204776c7245bF4147c2612BF6e5972Ee483701": {
@@ -288,7 +288,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "24814432444850706219983869"
+        "to": 24814432
       }
     },
     "0xcB444e90D8198415266c6a2724b7900fb12FC56E": {
@@ -318,7 +318,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1239697790395063732527675"
+        "to": 1239697
       }
     },
     "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d": {
@@ -348,7 +348,7 @@
       },
       "virtual balance": {
         "from": 0,
-        "to": "1290435158531919048467250"
+        "to": 1290435
       }
     }
   },
