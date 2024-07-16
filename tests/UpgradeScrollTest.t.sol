@@ -7,7 +7,7 @@ import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
 contract UpgradeScrollTest is
   UpgradePayloadTest(
     'scroll',
-    6837096,
+    7493458,
     1.5 * 1e3 // limit is 0.015%
   )
 {
