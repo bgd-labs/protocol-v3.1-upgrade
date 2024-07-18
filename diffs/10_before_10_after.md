@@ -7,10 +7,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xF2c62E55f33f8f5643b7C098237cEa25cEb4e590](https://optimistic.etherscan.io/address/0xF2c62E55f33f8f5643b7C098237cEa25cEb4e590) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.056 | 1.056 |
-| variableBorrowIndex | 1.071 | 1.071 |
-| currentLiquidityRate | 6.127 % | 6.127 % |
-| currentVariableBorrowRate | 8.251 % | 8.251 % |
+| liquidityIndex | 1.056 [1056467618467748345341648352] (27 decimals) | 1.056 [1056467770361881680404001004] (27 decimals) |
+| variableBorrowIndex | 1.071 [1071081422581948066152302602] (27 decimals) | 1.071 [1071081629956869718460102987] (27 decimals) |
+| aToken underlying balance |  | 6538370.941672 |
+| currentLiquidityRate | 6.127% [61271667157864750345009148] (25 decimals) | 6.127% [61271674541773754880681084] (25 decimals) |
+| currentVariableBorrowRate | 8.251% [82510381271331717293195968] (25 decimals) | 8.251% [82510386243035256157585031] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 6538369.954974 |
 | maxVariableBorrowRate | / | 69 % |
@@ -27,10 +28,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x6BA97468e2e6a3711a6DD05F0075d48E878c910e](https://optimistic.etherscan.io/address/0x6BA97468e2e6a3711a6DD05F0075d48E878c910e) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.001 | 1.001 |
-| variableBorrowIndex | 1.007 | 1.007 |
-| currentLiquidityRate | 0.004 % | 0.004 % |
-| currentVariableBorrowRate | 0.38 % | 0.38 % |
+| liquidityIndex | 1.000 [1000749726478279190664827556] (27 decimals) | 1.000 [1000749726531421888794207441] (27 decimals) |
+| variableBorrowIndex | 1.007 [1007388121045156777962912846] (27 decimals) | 1.007 [1007388125897007368875480673] (27 decimals) |
+| aToken underlying balance |  | 20475.179914054380739915 |
+| currentLiquidityRate | 0.004% [41866314920359332953101] (25 decimals) | 0.004% [41866315192981817098307] (25 decimals) |
+| currentVariableBorrowRate | 0.379% [3797145228321290973478607] (25 decimals) | 0.379% [3797145234617208660580251] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 20475.179911982470239108 |
 | maxVariableBorrowRate | / | 84.75 % |
@@ -47,10 +49,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.003 | 1.003 |
-| variableBorrowIndex | 1.03 | 1.03 |
-| currentLiquidityRate | 0.025 % | 0.025 % |
-| currentVariableBorrowRate | 0.697 % | 0.697 % |
+| liquidityIndex | 1.002 [1002966206251602264960869519] (27 decimals) | 1.002 [1002966341656297096353773055] (27 decimals) |
+| variableBorrowIndex | 1.030 [1030158643957983582316952109] (27 decimals) | 1.030 [1030162523289741628210829751] (27 decimals) |
+| aToken underlying balance |  | 182304.821793094343521725 |
+| currentLiquidityRate | 0.024% [249911590239777449865976] (25 decimals) | 0.024% [249913392996907041520649] (25 decimals) |
+| currentVariableBorrowRate | 0.697% [6970933963566228677523947] (25 decimals) | 0.697% [6970959106214130024037042] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 182304.819926895724719819 |
 | maxVariableBorrowRate | / | 307 % |
@@ -67,10 +70,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x129F838C3339f64a026aeb334Ffd5d55C2E94935](https://optimistic.etherscan.io/address/0x129F838C3339f64a026aeb334Ffd5d55C2E94935) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.026 | 1.026 |
-| variableBorrowIndex | 1.066 | 1.066 |
-| currentLiquidityRate | 1.932 % | 1.932 % |
-| currentVariableBorrowRate | 2.611 % | 2.611 % |
+| liquidityIndex | 1.025 [1025849455896466282692447974] (27 decimals) | 1.025 [1025849459666421321050328159] (27 decimals) |
+| variableBorrowIndex | 1.065 [1065551535351129580075841723] (27 decimals) | 1.065 [1065551540644401631686932269] (27 decimals) |
+| aToken underlying balance |  | 2292.702205395375357888 |
+| currentLiquidityRate | 1.931% [19315586285799846158810870] (25 decimals) | 1.931% [19315586310684282278458112] (25 decimals) |
+| currentVariableBorrowRate | 2.610% [26109894193445819989929389] (25 decimals) | 2.610% [26109894210264620732621494] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 2292.702205395375357888 |
 | maxVariableBorrowRate | / | 82.7 % |
@@ -87,10 +91,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.001 | 1.001 |
-| variableBorrowIndex | 1.01 | 1.01 |
-| currentLiquidityRate | 0.056 % | 0.056 % |
-| currentVariableBorrowRate | 1.047 % | 1.047 % |
+| liquidityIndex | 1.001 [1001278490716637677535596417] (27 decimals) | 1.001 [1001278499063497410807939787] (27 decimals) |
+| variableBorrowIndex | 1.009 [1009816318951096765818358309] (27 decimals) | 1.009 [1009816475234894827805314482] (27 decimals) |
+| aToken underlying balance |  | 8718631.710724792831607079 |
+| currentLiquidityRate | 0.056% [564142629890140526470688] (25 decimals) | 0.056% [564142792960648556431775] (25 decimals) |
+| currentVariableBorrowRate | 1.047% [10473509452729596571517911] (25 decimals) | 1.047% [10473510966460604830348716] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 8718631.708993837450741051 |
 | maxVariableBorrowRate | / | 307 % |
@@ -107,10 +112,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x04daBC3C1c052AB94AA2ca80140f2b978d2F6E17](https://optimistic.etherscan.io/address/0x04daBC3C1c052AB94AA2ca80140f2b978d2F6E17) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.004 | 1.004 |
-| variableBorrowIndex | 1.028 | 1.028 |
-| currentLiquidityRate | 0.036 % | 0.036 % |
-| currentVariableBorrowRate | 0.637 % | 0.637 % |
+| liquidityIndex | 1.003 [1003697464638628876564381700] (27 decimals) | 1.003 [1003697467681672496428008116] (27 decimals) |
+| variableBorrowIndex | 1.028 [1028245868587698188204368225] (27 decimals) | 1.028 [1028245922984798198451490332] (27 decimals) |
+| aToken underlying balance |  | 649.48444779 |
+| currentLiquidityRate | 0.036% [364930923547538974730559] (25 decimals) | 0.036% [364930959510274483596410] (25 decimals) |
+| currentVariableBorrowRate | 0.636% [6367721758538998597392364] (25 decimals) | 0.636% [6367722072297949913946682] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 649.48444779 |
 | maxVariableBorrowRate | / | 304 % |
@@ -127,6 +133,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
+| aToken underlying balance |  | 6929.515010473702664123 |
 | virtual accounting active | false | true |
 | virtual balance | / | 6929.515010473702664123 |
 | maxVariableBorrowRate | / | 307 % |
@@ -143,10 +150,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x049BDe04f282822a020631415b39Dc613B934894](https://optimistic.etherscan.io/address/0x049BDe04f282822a020631415b39Dc613B934894) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.089 | 1.089 |
-| variableBorrowIndex | 1.135 | 1.135 |
-| currentLiquidityRate | 3.993 % | 3.993 % |
-| currentVariableBorrowRate | 7.904 % | 7.904 % |
+| liquidityIndex | 1.089 [1089398245150984835065314416] (27 decimals) | 1.089 [1089398625855892945204465662] (27 decimals) |
+| variableBorrowIndex | 1.134 [1134956243214906737874243415] (27 decimals) | 1.134 [1134957028340537972477886604] (27 decimals) |
+| aToken underlying balance |  | 3001564.243971 |
+| currentLiquidityRate | 3.993% [39930001762011152699168829] (25 decimals) | 3.993% [39930578425945584629916576] (25 decimals) |
+| currentVariableBorrowRate | 7.904% [79041907529586688998462298] (25 decimals) | 7.904% [79042507224558756527749353] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 3001487.308187 |
 | maxVariableBorrowRate | / | 90 % |
@@ -163,10 +171,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xd9a0344d7f661c115f73e261d0b74263386fD8c8](https://optimistic.etherscan.io/address/0xd9a0344d7f661c115f73e261d0b74263386fD8c8) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.116 | 1.116 |
-| variableBorrowIndex | 1.171 | 1.171 |
-| currentLiquidityRate | 14.274 % | 14.274 % |
-| currentVariableBorrowRate | 21.417 % | 21.417 % |
+| liquidityIndex | 1.115 [1115883293608962036374508223] (27 decimals) | 1.115 [1115886122102447965870966086] (27 decimals) |
+| variableBorrowIndex | 1.171 [1171374215055884996019961220] (27 decimals) | 1.171 [1171378669969876071840942179] (27 decimals) |
+| aToken underlying balance |  | 594407.694966716712487592 |
+| currentLiquidityRate | 14.274% [142743054959157401739172222] (25 decimals) | 14.274% [142744467142858029678234258] (25 decimals) |
+| currentVariableBorrowRate | 21.417% [214171372304548698118823201] (25 decimals) | 21.417% [214173355206746347527809366] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 594407.694966716712487592 |
 | maxVariableBorrowRate | / | 84 % |
@@ -183,10 +192,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x245680a504e29c74a5907ce7c1025BF308319f92](https://optimistic.etherscan.io/address/0x245680a504e29c74a5907ce7c1025BF308319f92) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.127 | 1.127 |
-| variableBorrowIndex | 1.171 | 1.171 |
-| currentLiquidityRate | 6.2 % | 6.2 % |
-| currentVariableBorrowRate | 8.355 % | 8.355 % |
+| liquidityIndex | 1.126 [1126945505995292335040546995] (27 decimals) | 1.126 [1126945731973748527650961950] (27 decimals) |
+| variableBorrowIndex | 1.170 [1170863466295691684298461650] (27 decimals) | 1.170 [1170863782691829164873543974] (27 decimals) |
+| aToken underlying balance |  | 1912276.351291 |
+| currentLiquidityRate | 6.199% [61996983122004918709020593] (25 decimals) | 6.199% [61997609993498473762873509] (25 decimals) |
+| currentVariableBorrowRate | 8.354% [83547083688647387760184922] (25 decimals) | 8.354% [83547511849448791889862462] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 1912217.297612 |
 | maxVariableBorrowRate | / | 84 % |
@@ -203,10 +213,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x3B57B081dA6Af5e2759A57bD3211932Cb6176997](https://optimistic.etherscan.io/address/0x3B57B081dA6Af5e2759A57bD3211932Cb6176997) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1 | 1 |
-| variableBorrowIndex | 1.003 | 1.003 |
-| currentLiquidityRate | 0.012 % | 0.012 % |
-| currentVariableBorrowRate | 0.46 % | 0.46 % |
+| liquidityIndex | 1.000 [1000279780940756864426320675] (27 decimals) | 1.000 [1000279856995618744824615434] (27 decimals) |
+| variableBorrowIndex | 1.003 [1003389820612010586563558542] (27 decimals) | 1.003 [1003392858147347842944868135] (27 decimals) |
+| aToken underlying balance |  | 706.546670426695274479 |
+| currentLiquidityRate | 0.011% [115445125991561889516916] (25 decimals) | 0.011% [115445804349042010119955] (25 decimals) |
+| currentVariableBorrowRate | 0.459% [4596434770532805045414193] (25 decimals) | 0.459% [4596448274876541158158402] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 706.546670294003181072 |
 | maxVariableBorrowRate | / | 307 % |
@@ -223,10 +234,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x245680a504e29c74a5907ce7c1025BF308319f92](https://optimistic.etherscan.io/address/0x245680a504e29c74a5907ce7c1025BF308319f92) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.099 | 1.099 |
-| variableBorrowIndex | 1.144 | 1.144 |
-| currentLiquidityRate | 6.814 % | 6.821 % |
-| currentVariableBorrowRate | 10.208 % | 10.218 % |
+| liquidityIndex | 1.098 [1098602483419941332081901630] (27 decimals) | 1.098 [1098603095857955755742311180] (27 decimals) |
+| variableBorrowIndex | 1.144 [1144438742416402368709693747] (27 decimals) | 1.144 [1144439698156375296512407640] (27 decimals) |
+| aToken underlying balance |  | 331964.121310451989297341 |
+| currentLiquidityRate | 6.814% [68140993976149747088978749] (25 decimals) | 6.820% [68208706191122299649790201] (25 decimals) |
+| currentVariableBorrowRate | 10.207% [102078415284490828262441430] (25 decimals) | 10.217% [102179848295804657982552398] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 331913.785121473848776035 |
 | maxVariableBorrowRate | / | 84 % |
@@ -243,10 +255,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x61e39832D9A138cb0e1b95F79aa827273e71c97f](https://optimistic.etherscan.io/address/0x61e39832D9A138cb0e1b95F79aa827273e71c97f) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.08 | 1.08 |
-| variableBorrowIndex | 1.119 | 1.119 |
-| currentLiquidityRate | 5.747 % | 5.747 % |
-| currentVariableBorrowRate | 8.99 % | 8.99 % |
+| liquidityIndex | 1.080 [1080429171732244679193591877] (27 decimals) | 1.080 [1080447196521923160487606459] (27 decimals) |
+| variableBorrowIndex | 1.119 [1119272392986074420835008246] (27 decimals) | 1.119 [1119301601659188658884670508] (27 decimals) |
+| aToken underlying balance |  | 42748.16070654741826468 |
+| currentLiquidityRate | 5.747% [57473759063493971787895116] (25 decimals) | 5.747% [57474361620670808111722006] (25 decimals) |
+| currentVariableBorrowRate | 8.990% [89901320169972141420071595] (25 decimals) | 8.990% [89901791433245824896908685] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 42748.16070654741826468 |
 | maxVariableBorrowRate | / | 96 % |
@@ -263,10 +276,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x168Bb3f994642CEA4017b39cB691f4668da8596C](https://optimistic.etherscan.io/address/0x168Bb3f994642CEA4017b39cB691f4668da8596C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
-| liquidityIndex | 1.017 | 1.017 |
-| variableBorrowIndex | 1.069 | 1.069 |
-| currentLiquidityRate | 0.049 % | 0.049 % |
-| currentVariableBorrowRate | 4.432 % | 4.433 % |
+| liquidityIndex | 1.017 [1017119637363202125435906493] (27 decimals) | 1.017 [1017123514183649371353519763] (27 decimals) |
+| variableBorrowIndex | 1.069 [1069016337612672911500881565] (27 decimals) | 1.069 [1069384128257819937634403075] (27 decimals) |
+| aToken underlying balance |  | 28775.296582107234801888 |
+| currentLiquidityRate | 0.049% [491115912397879436011245] (25 decimals) | 0.049% [491378970609888719758717] (25 decimals) |
+| currentVariableBorrowRate | 4.432% [44322270356915582354606913] (25 decimals) | 4.433% [44334139017686526840208356] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 28775.296582107234801888 |
 | maxVariableBorrowRate | / | 309 % |
@@ -298,6 +312,10 @@
   },
   "reserves": {
     "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "6538370.941672"
+      },
       "currentLiquidityRate": {
         "from": "61271667157864750345009148",
         "to": "61271674541773754880681084"
@@ -328,6 +346,10 @@
       }
     },
     "0x1F32b1c2345538c0c6f582fCB022739c4A194Ebb": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "20475.179914054380739915"
+      },
       "currentLiquidityRate": {
         "from": "41866314920359332953101",
         "to": "41866315192981817098307"
@@ -358,6 +380,10 @@
       }
     },
     "0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "182304.821793094343521725"
+      },
       "currentLiquidityRate": {
         "from": "249911590239777449865976",
         "to": "249913392996907041520649"
@@ -388,6 +414,10 @@
       }
     },
     "0x4200000000000000000000000000000000000006": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "2292.702205395375357888"
+      },
       "currentLiquidityRate": {
         "from": "19315586285799846158810870",
         "to": "19315586310684282278458112"
@@ -418,6 +448,10 @@
       }
     },
     "0x4200000000000000000000000000000000000042": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "8718631.710724792831607079"
+      },
       "currentLiquidityRate": {
         "from": "564142629890140526470688",
         "to": "564142792960648556431775"
@@ -448,6 +482,10 @@
       }
     },
     "0x68f180fcCe6836688e9084f035309E29Bf0A2095": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "649.48444779"
+      },
       "currentLiquidityRate": {
         "from": "364930923547538974730559",
         "to": "364930959510274483596410"
@@ -478,6 +516,10 @@
       }
     },
     "0x76FB31fb4af56892A25e32cFC43De717950c9278": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "6929.515010473702664123"
+      },
       "interestRateStrategy": {
         "from": "0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C",
         "to": "0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea"
@@ -492,6 +534,10 @@
       }
     },
     "0x7F5c764cBc14f9669B88837ca1490cCa17c31607": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "3001564.243971"
+      },
       "currentLiquidityRate": {
         "from": "39930001762011152699168829",
         "to": "39930578425945584629916576"
@@ -522,6 +568,10 @@
       }
     },
     "0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "594407.694966716712487592"
+      },
       "currentLiquidityRate": {
         "from": "142743054959157401739172222",
         "to": "142744467142858029678234258"
@@ -552,6 +602,10 @@
       }
     },
     "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "1912276.351291"
+      },
       "currentLiquidityRate": {
         "from": "61996983122004918709020593",
         "to": "61997609993498473762873509"
@@ -582,6 +636,10 @@
       }
     },
     "0x9Bcef72be871e61ED4fBbc7630889beE758eb81D": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "706.546670426695274479"
+      },
       "currentLiquidityRate": {
         "from": "115445125991561889516916",
         "to": "115445804349042010119955"
@@ -612,6 +670,10 @@
       }
     },
     "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "331964.121310451989297341"
+      },
       "currentLiquidityRate": {
         "from": "68140993976149747088978749",
         "to": "68208706191122299649790201"
@@ -642,6 +704,10 @@
       }
     },
     "0xc40F949F8a4e094D1b49a23ea9241D289B7b2819": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "42748.16070654741826468"
+      },
       "currentLiquidityRate": {
         "from": "57473759063493971787895116",
         "to": "57474361620670808111722006"
@@ -672,6 +738,10 @@
       }
     },
     "0xdFA46478F9e5EA86d57387849598dbFB2e964b02": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "28775.296582107234801888"
+      },
       "currentLiquidityRate": {
         "from": "491115912397879436011245",
         "to": "491378970609888719758717"

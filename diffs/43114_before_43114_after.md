@@ -2,15 +2,16 @@
 
 ### Reserve altered
 
-#### BTC.b ([0x152b9d0FdC40C096757F570A51E494bd4b943E50](https://snowscan.xyz/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50))
+#### BTC.b ([0x152b9d0FdC40C096757F570A51E494bd4b943E50](https://snowtrace.io/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.003 | 1.003 |
-| variableBorrowIndex | 1.02 | 1.02 |
-| currentLiquidityRate | 0.006 % | 0.006 % |
-| currentVariableBorrowRate | 0.349 % | 0.349 % |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.003 [1003122283719024825481167788] (27 decimals) | 1.003 [1003122289397336417913538277] (27 decimals) |
+| variableBorrowIndex | 1.019 [1019787602094870567930865080] (27 decimals) | 1.019 [1019787923952581322775508504] (27 decimals) |
+| aToken underlying balance |  | 2148.45181382 |
+| currentLiquidityRate | 0.006% [62548655728619028557401] (25 decimals) | 0.006% [62548769463812502341107] (25 decimals) |
+| currentVariableBorrowRate | 0.348% [3487440123342355610545982] (25 decimals) | 0.348% [3487443294029976487582802] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 2148.45049376 |
 | maxVariableBorrowRate | / | 307 % |
@@ -22,11 +23,12 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### sAVAX ([0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE](https://snowscan.xyz/address/0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE))
+#### sAVAX ([0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE](https://snowtrace.io/address/0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| aToken underlying balance |  | 999701.690645012357527605 |
 | virtual accounting active | false | true |
 | virtual balance | / | 999701.690645012357527605 |
 | maxVariableBorrowRate | / | 307 % |
@@ -38,15 +40,16 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### WETH.e ([0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB](https://snowscan.xyz/address/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB))
+#### WETH.e ([0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB](https://snowtrace.io/address/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowscan.xyz/address/0xd5CA18a70189309664e34FB8150799ff13722308) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.012 | 1.012 |
-| variableBorrowIndex | 1.054 | 1.054 |
-| currentLiquidityRate | 0.322 % | 0.322 % |
-| currentVariableBorrowRate | 1.736 % | 1.736 % |
+| interestRateStrategy | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowtrace.io/address/0xd5CA18a70189309664e34FB8150799ff13722308) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.012 [1012306898869637966023402909] (27 decimals) | 1.012 [1012307145642639496341384508] (27 decimals) |
+| variableBorrowIndex | 1.053 [1053698204567759327152311601] (27 decimals) | 1.053 [1053699590291788650035184073] (27 decimals) |
+| aToken underlying balance |  | 7954.586926695028224553 |
+| currentLiquidityRate | 0.321% [3217924898530033169533604] (25 decimals) | 0.321% [3217929610478545108722367] (25 decimals) |
+| currentVariableBorrowRate | 1.736% [17360038326867504902671404] (25 decimals) | 1.736% [17360045895291284804948618] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 7954.586926695028224553 |
 | maxVariableBorrowRate | / | 83.7 % |
@@ -58,15 +61,16 @@
 | stableRateSlope2 | 80 % | / |
 | interestRate | ![before](/.assets/a4877f5866751d4c748b2860e175e398fd8b0f20.svg) | ![after](/.assets/916bad2a371ec778f6a1fbad323bf3b1bf3d2631.svg) |
 
-#### WBTC.e ([0x50b7545627a5162F82A992c33b87aDc75187B218](https://snowscan.xyz/address/0x50b7545627a5162F82A992c33b87aDc75187B218))
+#### WBTC.e ([0x50b7545627a5162F82A992c33b87aDc75187B218](https://snowtrace.io/address/0x50b7545627a5162F82A992c33b87aDc75187B218))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowscan.xyz/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.003 | 1.003 |
-| variableBorrowIndex | 1.023 | 1.023 |
-| currentLiquidityRate | 0.05 % | 0.05 % |
-| currentVariableBorrowRate | 0.748 % | 0.748 % |
+| interestRateStrategy | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowtrace.io/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.002 [1002621722257367857210218633] (27 decimals) | 1.002 [1002623930784886544068414112] (27 decimals) |
+| variableBorrowIndex | 1.023 [1023077382696537005414335868] (27 decimals) | 1.023 [1023110877346512492858590503] (27 decimals) |
+| aToken underlying balance |  | 162.55758482 |
+| currentLiquidityRate | 0.050% [503001406648843772664586] (25 decimals) | 0.050% [503031572543672675869597] (25 decimals) |
+| currentVariableBorrowRate | 0.747% [7475897617223289821585180] (25 decimals) | 0.747% [7476121785344120723106278] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 162.55758482 |
 | maxVariableBorrowRate | / | 304 % |
@@ -78,15 +82,16 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/2ace6324c7b225c2db54343eb84fccde0310d6db.svg) | ![after](/.assets/d96341be65a8deb48a568fc7bd8b8bb67541c2a9.svg) |
 
-#### LINK.e ([0x5947BB275c521040051D82396192181b413227A3](https://snowscan.xyz/address/0x5947BB275c521040051D82396192181b413227A3))
+#### LINK.e ([0x5947BB275c521040051D82396192181b413227A3](https://snowtrace.io/address/0x5947BB275c521040051D82396192181b413227A3))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.002 | 1.002 |
-| variableBorrowIndex | 1.024 | 1.024 |
-| currentLiquidityRate | 0.001 % | 0.001 % |
-| currentVariableBorrowRate | 0.12 % | 0.12 % |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.002 [1002491910799052693325918922] (27 decimals) | 1.002 [1002491912308911515048662748] (27 decimals) |
+| variableBorrowIndex | 1.023 [1023525193873928896802774866] (27 decimals) | 1.023 [1023525442674715845481445525] (27 decimals) |
+| aToken underlying balance |  | 157701.18854423748539125 |
+| currentLiquidityRate | 0.000% [7464490120132771158875] (25 decimals) | 0.000% [7464493720997230366661] (25 decimals) |
+| currentVariableBorrowRate | 0.120% [1204752520009923473191864] (25 decimals) | 0.120% [1204752810595746379175520] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 157701.18854423748539125 |
 | maxVariableBorrowRate | / | 307 % |
@@ -98,15 +103,16 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### MAI ([0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b](https://snowscan.xyz/address/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b))
+#### MAI ([0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b](https://snowtrace.io/address/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowscan.xyz/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.044 | 1.044 |
-| variableBorrowIndex | 1.355 | 1.369 |
-| currentLiquidityRate | 0.802 % | 0.84 % |
-| currentVariableBorrowRate | 32.532 % | 33.881 % |
+| interestRateStrategy | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowtrace.io/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.043 [1043566083559529807498838675] (27 decimals) | 1.043 [1043820349747018367517366672] (27 decimals) |
+| variableBorrowIndex | 1.355 [1355435615666615109225430125] (27 decimals) | 1.368 [1368895866249968308325269956] (27 decimals) |
+| aToken underlying balance |  | 5104.192507809577964115 |
+| currentLiquidityRate | 0.802% [8021432168922842354772656] (25 decimals) | 0.839% [8396099412076433459237356] (25 decimals) |
+| currentVariableBorrowRate | 32.531% [325319435472803880756933588] (25 decimals) | 33.881% [338814686170023567742630488] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 5104.109817001732568208 |
 | maxVariableBorrowRate | / | 309 % |
@@ -118,11 +124,12 @@
 | stableRateSlope2 | 75 % | / |
 | interestRate | ![before](/.assets/1adefa34e2a0ce0e7fdcc0467a1c415fce66b76d.svg) | ![after](/.assets/7886c194f50d7b55c5321771b14a13c4690bbbc0.svg) |
 
-#### AAVE.e ([0x63a72806098Bd3D9520cC43356dD78afe5D386D9](https://snowscan.xyz/address/0x63a72806098Bd3D9520cC43356dD78afe5D386D9))
+#### AAVE.e ([0x63a72806098Bd3D9520cC43356dD78afe5D386D9](https://snowtrace.io/address/0x63a72806098Bd3D9520cC43356dD78afe5D386D9))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| aToken underlying balance |  | 5164.423996813359630582 |
 | virtual accounting active | false | true |
 | virtual balance | / | 5164.423996813359630582 |
 | maxVariableBorrowRate | / | 307 % |
@@ -134,15 +141,16 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### USDt ([0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7](https://snowscan.xyz/address/0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7))
+#### USDt ([0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7](https://snowtrace.io/address/0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowscan.xyz/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.125 | 1.125 |
-| variableBorrowIndex | 1.167 | 1.167 |
-| currentLiquidityRate | 6.348 % | 6.348 % |
-| currentVariableBorrowRate | 8.445 % | 8.445 % |
+| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowtrace.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.125 [1125467362048216510517369759] (27 decimals) | 1.125 [1125472577396930042574773688] (27 decimals) |
+| variableBorrowIndex | 1.166 [1166924761105242831107503743] (27 decimals) | 1.166 [1166931954936717818486740772] (27 decimals) |
+| aToken underlying balance |  | 4317410.954477 |
+| currentLiquidityRate | 6.348% [63482165705246363147761376] (25 decimals) | 6.348% [63482384455713501969838575] (25 decimals) |
+| currentVariableBorrowRate | 8.445% [84453441903829069188052549] (25 decimals) | 8.445% [84453587836045254695622840] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 4317389.289121 |
 | maxVariableBorrowRate | / | 84 % |
@@ -154,15 +162,16 @@
 | stableRateSlope2 | 75 % | / |
 | interestRate | ![before](/.assets/e36150e52440137ed8c69d49f8f7002df1889e3d.svg) | ![after](/.assets/14fa89e5545fb4bd870978aecbbb0e7ee276a551.svg) |
 
-#### WAVAX ([0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7](https://snowscan.xyz/address/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7))
+#### WAVAX ([0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7](https://snowtrace.io/address/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowscan.xyz/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.049 | 1.049 |
-| variableBorrowIndex | 1.134 | 1.134 |
-| currentLiquidityRate | 1.703 % | 1.703 % |
-| currentVariableBorrowRate | 4.463 % | 4.463 % |
+| interestRateStrategy | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowtrace.io/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.049 [1049444130964776456811602023] (27 decimals) | 1.049 [1049444310612611780426459102] (27 decimals) |
+| variableBorrowIndex | 1.133 [1133883004544780619540747956] (27 decimals) | 1.133 [1133883513264014291135328870] (27 decimals) |
+| aToken underlying balance |  | 1708789.381033090886873257 |
+| currentLiquidityRate | 1.702% [17029818138094902912802402] (25 decimals) | 1.702% [17029825235558756448268153] (25 decimals) |
+| currentVariableBorrowRate | 4.463% [44633111063033748556521668] (25 decimals) | 4.463% [44633119190471275703811706] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 1708789.381033090886873257 |
 | maxVariableBorrowRate | / | 150 % |
@@ -174,15 +183,16 @@
 | stableRateSlope2 | 144.28 % | / |
 | interestRate | ![before](/.assets/90c9040ea1e92b7dfc3e47bcd8c55425d6424517.svg) | ![after](/.assets/0613c4d8451d75c86c61059a89fcadae7bb75bbb.svg) |
 
-#### USDC ([0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E](https://snowscan.xyz/address/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E))
+#### USDC ([0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E](https://snowtrace.io/address/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x769EbC5106bF09D9A665CCb691e1907612b57F16](https://snowscan.xyz/address/0x769EbC5106bF09D9A665CCb691e1907612b57F16) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.102 | 1.102 |
-| variableBorrowIndex | 1.138 | 1.138 |
-| currentLiquidityRate | 7.831 % | 7.831 % |
-| currentVariableBorrowRate | 9.727 % | 9.727 % |
+| interestRateStrategy | [0x769EbC5106bF09D9A665CCb691e1907612b57F16](https://snowtrace.io/address/0x769EbC5106bF09D9A665CCb691e1907612b57F16) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.101 [1101884915666510878881295869] (27 decimals) | 1.101 [1101886026595367960541384188] (27 decimals) |
+| variableBorrowIndex | 1.138 [1138421671038012898477168473] (27 decimals) | 1.138 [1138423096633909758546355606] (27 decimals) |
+| aToken underlying balance |  | 5470477.452788 |
+| currentLiquidityRate | 7.831% [78312408975780578182776935] (25 decimals) | 7.831% [78314263720857818844998548] (25 decimals) |
+| currentVariableBorrowRate | 9.726% [97268805906885900381601050] (25 decimals) | 9.727% [97271086621501549520600718] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 5470460.896017 |
 | maxVariableBorrowRate | / | 69 % |
@@ -194,15 +204,16 @@
 | stableRateSlope2 | 60 % | / |
 | interestRate | ![before](/.assets/092eee7f9fd487a7bf2aa3faa1516f84952932b6.svg) | ![after](/.assets/74eb64f7a04e3f76a1187118c8430cd0143274eb.svg) |
 
-#### FRAX ([0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64](https://snowscan.xyz/address/0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64))
+#### FRAX ([0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64](https://snowtrace.io/address/0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowscan.xyz/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.161 | 1.161 |
-| variableBorrowIndex | 1.213 | 1.213 |
-| currentLiquidityRate | 5.871 % | 5.871 % |
-| currentVariableBorrowRate | 8.567 % | 8.567 % |
+| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowtrace.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.161 [1161420480944940414188270349] (27 decimals) | 1.161 [1161425854097603512012000472] (27 decimals) |
+| variableBorrowIndex | 1.212 [1212824299262921297329384934] (27 decimals) | 1.212 [1212832486438501676528005383] (27 decimals) |
+| aToken underlying balance |  | 4043.789495845635047736 |
+| currentLiquidityRate | 5.871% [58711058940316109620530249] (25 decimals) | 5.871% [58711490688014202562854397] (25 decimals) |
+| currentVariableBorrowRate | 8.566% [85667277110571885519018769] (25 decimals) | 8.566% [85667592098773123625330041] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 4043.713054837326383717 |
 | maxVariableBorrowRate | / | 84 % |
@@ -214,15 +225,16 @@
 | stableRateSlope2 | 75 % | / |
 | interestRate | ![before](/.assets/e36150e52440137ed8c69d49f8f7002df1889e3d.svg) | ![after](/.assets/14fa89e5545fb4bd870978aecbbb0e7ee276a551.svg) |
 
-#### DAI.e ([0xd586E7F844cEa2F87f50152665BCbc2C279D8d70](https://snowscan.xyz/address/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70))
+#### DAI.e ([0xd586E7F844cEa2F87f50152665BCbc2C279D8d70](https://snowtrace.io/address/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowscan.xyz/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.094 | 1.094 |
-| variableBorrowIndex | 1.139 | 1.139 |
-| currentLiquidityRate | 9.138 % | 9.138 % |
-| currentVariableBorrowRate | 13.455 % | 13.455 % |
+| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowtrace.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| liquidityIndex | 1.094 [1094110012459220444944026165] (27 decimals) | 1.094 [1094117890404843484035121237] (27 decimals) |
+| variableBorrowIndex | 1.139 [1139213087333677904651493920] (27 decimals) | 1.139 [1139225165362873779438144556] (27 decimals) |
+| aToken underlying balance |  | 328902.052355160937623086 |
+| currentLiquidityRate | 9.137% [91376012089409785872345902] (25 decimals) | 9.138% [91380701530769557877558832] (25 decimals) |
+| currentVariableBorrowRate | 13.454% [134545452041521739352569903] (25 decimals) | 13.455% [134552224679974446124904715] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 328902.052355160937623086 |
 | maxVariableBorrowRate | / | 84 % |
@@ -254,6 +266,10 @@
   },
   "reserves": {
     "0x152b9d0FdC40C096757F570A51E494bd4b943E50": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "2148.45181382"
+      },
       "currentLiquidityRate": {
         "from": "62548655728619028557401",
         "to": "62548769463812502341107"
@@ -284,6 +300,10 @@
       }
     },
     "0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "999701.690645012357527605"
+      },
       "interestRateStrategy": {
         "from": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
@@ -298,6 +318,10 @@
       }
     },
     "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "7954.586926695028224553"
+      },
       "currentLiquidityRate": {
         "from": "3217924898530033169533604",
         "to": "3217929610478545108722367"
@@ -328,6 +352,10 @@
       }
     },
     "0x50b7545627a5162F82A992c33b87aDc75187B218": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "162.55758482"
+      },
       "currentLiquidityRate": {
         "from": "503001406648843772664586",
         "to": "503031572543672675869597"
@@ -358,6 +386,10 @@
       }
     },
     "0x5947BB275c521040051D82396192181b413227A3": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "157701.18854423748539125"
+      },
       "currentLiquidityRate": {
         "from": "7464490120132771158875",
         "to": "7464493720997230366661"
@@ -388,6 +420,10 @@
       }
     },
     "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "5104.192507809577964115"
+      },
       "currentLiquidityRate": {
         "from": "8021432168922842354772656",
         "to": "8396099412076433459237356"
@@ -418,6 +454,10 @@
       }
     },
     "0x63a72806098Bd3D9520cC43356dD78afe5D386D9": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "5164.423996813359630582"
+      },
       "interestRateStrategy": {
         "from": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
@@ -432,6 +472,10 @@
       }
     },
     "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "4317410.954477"
+      },
       "currentLiquidityRate": {
         "from": "63482165705246363147761376",
         "to": "63482384455713501969838575"
@@ -462,6 +506,10 @@
       }
     },
     "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "1708789.381033090886873257"
+      },
       "currentLiquidityRate": {
         "from": "17029818138094902912802402",
         "to": "17029825235558756448268153"
@@ -492,6 +540,10 @@
       }
     },
     "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "5470477.452788"
+      },
       "currentLiquidityRate": {
         "from": "78312408975780578182776935",
         "to": "78314263720857818844998548"
@@ -522,6 +574,10 @@
       }
     },
     "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "4043.789495845635047736"
+      },
       "currentLiquidityRate": {
         "from": "58711058940316109620530249",
         "to": "58711490688014202562854397"
@@ -552,6 +608,10 @@
       }
     },
     "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "328902.052355160937623086"
+      },
       "currentLiquidityRate": {
         "from": "91376012089409785872345902",
         "to": "91380701530769557877558832"

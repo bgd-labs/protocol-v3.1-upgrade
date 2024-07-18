@@ -2,15 +2,16 @@
 
 ### Reserve altered
 
-#### WETH ([0x420000000000000000000000000000000000000A](https://andromeda-explorer.metis.io/address/0x420000000000000000000000000000000000000A))
+#### WETH ([0x420000000000000000000000000000000000000A](https://explorer.metis.io/address/0x420000000000000000000000000000000000000A))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://andromeda-explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://andromeda-explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.01 | 1.01 |
-| variableBorrowIndex | 1.03 | 1.03 |
-| currentLiquidityRate | 0.159 % | 0.159 % |
-| currentVariableBorrowRate | 1.438 % | 1.438 % |
+| interestRateStrategy | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
+| liquidityIndex | 1.009 [1009567635322008898171288298] (27 decimals) | 1.009 [1009567961579522953255541012] (27 decimals) |
+| variableBorrowIndex | 1.030 [1030390859780115005314561044] (27 decimals) | 1.030 [1030393878504593332121583080] (27 decimals) |
+| aToken underlying balance |  | 736.349369593204430438 |
+| currentLiquidityRate | 0.158% [1586202310426466016449658] (25 decimals) | 0.158% [1586207742718818329975292] (25 decimals) |
+| currentVariableBorrowRate | 1.437% [14379848736827089094315978] (25 decimals) | 1.437% [14379860234551354264191261] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 736.349305581934715959 |
 | maxVariableBorrowRate | / | 83.7 % |
@@ -22,15 +23,16 @@
 | stableRateSlope2 | 80 % | / |
 | interestRate | ![before](/.assets/b5b60c9a6da247fd6707dc572d95d822d367c535.svg) | ![after](/.assets/5a5123819558b2679cc9d427d997ff7916be309b.svg) |
 
-#### m.DAI ([0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0](https://andromeda-explorer.metis.io/address/0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0))
+#### m.DAI ([0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0](https://explorer.metis.io/address/0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://andromeda-explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://andromeda-explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.059 | 1.059 |
-| variableBorrowIndex | 1.092 | 1.092 |
-| currentLiquidityRate | 3.873 % | 3.873 % |
-| currentVariableBorrowRate | 6.722 % | 6.722 % |
+| interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
+| liquidityIndex | 1.058 [1058718987293622573357710547] (27 decimals) | 1.058 [1058726239156722858289073728] (27 decimals) |
+| variableBorrowIndex | 1.092 [1092086715993629652100656226] (27 decimals) | 1.092 [1092099698680023402431825819] (27 decimals) |
+| aToken underlying balance |  | 178294.435511625346650214 |
+| currentLiquidityRate | 3.873% [38732440064392652129526542] (25 decimals) | 3.873% [38732730345480877398899117] (25 decimals) |
+| currentVariableBorrowRate | 6.722% [67221906207568546965628001] (25 decimals) | 6.722% [67222158105092865005616055] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 178293.672131110498247138 |
 | maxVariableBorrowRate | / | 82 % |
@@ -42,15 +44,16 @@
 | stableRateSlope2 | 75 % | / |
 | interestRate | ![before](/.assets/2c4f8de05fd07a1c9a695598ae154fc386ab9513.svg) | ![after](/.assets/9e000c9b0f38fb906c182c50b60f6c846aff233c.svg) |
 
-#### Metis ([0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://andromeda-explorer.metis.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000))
+#### Metis ([0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://explorer.metis.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://andromeda-explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://andromeda-explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1 | 1 |
-| variableBorrowIndex | 1.005 | 1.005 |
-| currentLiquidityRate | 0.031 % | 0.031 % |
-| currentVariableBorrowRate | 0.749 % | 0.749 % |
+| interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
+| liquidityIndex | 1.000 [1000235343749209949874176341] (27 decimals) | 1.000 [1000235344994053165404067638] (27 decimals) |
+| variableBorrowIndex | 1.004 [1004845052697511614116696491] (27 decimals) | 1.004 [1004845083249558857147266319] (27 decimals) |
+| aToken underlying balance |  | 218554.253155706184552836 |
+| currentLiquidityRate | 0.030% [306626084693799562054596] (25 decimals) | 0.030% [306626102518227347803030] (25 decimals) |
+| currentVariableBorrowRate | 0.749% [7490966399005013697188722] (25 decimals) | 0.749% [7490966616733045246479336] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 218554.253127038015740781 |
 | maxVariableBorrowRate | / | 307 % |
@@ -62,15 +65,16 @@
 | stableRateSlope2 | 300 % | / |
 | interestRate | ![before](/.assets/5db4fb18964b9bb0cd2159013670bf8ec21b9864.svg) | ![after](/.assets/d94ed5f5babdd12bc4f369c0ebc698f790544557.svg) |
 
-#### m.USDC ([0xEA32A96608495e54156Ae48931A7c20f0dcc1a21](https://andromeda-explorer.metis.io/address/0xEA32A96608495e54156Ae48931A7c20f0dcc1a21))
+#### m.USDC ([0xEA32A96608495e54156Ae48931A7c20f0dcc1a21](https://explorer.metis.io/address/0xEA32A96608495e54156Ae48931A7c20f0dcc1a21))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://andromeda-explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://andromeda-explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.029 | 1.029 |
-| variableBorrowIndex | 1.045 | 1.045 |
-| currentLiquidityRate | 2.837 % | 2.837 % |
-| currentVariableBorrowRate | 4.584 % | 4.584 % |
+| interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
+| liquidityIndex | 1.029 [1029379299338193989696407013] (27 decimals) | 1.029 [1029382196249839679937328922] (27 decimals) |
+| variableBorrowIndex | 1.044 [1044865993860094978724014686] (27 decimals) | 1.044 [1044870745075015181717616816] (27 decimals) |
+| aToken underlying balance |  | 2574986.836868 |
+| currentLiquidityRate | 2.837% [28372635697834944167189376] (25 decimals) | 2.837% [28372727116098300007677577] (25 decimals) |
+| currentVariableBorrowRate | 4.584% [45844047796394942817133439] (25 decimals) | 4.584% [45844121652414233555463269] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 2574985.264181 |
 | maxVariableBorrowRate | / | 66 % |
@@ -82,15 +86,16 @@
 | stableRateSlope2 | 60 % | / |
 | interestRate | ![before](/.assets/fffd1cfa6239774cd846d352db865b5aa91ea625.svg) | ![after](/.assets/42f481f3dae577e453564d6e975b96b0eb0bf288.svg) |
 
-#### m.USDT ([0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC](https://andromeda-explorer.metis.io/address/0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC))
+#### m.USDT ([0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC](https://explorer.metis.io/address/0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://andromeda-explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://andromeda-explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.05 | 1.05 |
-| variableBorrowIndex | 1.066 | 1.066 |
-| currentLiquidityRate | 4.066 % | 4.066 % |
-| currentVariableBorrowRate | 5.488 % | 5.488 % |
+| interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
+| liquidityIndex | 1.049 [1049867796880169540969380006] (27 decimals) | 1.049 [1049871895941775721990024774] (27 decimals) |
+| variableBorrowIndex | 1.066 [1066458167742854118348281117] (27 decimals) | 1.066 [1066463787630482941959020159] (27 decimals) |
+| aToken underlying balance |  | 885790.652602 |
+| currentLiquidityRate | 4.066% [40663107725906291088496529] (25 decimals) | 4.066% [40663347397901646614700772] (25 decimals) |
+| currentVariableBorrowRate | 5.488% [54882438482367348041738226] (25 decimals) | 5.488% [54882600223130589417424458] (25 decimals) |
 | virtual accounting active | false | true |
 | virtual balance | / | 885780.552291 |
 | maxVariableBorrowRate | / | 81 % |
@@ -122,6 +127,10 @@
   },
   "reserves": {
     "0x420000000000000000000000000000000000000A": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "736.349369593204430438"
+      },
       "currentLiquidityRate": {
         "from": "1586202310426466016449658",
         "to": "1586207742718818329975292"
@@ -152,6 +161,10 @@
       }
     },
     "0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "178294.435511625346650214"
+      },
       "currentLiquidityRate": {
         "from": "38732440064392652129526542",
         "to": "38732730345480877398899117"
@@ -182,6 +195,10 @@
       }
     },
     "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "218554.253155706184552836"
+      },
       "currentLiquidityRate": {
         "from": "306626084693799562054596",
         "to": "306626102518227347803030"
@@ -212,6 +229,10 @@
       }
     },
     "0xEA32A96608495e54156Ae48931A7c20f0dcc1a21": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "2574986.836868"
+      },
       "currentLiquidityRate": {
         "from": "28372635697834944167189376",
         "to": "28372727116098300007677577"
@@ -242,6 +263,10 @@
       }
     },
     "0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "885790.652602"
+      },
       "currentLiquidityRate": {
         "from": "40663107725906291088496529",
         "to": "40663347397901646614700772"
