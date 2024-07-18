@@ -7,11 +7,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.003 [1003122283719024825481167788] (27 decimals) | 1.003 [1003122289397336417913538277] (27 decimals) |
-| variableBorrowIndex | 1.019 [1019787602094870567930865080] (27 decimals) | 1.019 [1019787923952581322775508504] (27 decimals) |
+| liquidityIndex | 1.003 [1003122283719024825481167788] | 1.003 [1003122289397336417913538277] |
+| variableBorrowIndex | 1.019 [1019787602094870567930865080] | 1.019 [1019787923952581322775508504] |
 | aToken underlying balance |  | 2148.45181382 |
-| currentLiquidityRate | 0.006% [62548655728619028557401] (25 decimals) | 0.006% [62548769463812502341107] (25 decimals) |
-| currentVariableBorrowRate | 0.348% [3487440123342355610545982] (25 decimals) | 0.348% [3487443294029976487582802] (25 decimals) |
+| currentLiquidityRate | 0.006% [62548655728619028557401] | 0.006% [62548769463812502341107] |
+| currentVariableBorrowRate | 0.348% [3487440123342355610545982] | 0.348% [3487443294029976487582802] |
 | virtual accounting active | false | true |
 | virtual balance | / | 2148.45049376 |
 | maxVariableBorrowRate | / | 307 % |
@@ -45,11 +45,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowtrace.io/address/0xd5CA18a70189309664e34FB8150799ff13722308) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.012 [1012306898869637966023402909] (27 decimals) | 1.012 [1012307145642639496341384508] (27 decimals) |
-| variableBorrowIndex | 1.053 [1053698204567759327152311601] (27 decimals) | 1.053 [1053699590291788650035184073] (27 decimals) |
+| liquidityIndex | 1.012 [1012306898869637966023402909] | 1.012 [1012307145642639496341384508] |
+| variableBorrowIndex | 1.053 [1053698204567759327152311601] | 1.053 [1053699590291788650035184073] |
 | aToken underlying balance |  | 7954.586926695028224553 |
-| currentLiquidityRate | 0.321% [3217924898530033169533604] (25 decimals) | 0.321% [3217929610478545108722367] (25 decimals) |
-| currentVariableBorrowRate | 1.736% [17360038326867504902671404] (25 decimals) | 1.736% [17360045895291284804948618] (25 decimals) |
+| currentLiquidityRate | 0.321% [3217924898530033169533604] | 0.321% [3217929610478545108722367] |
+| currentVariableBorrowRate | 1.736% [17360038326867504902671404] | 1.736% [17360045895291284804948618] |
 | virtual accounting active | false | true |
 | virtual balance | / | 7954.586926695028224553 |
 | maxVariableBorrowRate | / | 83.7 % |
@@ -66,11 +66,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowtrace.io/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.002 [1002621722257367857210218633] (27 decimals) | 1.002 [1002623930784886544068414112] (27 decimals) |
-| variableBorrowIndex | 1.023 [1023077382696537005414335868] (27 decimals) | 1.023 [1023110877346512492858590503] (27 decimals) |
+| liquidityIndex | 1.002 [1002621722257367857210218633] | 1.002 [1002623930784886544068414112] |
+| variableBorrowIndex | 1.023 [1023077382696537005414335868] | 1.023 [1023110877346512492858590503] |
 | aToken underlying balance |  | 162.55758482 |
-| currentLiquidityRate | 0.050% [503001406648843772664586] (25 decimals) | 0.050% [503031572543672675869597] (25 decimals) |
-| currentVariableBorrowRate | 0.747% [7475897617223289821585180] (25 decimals) | 0.747% [7476121785344120723106278] (25 decimals) |
+| currentLiquidityRate | 0.050% [503001406648843772664586] | 0.050% [503031572543672675869597] |
+| currentVariableBorrowRate | 0.747% [7475897617223289821585180] | 0.747% [7476121785344120723106278] |
 | virtual accounting active | false | true |
 | virtual balance | / | 162.55758482 |
 | maxVariableBorrowRate | / | 304 % |
@@ -87,11 +87,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.002 [1002491910799052693325918922] (27 decimals) | 1.002 [1002491912308911515048662748] (27 decimals) |
-| variableBorrowIndex | 1.023 [1023525193873928896802774866] (27 decimals) | 1.023 [1023525442674715845481445525] (27 decimals) |
+| liquidityIndex | 1.002 [1002491910799052693325918922] | 1.002 [1002491912308911515048662748] |
+| variableBorrowIndex | 1.023 [1023525193873928896802774866] | 1.023 [1023525442674715845481445525] |
 | aToken underlying balance |  | 157701.18854423748539125 |
-| currentLiquidityRate | 0.000% [7464490120132771158875] (25 decimals) | 0.000% [7464493720997230366661] (25 decimals) |
-| currentVariableBorrowRate | 0.120% [1204752520009923473191864] (25 decimals) | 0.120% [1204752810595746379175520] (25 decimals) |
+| currentLiquidityRate | 0.000% [7464490120132771158875] | 0.000% [7464493720997230366661] |
+| currentVariableBorrowRate | 0.120% [1204752520009923473191864] | 0.120% [1204752810595746379175520] |
 | virtual accounting active | false | true |
 | virtual balance | / | 157701.18854423748539125 |
 | maxVariableBorrowRate | / | 307 % |
@@ -108,11 +108,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowtrace.io/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.043 [1043566083559529807498838675] (27 decimals) | 1.043 [1043820349747018367517366672] (27 decimals) |
-| variableBorrowIndex | 1.355 [1355435615666615109225430125] (27 decimals) | 1.368 [1368895866249968308325269956] (27 decimals) |
+| liquidityIndex | 1.043 [1043566083559529807498838675] | 1.043 [1043820349747018367517366672] |
+| variableBorrowIndex | 1.355 [1355435615666615109225430125] | 1.368 [1368895866249968308325269956] |
 | aToken underlying balance |  | 5104.192507809577964115 |
-| currentLiquidityRate | 0.802% [8021432168922842354772656] (25 decimals) | 0.839% [8396099412076433459237356] (25 decimals) |
-| currentVariableBorrowRate | 32.531% [325319435472803880756933588] (25 decimals) | 33.881% [338814686170023567742630488] (25 decimals) |
+| currentLiquidityRate | 0.802% [8021432168922842354772656] | 0.839% [8396099412076433459237356] |
+| currentVariableBorrowRate | 32.531% [325319435472803880756933588] | 33.881% [338814686170023567742630488] |
 | virtual accounting active | false | true |
 | virtual balance | / | 5104.109817001732568208 |
 | maxVariableBorrowRate | / | 309 % |
@@ -146,11 +146,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowtrace.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.125 [1125467362048216510517369759] (27 decimals) | 1.125 [1125472577396930042574773688] (27 decimals) |
-| variableBorrowIndex | 1.166 [1166924761105242831107503743] (27 decimals) | 1.166 [1166931954936717818486740772] (27 decimals) |
+| liquidityIndex | 1.125 [1125467362048216510517369759] | 1.125 [1125472577396930042574773688] |
+| variableBorrowIndex | 1.166 [1166924761105242831107503743] | 1.166 [1166931954936717818486740772] |
 | aToken underlying balance |  | 4317410.954477 |
-| currentLiquidityRate | 6.348% [63482165705246363147761376] (25 decimals) | 6.348% [63482384455713501969838575] (25 decimals) |
-| currentVariableBorrowRate | 8.445% [84453441903829069188052549] (25 decimals) | 8.445% [84453587836045254695622840] (25 decimals) |
+| currentLiquidityRate | 6.348% [63482165705246363147761376] | 6.348% [63482384455713501969838575] |
+| currentVariableBorrowRate | 8.445% [84453441903829069188052549] | 8.445% [84453587836045254695622840] |
 | virtual accounting active | false | true |
 | virtual balance | / | 4317389.289121 |
 | maxVariableBorrowRate | / | 84 % |
@@ -167,11 +167,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowtrace.io/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.049 [1049444130964776456811602023] (27 decimals) | 1.049 [1049444310612611780426459102] (27 decimals) |
-| variableBorrowIndex | 1.133 [1133883004544780619540747956] (27 decimals) | 1.133 [1133883513264014291135328870] (27 decimals) |
+| liquidityIndex | 1.049 [1049444130964776456811602023] | 1.049 [1049444310612611780426459102] |
+| variableBorrowIndex | 1.133 [1133883004544780619540747956] | 1.133 [1133883513264014291135328870] |
 | aToken underlying balance |  | 1708789.381033090886873257 |
-| currentLiquidityRate | 1.702% [17029818138094902912802402] (25 decimals) | 1.702% [17029825235558756448268153] (25 decimals) |
-| currentVariableBorrowRate | 4.463% [44633111063033748556521668] (25 decimals) | 4.463% [44633119190471275703811706] (25 decimals) |
+| currentLiquidityRate | 1.702% [17029818138094902912802402] | 1.702% [17029825235558756448268153] |
+| currentVariableBorrowRate | 4.463% [44633111063033748556521668] | 4.463% [44633119190471275703811706] |
 | virtual accounting active | false | true |
 | virtual balance | / | 1708789.381033090886873257 |
 | maxVariableBorrowRate | / | 150 % |
@@ -188,11 +188,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x769EbC5106bF09D9A665CCb691e1907612b57F16](https://snowtrace.io/address/0x769EbC5106bF09D9A665CCb691e1907612b57F16) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.101 [1101884915666510878881295869] (27 decimals) | 1.101 [1101886026595367960541384188] (27 decimals) |
-| variableBorrowIndex | 1.138 [1138421671038012898477168473] (27 decimals) | 1.138 [1138423096633909758546355606] (27 decimals) |
+| liquidityIndex | 1.101 [1101884915666510878881295869] | 1.101 [1101886026595367960541384188] |
+| variableBorrowIndex | 1.138 [1138421671038012898477168473] | 1.138 [1138423096633909758546355606] |
 | aToken underlying balance |  | 5470477.452788 |
-| currentLiquidityRate | 7.831% [78312408975780578182776935] (25 decimals) | 7.831% [78314263720857818844998548] (25 decimals) |
-| currentVariableBorrowRate | 9.726% [97268805906885900381601050] (25 decimals) | 9.727% [97271086621501549520600718] (25 decimals) |
+| currentLiquidityRate | 7.831% [78312408975780578182776935] | 7.831% [78314263720857818844998548] |
+| currentVariableBorrowRate | 9.726% [97268805906885900381601050] | 9.727% [97271086621501549520600718] |
 | virtual accounting active | false | true |
 | virtual balance | / | 5470460.896017 |
 | maxVariableBorrowRate | / | 69 % |
@@ -209,11 +209,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowtrace.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.161 [1161420480944940414188270349] (27 decimals) | 1.161 [1161425854097603512012000472] (27 decimals) |
-| variableBorrowIndex | 1.212 [1212824299262921297329384934] (27 decimals) | 1.212 [1212832486438501676528005383] (27 decimals) |
+| liquidityIndex | 1.161 [1161420480944940414188270349] | 1.161 [1161425854097603512012000472] |
+| variableBorrowIndex | 1.212 [1212824299262921297329384934] | 1.212 [1212832486438501676528005383] |
 | aToken underlying balance |  | 4043.789495845635047736 |
-| currentLiquidityRate | 5.871% [58711058940316109620530249] (25 decimals) | 5.871% [58711490688014202562854397] (25 decimals) |
-| currentVariableBorrowRate | 8.566% [85667277110571885519018769] (25 decimals) | 8.566% [85667592098773123625330041] (25 decimals) |
+| currentLiquidityRate | 5.871% [58711058940316109620530249] | 5.871% [58711490688014202562854397] |
+| currentVariableBorrowRate | 8.566% [85667277110571885519018769] | 8.566% [85667592098773123625330041] |
 | virtual accounting active | false | true |
 | virtual balance | / | 4043.713054837326383717 |
 | maxVariableBorrowRate | / | 84 % |
@@ -230,11 +230,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowtrace.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.094 [1094110012459220444944026165] (27 decimals) | 1.094 [1094117890404843484035121237] (27 decimals) |
-| variableBorrowIndex | 1.139 [1139213087333677904651493920] (27 decimals) | 1.139 [1139225165362873779438144556] (27 decimals) |
+| liquidityIndex | 1.094 [1094110012459220444944026165] | 1.094 [1094117890404843484035121237] |
+| variableBorrowIndex | 1.139 [1139213087333677904651493920] | 1.139 [1139225165362873779438144556] |
 | aToken underlying balance |  | 328902.052355160937623086 |
-| currentLiquidityRate | 9.137% [91376012089409785872345902] (25 decimals) | 9.138% [91380701530769557877558832] (25 decimals) |
-| currentVariableBorrowRate | 13.454% [134545452041521739352569903] (25 decimals) | 13.455% [134552224679974446124904715] (25 decimals) |
+| currentLiquidityRate | 9.137% [91376012089409785872345902] | 9.138% [91380701530769557877558832] |
+| currentVariableBorrowRate | 13.454% [134545452041521739352569903] | 13.455% [134552224679974446124904715] |
 | virtual accounting active | false | true |
 | virtual balance | / | 328902.052355160937623086 |
 | maxVariableBorrowRate | / | 84 % |

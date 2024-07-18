@@ -7,11 +7,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.009 [1009567635322008898171288298] (27 decimals) | 1.009 [1009567961579522953255541012] (27 decimals) |
-| variableBorrowIndex | 1.030 [1030390859780115005314561044] (27 decimals) | 1.030 [1030393878504593332121583080] (27 decimals) |
+| liquidityIndex | 1.009 [1009567635322008898171288298] | 1.009 [1009567961579522953255541012] |
+| variableBorrowIndex | 1.030 [1030390859780115005314561044] | 1.030 [1030393878504593332121583080] |
 | aToken underlying balance |  | 736.349369593204430438 |
-| currentLiquidityRate | 0.158% [1586202310426466016449658] (25 decimals) | 0.158% [1586207742718818329975292] (25 decimals) |
-| currentVariableBorrowRate | 1.437% [14379848736827089094315978] (25 decimals) | 1.437% [14379860234551354264191261] (25 decimals) |
+| currentLiquidityRate | 0.158% [1586202310426466016449658] | 0.158% [1586207742718818329975292] |
+| currentVariableBorrowRate | 1.437% [14379848736827089094315978] | 1.437% [14379860234551354264191261] |
 | virtual accounting active | false | true |
 | virtual balance | / | 736.349305581934715959 |
 | maxVariableBorrowRate | / | 83.7 % |
@@ -28,11 +28,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.058 [1058718987293622573357710547] (27 decimals) | 1.058 [1058726239156722858289073728] (27 decimals) |
-| variableBorrowIndex | 1.092 [1092086715993629652100656226] (27 decimals) | 1.092 [1092099698680023402431825819] (27 decimals) |
+| liquidityIndex | 1.058 [1058718987293622573357710547] | 1.058 [1058726239156722858289073728] |
+| variableBorrowIndex | 1.092 [1092086715993629652100656226] | 1.092 [1092099698680023402431825819] |
 | aToken underlying balance |  | 178294.435511625346650214 |
-| currentLiquidityRate | 3.873% [38732440064392652129526542] (25 decimals) | 3.873% [38732730345480877398899117] (25 decimals) |
-| currentVariableBorrowRate | 6.722% [67221906207568546965628001] (25 decimals) | 6.722% [67222158105092865005616055] (25 decimals) |
+| currentLiquidityRate | 3.873% [38732440064392652129526542] | 3.873% [38732730345480877398899117] |
+| currentVariableBorrowRate | 6.722% [67221906207568546965628001] | 6.722% [67222158105092865005616055] |
 | virtual accounting active | false | true |
 | virtual balance | / | 178293.672131110498247138 |
 | maxVariableBorrowRate | / | 82 % |
@@ -49,11 +49,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.000 [1000235343749209949874176341] (27 decimals) | 1.000 [1000235344994053165404067638] (27 decimals) |
-| variableBorrowIndex | 1.004 [1004845052697511614116696491] (27 decimals) | 1.004 [1004845083249558857147266319] (27 decimals) |
+| liquidityIndex | 1.000 [1000235343749209949874176341] | 1.000 [1000235344994053165404067638] |
+| variableBorrowIndex | 1.004 [1004845052697511614116696491] | 1.004 [1004845083249558857147266319] |
 | aToken underlying balance |  | 218554.253155706184552836 |
-| currentLiquidityRate | 0.030% [306626084693799562054596] (25 decimals) | 0.030% [306626102518227347803030] (25 decimals) |
-| currentVariableBorrowRate | 0.749% [7490966399005013697188722] (25 decimals) | 0.749% [7490966616733045246479336] (25 decimals) |
+| currentLiquidityRate | 0.030% [306626084693799562054596] | 0.030% [306626102518227347803030] |
+| currentVariableBorrowRate | 0.749% [7490966399005013697188722] | 0.749% [7490966616733045246479336] |
 | virtual accounting active | false | true |
 | virtual balance | / | 218554.253127038015740781 |
 | maxVariableBorrowRate | / | 307 % |
@@ -70,11 +70,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.029 [1029379299338193989696407013] (27 decimals) | 1.029 [1029382196249839679937328922] (27 decimals) |
-| variableBorrowIndex | 1.044 [1044865993860094978724014686] (27 decimals) | 1.044 [1044870745075015181717616816] (27 decimals) |
+| liquidityIndex | 1.029 [1029379299338193989696407013] | 1.029 [1029382196249839679937328922] |
+| variableBorrowIndex | 1.044 [1044865993860094978724014686] | 1.044 [1044870745075015181717616816] |
 | aToken underlying balance |  | 2574986.836868 |
-| currentLiquidityRate | 2.837% [28372635697834944167189376] (25 decimals) | 2.837% [28372727116098300007677577] (25 decimals) |
-| currentVariableBorrowRate | 4.584% [45844047796394942817133439] (25 decimals) | 4.584% [45844121652414233555463269] (25 decimals) |
+| currentLiquidityRate | 2.837% [28372635697834944167189376] | 2.837% [28372727116098300007677577] |
+| currentVariableBorrowRate | 4.584% [45844047796394942817133439] | 4.584% [45844121652414233555463269] |
 | virtual accounting active | false | true |
 | virtual balance | / | 2574985.264181 |
 | maxVariableBorrowRate | / | 66 % |
@@ -91,11 +91,11 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
-| liquidityIndex | 1.049 [1049867796880169540969380006] (27 decimals) | 1.049 [1049871895941775721990024774] (27 decimals) |
-| variableBorrowIndex | 1.066 [1066458167742854118348281117] (27 decimals) | 1.066 [1066463787630482941959020159] (27 decimals) |
+| liquidityIndex | 1.049 [1049867796880169540969380006] | 1.049 [1049871895941775721990024774] |
+| variableBorrowIndex | 1.066 [1066458167742854118348281117] | 1.066 [1066463787630482941959020159] |
 | aToken underlying balance |  | 885790.652602 |
-| currentLiquidityRate | 4.066% [40663107725906291088496529] (25 decimals) | 4.066% [40663347397901646614700772] (25 decimals) |
-| currentVariableBorrowRate | 5.488% [54882438482367348041738226] (25 decimals) | 5.488% [54882600223130589417424458] (25 decimals) |
+| currentLiquidityRate | 4.066% [40663107725906291088496529] | 4.066% [40663347397901646614700772] |
+| currentVariableBorrowRate | 5.488% [54882438482367348041738226] | 5.488% [54882600223130589417424458] |
 | virtual accounting active | false | true |
 | virtual balance | / | 885780.552291 |
 | maxVariableBorrowRate | / | 81 % |
