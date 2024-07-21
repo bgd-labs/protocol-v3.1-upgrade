@@ -7,7 +7,7 @@ import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
 contract UpgradeGnosisTest is
   UpgradePayloadTest(
     'gnosis',
-    34659705,
+    34982688,
     1.5 * 1e3 // limit is 0.015%
   )
 {
