@@ -7,6 +7,7 @@ import {IPoolConfigurator} from 'aave-v3-origin/core/contracts/interfaces/IPoolC
 import {DefaultReserveInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/protocol/pool/DefaultReserveInterestRateStrategyV2.sol';
 import {IDefaultInterestRateStrategyV2} from 'aave-v3-origin/core/contracts/interfaces/IDefaultInterestRateStrategyV2.sol';
 import {AaveV3EthereumAssets, IACLManager} from 'aave-address-book/AaveV3Ethereum.sol';
+import {AaveV3ArbitrumAssets} from 'aave-address-book/AaveV3Arbitrum.sol';
 import {ReserveConfiguration} from 'aave-v3-origin/core/contracts/protocol/libraries/configuration/ReserveConfiguration.sol';
 
 interface ILegacyDefaultInterestRateStrategy {
@@ -88,7 +89,10 @@ contract UpgradePayload is IProposalGenericExecutor {
         CONFIGURATOR.setReserveFreeze(reserves[i], true);
       }
 
-      if (reserves[i] == AaveV3EthereumAssets.GHO_UNDERLYING) {
+      if (
+        reserves[i] == AaveV3EthereumAssets.GHO_UNDERLYING ||
+        reserves[i] == AaveV3ArbitrumAssets.GHO_UNDERLYING
+      ) {
         currentUOpt = DEFAULT_IR.MAX_OPTIMAL_POINT();
       } else {
         currentUOpt =
