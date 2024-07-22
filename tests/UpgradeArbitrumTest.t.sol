@@ -9,7 +9,7 @@ import {UpgradePayloadTestWithStableSwap} from './UpgradePayloadTestWithStableSw
 contract UpgradeArbitrumTest is
   UpgradePayloadTestWithStableSwap(
     'arbitrum',
-    232545374,
+    234849726,
     0x62B8e137ee87Ab3CaEB2FEA3B88D04abeA7C5579,
     AaveV3ArbitrumAssets.USDC_UNDERLYING,
     1.5 * 1e3 // limit is 0.015%
