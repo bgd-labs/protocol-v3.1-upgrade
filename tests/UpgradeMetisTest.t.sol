@@ -7,7 +7,7 @@ import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
 contract UpgradeMetisTest is
   UpgradePayloadTest(
     'metis',
-    17688771,
+    17678887,
     1.5 * 1e3 // limit is 0.015%
   )
 {

@@ -7,7 +7,7 @@ import {DeploymentLibrary} from '../scripts/Deploy.s.sol';
 contract UpgradeBNBTest is
   UpgradePayloadTest(
     'bnb',
-    40523273,
+    40501324,
     1.5 * 1e3 // limit is 0.015%
   )
 {

@@ -9,7 +9,7 @@ import {UpgradePayloadTestWithStableSwap} from './UpgradePayloadTestWithStableSw
 contract UpgradeOptimismTest is
   UpgradePayloadTestWithStableSwap(
     'optimism',
-    122767504,
+    122734476,
     0x583891495AF8624fbc88Cc5e8AA45C91d089A508,
     AaveV3OptimismAssets.USDC_UNDERLYING,
     1.5 * 1e3 // limit is 0.015%
