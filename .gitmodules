@@ -3,7 +3,7 @@
 	url = https://github.com/foundry-rs/forge-std
 [submodule "lib/aave-helpers"]
 	path = lib/aave-helpers
-	url = https://github.com/lib/aave-helpers
+	url = https://github.com/bgd-labs/aave-helpers
 	branch = fix/updated-with-virtual-balance
 [submodule "lib/aave-v3-origin"]
 	path = lib/aave-v3-origin
